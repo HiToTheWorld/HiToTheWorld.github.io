@@ -20,6 +20,34 @@
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
+        overflow: overlay;
+      }
+
+      #endoverlay {
+        width: 100%;
+        height: 15%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(transparent, black);
+        background-position: fixed;
+      }
+
+      ::-webkit-scrollbar {
+        width: 15px;
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.7);
       }
 
       h1 {
@@ -48,20 +76,102 @@
         border-radius: 10px;
       }
 
+      .pbcontainer button {
+        padding: 20px;
+        margin: 10px;
+        width: 30%;
+        min-width: 250px;
+        height: 100px;
+        text-align: left;
+        background: #212121;
+        color: white;
+        border: 3px solid black;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /*       .pbcontainer button:before {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: 'Montserrat';
+        content: '. . .';
+        width: 100%;
+        height: 15%;
+        position: absolute;
+        left: 0;
+        top: 85%;
+        background: linear-gradient(transparent, black 85%, black);
+      } */
+
+      .pbcontainer button:hover {
+        background: #252525;
+        border-color: #505050;
+      }
+
+      .pbcontainer button:focus {
+        background: #252525;
+        border-color: white;
+        cursor: wait;
+      }
+
+      .pbcontainer button div p {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 5px;
+        font-family: 'Montserrat';
+        font-size: 12px;
+      }
+
+      .pbcontainer button div p strong {
+        font-size: 14px;
+      }
+
+      .pbcontainer button img {
+        float: left;
+        padding: 0;
+        padding-right: 10px;
+        margin: 0;
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        background: none;
+      }
+
+      }
+
+      }
+
     </style>
   </head>
 
   <body>
+    <div id="endoverlay"></div>
     <h1>Programming and Development</h1>
     <h3>@rabitailleow</h3>
     <div id='myprojects'>
       <h2>My Projects</h2>
       <h5>Recent</h5>
-      <div id="projectbuttons">
-				<button>
-      </div
+      <div class="pbcontainer" id="rprojectbuttons">
+        <button>
+          <img src='https://publicimagestore.rabitailleow.repl.co/images/saw.jpg' />
+          <div>
+            <p><strong>Drill Game</strong></p>
+            <p>Drill into an infinite wall until the drill breaks or you run out of fuel!</p>
+          </div>
+        </button>
+        <button>
+          <img src='https://publicimagestore.rabitailleow.repl.co/images/saw.jpg' />
+          <div>
+            <p><strong>Drill Game</strong></p>
+            <p>Drill into an infinite wall until the drill breaks or you run out of fuel!</p>
+          </div>
+        </button>
+      </div>
       <h5>Other</h5>
     </div>
+
     <!--   <p></p> -->
     <script src="script.js"></script>
   </body>
