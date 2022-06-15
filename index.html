@@ -10,17 +10,19 @@
     <style>
       html,
       body {
+        color: white;
         height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
         text-align: center;
-        background-image: url('https://publicimagestore.rabitailleow.repl.co/images/colorwaves.jpg');
+        background-image: url('https://publicimagestore.rabitailleow.repl.co/images/sunset.jpg');
         background-repeat: none;
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
         overflow: overlay;
+        overflow-x: hidden;
       }
 
       #endoverlay {
@@ -31,6 +33,7 @@
         bottom: 0;
         background: linear-gradient(transparent, black);
         background-position: fixed;
+        pointer-events: none;
       }
 
       ::-webkit-scrollbar {
@@ -62,16 +65,21 @@
         font-weight: 400;
       }
 
+      br {
+        width: 100%;
+        flex-basis: 100%;
+        height: 0;
+      }
+
       #myprojects {
         color: white;
         font-family: 'Montserrat';
         text-align: left;
-        max-width: 80%;
-        min-width: 80%;
+        width: 80%;
         margin: auto;
         padding: 2%;
         padding-left: 5%;
-        background-color: grey;
+        background-color: rgba(105, 105, 105, 0.7);
         border: 2px solid white;
         border-radius: 10px;
       }
@@ -139,41 +147,115 @@
         background: none;
       }
 
+      #aboutme {
+        width: 100%;
+        background-color: #252525;
+        color: white;
+        font-family: 'Montserrat';
+        text-align: left;
+        margin-top: 25px;
+        /*         padding: 2%; */
+        padding-left: 5%;
+        overflow: hidden;
       }
 
+      #aboutme img {
+        padding: 25px;
+        float: left;
+        width: 100px;
+        height: 100px;
+      }
+
+      #aboutme p {
+        padding: 10px;
+        width: 90%;
+        font-size: 13px;
+      }
+
+
+      #footer {
+        width: 100%;
+        height: 25%;
+        margin: 0;
+        padding: 15px;
+        border-top: 3px solid black;
+        border-top: 5px solid white;
+        background: none;
+        /*         background: rgba(255, 255, 255, 0.6); */
+        backdrop-filter: blur(15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Oswald';
+      }
+
+      #footer p {
+        margin: 0;
+        padding: 0;
       }
 
     </style>
   </head>
 
   <body>
-    <div id="endoverlay"></div>
+    <div id="navbar"></div>
     <h1>Programming and Development</h1>
     <h3>@rabitailleow</h3>
     <div id='myprojects'>
       <h2>My Projects</h2>
       <h5>Recent</h5>
       <div class="pbcontainer" id="rprojectbuttons">
-        <button>
-          <img src='https://publicimagestore.rabitailleow.repl.co/images/saw.jpg' />
-          <div>
-            <p><strong>Drill Game</strong></p>
-            <p>Drill into an infinite wall until the drill breaks or you run out of fuel!</p>
-          </div>
-        </button>
-        <button>
-          <img src='https://publicimagestore.rabitailleow.repl.co/images/saw.jpg' />
+        <button onclick="showProjectModal(this)">
+          <img src='https://publicimagestore.rabitailleow.repl.co/images/saw.png' />
           <div>
             <p><strong>Drill Game</strong></p>
             <p>Drill into an infinite wall until the drill breaks or you run out of fuel!</p>
           </div>
         </button>
       </div>
-      <h5>Other</h5>
+      <h5>Featured</h5>
+      <a href="./projects">See All</a>
     </div>
 
-    <!--   <p></p> -->
-    <script src="script.js"></script>
+    <div id="aboutme">
+      <h2>About Me</h2>
+      <img src='https://publicimagestore.rabitailleow.repl.co/images/saw.png' />
+      <p>Hi! I'm rabitailleow. I love to code in my free time along with sleeping and playing video games such as Cities: Skylines. I love tech - computers, smartphones, and anything mechanincal. My mother says that I spend too much time on my devices. I built my own PC, just like I built this website from scratch. Yes, I did code this myself! If you need any proof, just head over to the "This Site" page on the navbar.</p>
+    </div>
+
+    <div id='footer'>
+      <div>
+        <p>@rabitailleow</p>
+        <p>Made on replit and imported to github</p>
+      </div>
+    </div>
+    <div id="endoverlay"></div>
+    <script>
+      const navbar = document.getElementById('navbar')
+
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      function showProjectModal(pelem) {
+        let modal = pelem.getElementsByClassName('projectModal')[0]
+      }
+
+      document.addEventListener('scroll', function() {
+        if (isInViewport(navbar) == true) {
+
+        } else {
+
+        }
+      })
+
+    </script>
   </body>
 
 </html>
