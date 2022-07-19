@@ -21,6 +21,7 @@ html,
         left: 0;
         width: 100%;
         min-height: 50px;
+        background-color: dimgrey;
       }
 
       #endoverlay {
