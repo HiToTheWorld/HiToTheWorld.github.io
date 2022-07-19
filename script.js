@@ -12,12 +12,12 @@ function isInViewport(element) {
 
 function showProjectModal(pelem) {
   let modal = pelem.getElementsByClassName('projectModal')[0]
-  modal.style.display = "block"
+//   modal.style.display = "block"
 }
 
 document.addEventListener('scroll', function() {
   if (isInViewport(navbar) == true) {
-
+    
   } else {
 
   }
