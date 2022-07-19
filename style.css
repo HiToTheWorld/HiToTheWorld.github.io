@@ -22,6 +22,7 @@ html,
         width: 100%;
         height: 80px;
         background-color: dimgrey;
+        z-index: 100;
       }
 
       #navbarcover {
