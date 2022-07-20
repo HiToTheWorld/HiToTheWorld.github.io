@@ -24,7 +24,7 @@ document.addEventListener('scroll', function() {
       side = true
       navbar.style.animation = "tofullnavbar 0.5s"
       window.setTimeout(function () {
-        navbar.style.minHeight = "120px";
+        navbar.style.height = "120px";
       }, 500)
     }
   } else {
@@ -32,7 +32,7 @@ document.addEventListener('scroll', function() {
       side = false
       navbar.style.animation = "toslimnavbar 0.5s"
       window.setTimeout(function () {
-        navbar.style.minHeight = "80px";
+        navbar.style.height = "80px";
       }, 500)
     }
   }
