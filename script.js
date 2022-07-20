@@ -18,6 +18,8 @@ function showProjectModal(pelem) {
 
 let side = true
 
+console.log('compiled')
+
 window.onscroll = function() {onpagescroll()}
 
 function onpagescroll() {
