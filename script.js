@@ -18,9 +18,10 @@ function showProjectModal(pelem) {
 
 let side = true
 
-window.addEventListener('scroll', function() {
-  console.log('scrolled')
-  if (isInViewport(navbarcover) == true) {
+window.onscroll = function() {onpagescroll()}
+
+function onpagescroll() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     if (side == false) {
       side = true
       navbar.style.animation = "tofullnavbar 0.5s"
@@ -40,4 +41,4 @@ window.addEventListener('scroll', function() {
     }
     
   }
-})
+}
