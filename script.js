@@ -19,8 +19,8 @@ const navbarcover = document.getElementById('navbarcover')
 let side = true
 
 function onpagescroll() {
-  console.log('scrolled')
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+  let maxoffset = 80
+  if (document.body.scrollTop > maxoffset || document.documentElement.scrollTop > maxoffset || window.pageYOffset > maxoffset) {
     if (side == false) {
       side = true
       navbar.style.animation = "toslimnavbar 0.5s"
