@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar')
+const navbarcover = document.getElementById('navbarcover')
 
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
@@ -15,10 +16,26 @@ function showProjectModal(pelem) {
 //   modal.style.display = "block"
 }
 
-document.addEventListener('scroll', function() {
-  if (isInViewport(navbar) == true) {
-    
-  } else {
+let side = true
 
+document.addEventListener('scroll', function() {
+  if (isInViewport(navbarcover) == true) {
+    if (side == false) {
+      side = true
+      navbar.style.animation = "tofullnavbar 0.5s"
+      window.setTimeout(function () {
+        navbar.style.minHeight = "80px";
+      }, 500)
+      console.log('moved')
+    }
+  } else {
+    if (side == true) {
+      side = false
+      navbar.style.animation = "toslimnavbar 0.5s"
+      window.setTimeout(function () {
+        navbar.style.minHeight = "50px";
+        console.log('movedagain')
+      }, 500)
+    }
   }
 })
