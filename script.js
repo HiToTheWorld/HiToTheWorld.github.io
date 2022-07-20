@@ -24,17 +24,15 @@ document.addEventListener('scroll', function() {
       side = true
       navbar.style.animation = "tofullnavbar 0.5s"
       window.setTimeout(function () {
-        navbar.style.minHeight = "80px";
+        navbar.style.minHeight = "120px";
       }, 500)
-      console.log('moved')
     }
   } else {
     if (side == true) {
       side = false
       navbar.style.animation = "toslimnavbar 0.5s"
       window.setTimeout(function () {
-        navbar.style.minHeight = "50px";
-        console.log('movedagain')
+        navbar.style.minHeight = "80px";
       }, 500)
     }
   }
