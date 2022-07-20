@@ -1,5 +1,5 @@
 #navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,7 +10,7 @@
 
 @keyframes toslimnavbar {
   100% {
-    height: 80px;
+    height: 50px;
   }
 }
 

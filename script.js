@@ -28,7 +28,6 @@ function onpagescroll() {
         navbar.style.height = "50px";
         navbar.style.animation = "none"
       }, 499)
-      console.log('1')
     }
   } else {
     if (side == true) {
@@ -38,7 +37,6 @@ function onpagescroll() {
         navbar.style.height = "120px";
         navbar.style.animation = "none"
       }, 499)
-      console.log('2')
     }
     
   }
