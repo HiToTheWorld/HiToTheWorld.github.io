@@ -20,26 +20,26 @@ let side = true
 
 console.log('compiled')
 
-window.onscroll = function() {onpagescroll()}
-
-function onpagescroll() {
+document.onscroll = function () {
   console.log('scrolled')
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     if (side == false) {
       side = true
-      navbar.style.animation = "tofullnavbar 0.5s"
+      navbar.style.animation = "toslimnavbar 0.5s"
       window.setTimeout(function () {
-        navbar.style.height = "120px";
-      }, 500)
+        navbar.style.height = "50px";
+        navbar.style.animation = "none"
+      }, 499)
       console.log('1')
     }
   } else {
     if (side == true) {
       side = false
-      navbar.style.animation = "toslimnavbar 0.5s"
+      navbar.style.animation = "tofullnavbar 0.5s"
       window.setTimeout(function () {
         navbar.style.height = "80px";
-      }, 500)
+        navbar.style.animation = "none"
+      }, 499)
       console.log('2')
     }
     
