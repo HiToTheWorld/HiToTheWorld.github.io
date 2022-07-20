@@ -19,6 +19,7 @@ function showProjectModal(pelem) {
 let side = true
 
 document.addEventListener('scroll', function() {
+  console.log('scrolled')
   if (isInViewport(navbarcover) == true) {
     if (side == false) {
       side = true
