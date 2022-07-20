@@ -20,7 +20,7 @@ html,
         top: 0;
         left: 0;
         width: 100%;
-        min-height: 80px;
+        min-height: 120px;
         background-color: dimgrey;
         z-index: 100;
         animation: tofullnavbar 1s 1s;
@@ -28,13 +28,13 @@ html,
       
       @keyframes toslimnavbar {
         100% {
-          min-height: 50px;
+          min-height: 80px;
         }
       }
       
       @keyframes tofullnavbar {
         100% {
-          min-height: 80px;
+          min-height: 120px;
           background-color: dimgrey;
         }
       }
