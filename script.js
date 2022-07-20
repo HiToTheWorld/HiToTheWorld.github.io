@@ -26,6 +26,7 @@ document.addEventListener('scroll', function() {
       window.setTimeout(function () {
         navbar.style.height = "120px";
       }, 500)
+      console.log('1')
     }
   } else {
     if (side == true) {
@@ -34,6 +35,8 @@ document.addEventListener('scroll', function() {
       window.setTimeout(function () {
         navbar.style.height = "80px";
       }, 500)
+      console.log('2')
     }
+    
   }
 })
