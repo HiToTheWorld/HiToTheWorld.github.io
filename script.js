@@ -21,6 +21,7 @@ let side = true
 window.onscroll = function() {onpagescroll()}
 
 function onpagescroll() {
+  console.log('scrolled')
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     if (side == false) {
       side = true
