@@ -1,5 +1,5 @@
-// const navbar = document.getElementById('navbar')
-// const navbarcover = document.getElementById('navbarcover')
+const navbar = document.getElementById('navbar')
+const navbarcover = document.getElementById('navbarcover')
 
 // function isInViewport(element) {
 //   const rect = element.getBoundingClientRect();
