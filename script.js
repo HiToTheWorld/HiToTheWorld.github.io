@@ -1,5 +1,5 @@
-const navbar = document.getElementById('navbar')
-const navbarcover = document.getElementById('navbarcover')
+// const navbar = document.getElementById('navbar')
+// const navbarcover = document.getElementById('navbarcover')
 
 // function isInViewport(element) {
 //   const rect = element.getBoundingClientRect();
@@ -18,9 +18,7 @@ const navbarcover = document.getElementById('navbarcover')
 
 let side = true
 
-console.log('compiled')
-
-document.onscroll = function () {
+function onpagescroll() {
   console.log('scrolled')
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     if (side == false) {
@@ -37,7 +35,7 @@ document.onscroll = function () {
       side = false
       navbar.style.animation = "tofullnavbar 0.5s"
       window.setTimeout(function () {
-        navbar.style.height = "80px";
+        navbar.style.height = "120px";
         navbar.style.animation = "none"
       }, 499)
       console.log('2')
@@ -46,4 +44,6 @@ document.onscroll = function () {
   }
 }
 
-console.log('finished compiling')
+window.onscroll = function () {onpagescroll()}
+
+onpagescroll()
