@@ -1,6 +1,3 @@
-const navbar = document.getElementById('navbar')
-const navbarcover = document.getElementById('navbarcover')
-
 // function isInViewport(element) {
 //   const rect = element.getBoundingClientRect();
 //   return (
@@ -11,37 +8,30 @@ const navbarcover = document.getElementById('navbarcover')
 //   );
 // }
 
-// function showProjectModal(pelem) {
-//   let modal = pelem.getElementsByClassName('projectModal')[0]
-// //   modal.style.display = "block"
-// }
+function showProjectModal(modalname) {
+  modalname = modalname.split('button')[0] + 'modal'
+  console.log(modalname)
+  let modal = document.getElementById(modalname)
+  document.getElementById('projectmodals').style.display = 'flex'
+  modal.style.display = "block"
+  
+  // let pos = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset
 
-let side = true
-
-function onpagescroll() {
-  let maxoffset = 80
-  if (document.body.scrollTop > maxoffset || document.documentElement.scrollTop > maxoffset || window.pageYOffset > maxoffset) {
-    if (side == false) {
-      side = true
-      navbar.style.animation = "toslimnavbar 0.5s"
-      window.setTimeout(function () {
-        navbar.style.height = "50px";
-        navbar.style.animation = "none"
-      }, 499)
-    }
-  } else {
-    if (side == true) {
-      side = false
-      navbar.style.animation = "tofullnavbar 0.5s"
-      window.setTimeout(function () {
-        navbar.style.height = "120px";
-        navbar.style.animation = "none"
-      }, 499)
-    }
-    
-  }
+  // console.log(pos)
+  // document.documentElement.style.height = "100%"
+  // document.body.style.height = "100%"
+  // document.documentElement.style.overflow = "hidden"
+  // document.body.style.overflow = "hidden"
+  //   document.documentElement.style.top = pos
+  // document.body.style.top = pos
 }
 
-window.onscroll = function () {onpagescroll()}
-
-onpagescroll()
+document.getElementById('projectmodals').addEventListener('click', function (e) {
+  if (e.target == document.getElementById('projectmodals')) {
+    document.getElementById('projectmodals').style.display = 'none'
+    let modals = document.getElementById('projectmodals').getElementsByTagName('div')
+    for (let i = 0; i < modals.length; i++) {
+      modals[i].style.display = "none"
+    }
+  }
+})

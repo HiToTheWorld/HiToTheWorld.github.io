@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>rabitailleow</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="navbar.css" rel="stylesheet" type="text/css" />
+    <link href="./navbar/navbar.css" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -15,34 +15,49 @@
   <body>
     <div id="navbar">
       <h1>Programming and Development</h1>
+      <div id="navbarbuttons">
+        <a href="./">Home</a>
+        <a href="./projects">My Projects</a>
+        <a href="./thissite">This Site</a>
+      </div>
     </div>
 
     <div id="projectmodals">
-      
+      <div class="projectmodal" id="numberstatmodal">
+          <img src='https://publicdatastore.rabitailleow.repl.co/images/numberstat.png'/>
+          <h2>Number-Stat</h2>
+        <p>Number-Stat is a software that tells you importaint things about a data set. Input your data, or generate a new array, and then click "Calculate". The right side of the screen will have your information.</p>
+        <button onclick="window.open('./projects/numberstat')" class="modallaunchwebsite">Launch 🚀</button>
+      </div>
     </div>
     <!-- <h1>Programming and Development</h1>
     <h3>@rabitailleow</h3> -->
     <div id="navbarcover"></div>
     <div id='myprojects'>
-      <h2>My Projects</h2>
+      <div style="display: flex; justify-content: flex-start; align-items: center;">
+          <h2 style="padding-right: 20px; float: left;">My Projects</h2>
+          <a href="./projects">See All</a>
+      </div>
       <h5>Recent</h5>
       <div class="pbcontainer" id="rprojectbuttons">
-        <button onclick="showProjectModal(this)">
-          <img src='https://publicdatastore.rabitailleow.repl.co/images/saw.png' />
+        <button id="numberstatbutton" onclick="showProjectModal(this.id)">
+          <img src='https://publicdatastore.rabitailleow.repl.co/images/numberstat.png' />
           <div>
-            <p><strong>Drill Game</strong></p>
-            <p>Drill into an infinite wall until the drill breaks or you run out of fuel!</p>
+            <p><strong>Number-Stat</strong></p>
+            <p>Get info on any number(s)</p>
           </div>
         </button>
       </div>
       <h5>Featured</h5>
-      <a href="./projects">See All</a>
+      <div class="pbcontainer" id="fprojectbuttons">
+        
+      </div>
     </div>
 
     <div id="aboutme">
       <h2>About Me</h2>
       <img src='https://publicdatastore.rabitailleow.repl.co/images/hpfp.jpg' />
-      <p>Hi! I'm rabitailleow. I love to code in my free time along with sleeping and playing video games such as Cities: Skylines. I love tech - computers, smartphones, and anything mechanincal. My mother says that I spend too much time on my devices. I built my own PC, just like I built this website from scratch. Yes, I did code this myself! If you need any proof, just head over to the "This Site" page on the navbar.</p>
+      <p><strong>(Disclaimer: I wrote this at 11pm so don't judge)</strong> Hi! I'm rabitailleow. I love to code in my free time along with sleeping and playing video games such as Cities: Skylines. I love tech - computers, smartphones, and anything mechanincal. My mother says that I spend too much time on my devices. I built my own PC, just like I built this website from scratch. Yes, I did code this myself! If you need any proof, just head over to the "This Site" page on the navbar.</p>
     </div>
 
     <div id='footer'>
@@ -53,6 +68,7 @@
     </div>
     <div id="endoverlay"></div>
     <script src="script.js"></script>
+    <script src="./navbar/navbar.js"></script>
   </body>
 
 </html>
