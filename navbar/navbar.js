@@ -49,7 +49,6 @@ window.onscroll = function() {
 onpagescroll()
 
 for (let i = 0; i < atags.length; i++) {
-  console.log(window.location)
   if (atags[i].href == window.location) {
     atags[i].style.borderBottom = "5px solid white"
   }
