@@ -222,12 +222,13 @@ br {
   font-size: 13px;
 }
 
+
 #footer {
   width: 100%;
   min-height: 25%;
   margin: 0;
   padding: 5% 0;
-  border-top: 3px solid black;
+/*   border-top: 3px solid black; */
   border-top: 5px solid white;
   background: none;
   /*         background: rgba(255, 255, 255, 0.6); */

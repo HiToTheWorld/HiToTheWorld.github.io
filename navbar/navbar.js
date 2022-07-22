@@ -2,9 +2,11 @@ const navbar = document.getElementById('navbar')
 const navbarcover = document.getElementById('navbarcover')
 const atags = document.getElementById('navbarbuttons').getElementsByTagName('a')
 let side = true
+let maxw = 800
 
 function onpagescroll() {
   let maxoffset = 80
+  if (window.innerWidth > 800) {
   if (document.body.scrollTop > maxoffset || document.documentElement.scrollTop > maxoffset || window.pageYOffset > maxoffset) {
     if (side == false) {
       side = true
@@ -16,11 +18,11 @@ function onpagescroll() {
         navbar.style.height = "80px";
         navbar.style.animation = "none"
         for (let i = 0; i < atags.length; i++) {
-          console.log(atags[i].style.animation)
           atags[i].style.padding = "2.5%"
+          atags[i].style.marginRight = "1.3%"
           atags[i].style.animation = "none"
         }
-      }, 500)
+      }, 499)
     }
   } else {
     if (side == true) {
@@ -34,19 +36,35 @@ function onpagescroll() {
         navbar.style.animation = "none"
         for (let i = 0; i < atags.length; i++) {
           atags[i].style.padding = "3%"
+          atags[i].style.marginRight = "3%"
           atags[i].style.animation = "none"
         }
-      }, 500)
+      }, 499)
     }
 
   }
+  }
 }
 
-window.onscroll = function() {
+window.onresize = function () {
+  window.location.reload()
+}
+
+window.onscroll = function () {
   onpagescroll()
 }
 
 onpagescroll()
+
+document.getElementById('navbaropen').addEventListener('click', function () {
+  if (window.innerWidth < 800) {
+    document.getElementById('navbarbuttons').style.animation = "buttonsmobilein 1s"
+    window.setTimeout(function () {
+      document.getElementById('navbarbuttons').style.left = "0"
+      document.getElementById('navbarbuttons').style.animation = "none"
+    }, 999)
+  }
+})
 
 for (let i = 0; i < atags.length; i++) {
   if (atags[i].href == window.location) {
