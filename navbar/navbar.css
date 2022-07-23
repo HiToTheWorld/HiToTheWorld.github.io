@@ -109,6 +109,25 @@
   background: #9c9c9c;
 }
 
+#closemobilenavbar {
+  display: none;
+  text-align: left;
+  font-family: 'Montserrat';
+  color: white;
+  margin: 0;
+  padding: 8% 0;
+  padding-left: 5%;
+  width: 95%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#closemobilenavbar:hover {
+  background: #404040
+}
+
+
 #navbarcover {
   width: 100%;
   min-height: 145px;
@@ -144,6 +163,10 @@
     padding-left: 5%;
     width: 95%;
     background: none;
+  }
+
+  #closemobilenavbar {
+    display: block
   }
 
   #navbarbuttons a:hover {

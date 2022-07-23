@@ -66,6 +66,16 @@ document.getElementById('navbaropen').addEventListener('click', function () {
   }
 })
 
+document.getElementById('closemobilenavbar').addEventListener('click', function () {
+  if (window.innerWidth < 800) {
+    document.getElementById('navbarbuttons').style.animation = "buttonsmobileout 1s"
+    window.setTimeout(function () {
+      document.getElementById('navbarbuttons').style.left = "calc(-40vh + -15px)"
+      document.getElementById('navbarbuttons').style.animation = "none"
+    }, 999)
+  }
+})
+
 for (let i = 0; i < atags.length; i++) {
   if (atags[i].href == window.location) {
     atags[i].style.borderBottom = "5px solid white"
