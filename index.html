@@ -12,28 +12,16 @@
   </head>
 
   <body>
-    <div id="navbar">
-      <button id="navbaropen"><img src="https://publicdatastore.rabitailleow.repl.co/images/numberstat.png"></button>
-      <h1>Programming and Development</h1>
-      <div id="navbarbuttons">
-        <button id="closemobilenavbar">X</button>
-        <a href="./">Home</a>
-        <a href="./projects">My Projects</a>
-        <a href="./thissite">This Site</a>
-      </div>
-    </div>
+    <script src="./navbar/navbar.js"></script>
 
     <div id="projectmodals">
       <div class="projectmodal" id="numberstatmodal">
           <img src='https://publicdatastore.rabitailleow.repl.co/images/numberstat.png'/>
           <h2>Number-Stat</h2>
         <p>Number-Stat is a software that tells you importaint things about a data set. Input your data, or generate a new array, and then click "Calculate". The right side of the screen will have your information.</p>
-        <button onclick="window.open('./projects/numberstat')" class="modallaunchwebsite">Launch 🚀</button>
+        <button onclick="window.location.replace('./projects/numberstat')" class="modallaunchwebsite">Launch 🚀</button>
       </div>
     </div>
-    <!-- <h1>Programming and Development</h1>
-    <h3>@rabitailleow</h3> -->
-    <div id="navbarcover"></div>
     <div id='myprojects'>
       <div style="display: flex; justify-content: flex-start; align-items: center;">
           <h2 style="padding-right: 20px; float: left;">My Projects</h2>
@@ -69,7 +57,6 @@
     </div>
     <div id="endoverlay"></div>
     <script src="script.js"></script>
-    <script src="./navbar/navbar.js"></script>
   </body>
 
 </html>
