@@ -15,6 +15,7 @@ navbar.id = "navbar"
 navbaropen.id = "navbaropen"
 navbarbuttons.id = "navbarbuttons"
 closemobilenavbar.id = "closemobilenavbar"
+navbarcover.id = "navbarcover"
 
 navbaropenimg.src = "https://publicdatastore.rabitailleow.repl.co/images/numberstat.png"
 
@@ -39,7 +40,7 @@ navbar.appendChild(navbaropen)
 navbar.appendChild(navbartitle)
 navbar.appendChild(navbarbuttons)
 
-navbarcover.insertBefore(navbar, null)
+document.body.insertBefore(navbar, navbarcover)
 
 //CSS
 
