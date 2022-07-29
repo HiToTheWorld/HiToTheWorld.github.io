@@ -1,4 +1,10 @@
-if (document.referrer != window.location.origin) {
+let maincss = document.createElement("link")
+maincss.rel = "stylesheet"
+maincss.type = "text/css"
+maincss.href = "https://" + window.location.host + "/main/main.css"
+document.head.appendChild(maincss)
+
+if (document.referrer.split('/')[2] != window.location.host) {
     const loader = document.createElement("div")
     const loaderimg = document.createElement("img")
     const rotateimg = document.createElement("img")
