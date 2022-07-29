@@ -114,8 +114,12 @@ function onpagescroll() {
   }
 }
 
+let mobile = (window.innerWidth < 800)
+
 window.onresize = function () {
-  window.location.reload()
+  if ((mobile == true && window.innerWidth > 800) || (mobile == false && window.innerWidth < 800)) {
+    window.location.reload()
+  }
 }
 
 window.onscroll = function () {
