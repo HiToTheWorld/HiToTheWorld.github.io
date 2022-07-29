@@ -19,6 +19,8 @@ if (document.referrer.split('/')[2] != window.location.host && !(window.location
     loader.style.minWidth = '100%'
     loader.style.minHeight = '100%'
     loader.style.position = 'fixed'
+    loader.style.top = 0
+    loader.style.left = 0
     loader.style.backgroundColor = "#586082"
     loader.style.zIndex = 100
 
