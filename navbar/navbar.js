@@ -1,4 +1,5 @@
 //HTML
+
 const navbar = document.createElement("div")
 const navbaropen = document.createElement("button")
 const navbaropenimg = document.createElement("canvas")
