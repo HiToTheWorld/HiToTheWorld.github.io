@@ -92,7 +92,8 @@
   height: 80%;
 }
 
-#navbarbuttons a {
+#navbarbuttons a,
+#navbarbuttons button {
   width: 25%;
   padding: 3%;
   margin-right: 3%;

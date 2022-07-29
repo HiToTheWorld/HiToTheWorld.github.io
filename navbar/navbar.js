@@ -1,5 +1,5 @@
 //HTML
-
+const serverhost = "https://rabitailleow.github.io/"
 const navbar = document.createElement("div")
 const navbaropen = document.createElement("button")
 const navbaropenimg = document.createElement("canvas")
@@ -9,6 +9,7 @@ const closemobilenavbar = document.createElement("button")
 const homebutton = document.createElement("a")
 const myprojectsbutton = document.createElement("a")
 const thissitebutton = document.createElement("a")
+const morebuton = document.createElement("button")
 const navbarcover = document.createElement("div")
 
 navbar.id = "navbar"
@@ -32,9 +33,9 @@ ctx.strokeStyle = "white"
 ctx.lineWidth = 2
 ctx.stroke()
 
-homebutton.href = "https://" + window.location.host
-myprojectsbutton.href = "https://" + window.location.host + "/projects/"
-thissitebutton.href = "https://" + window.location.host + "/thissite/"
+homebutton.href = serverhost
+myprojectsbutton.href = serverhost + "projects/"
+thissitebutton.href = serverhost + "thissite/"
 
 navbartitle.innerHTML = "rabitailleow"
 closemobilenavbar.innerHTML = "X"
@@ -55,7 +56,9 @@ navbar.appendChild(navbarbuttons)
 
 document.body.insertBefore(navbar, navbarcover)
 
-if (window.innerWidth < 800) {
+const atags = navbarbuttons.getElementsByTagName('a')
+
+if (window.innerWidth < 800 || atags.length > 3) {
 
 }
 
@@ -64,12 +67,11 @@ if (window.innerWidth < 800) {
 let navbarcss = document.createElement("link")
 navbarcss.rel = "stylesheet"
 navbarcss.type = "text/css"
-navbarcss.href = "https://" + window.location.host + "/navbar/navbar.css"
+navbarcss.href = serverhost + "navbar/navbar.css"
 document.head.appendChild(navbarcss)
 
 //JavaScript
 
-const atags = navbarbuttons.getElementsByTagName('a')
 let side = true
 let maxw = 800
 

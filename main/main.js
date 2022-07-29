@@ -1,7 +1,9 @@
+let serverhost = "https://rabitailleow.github.io/"
+
 let maincss = document.createElement("link")
 maincss.rel = "stylesheet"
 maincss.type = "text/css"
-maincss.href = "https://" + window.location.host + "/main/main.css"
+maincss.href = serverhost + "main/main.css"
 document.head.appendChild(maincss)
 
 if (document.referrer.split('/')[2] != window.location.host && !(window.location.href.match('file://'))) {
@@ -23,12 +25,12 @@ if (document.referrer.split('/')[2] != window.location.host && !(window.location
     let imgop = 0
     loaderimg.style.opacity = imgop
     loaderimg.style.zIndex = 101
-    loaderimg.src = "https://publicdatastore.rabitailleow.repl.co/images/rabitailleow.png"
+    loaderimg.src = serverhost + "main/images/rabitailleow.png"
 
     rotateimg.style.position = "absolute"
     rotateimg.style.opacity = imgop
     rotateimg.style.zIndex = 101
-    rotateimg.src = "https://publicdatastore.rabitailleow.repl.co/images/loading.png"
+    rotateimg.src = serverhost + "main/images/loading.png"
 
     if (window.innerWidth > window.innerHeight) {
         loaderimg.style.minHeight = (window.innerHeight / 5) + 'px'
@@ -92,3 +94,20 @@ if (document.referrer.split('/')[2] != window.location.host && !(window.location
     loader.append(rotateimg)
     document.body.prepend(loader)
 }
+
+//Prefetch future pages
+
+let homefetch = document.createElement("link")
+homefetch.rel = "prefetch"
+homefetch.href = serverhost
+document.head.appendChild(homefetch)
+
+let projectsfetch = document.createElement("link")
+projectsfetch.rel = "prefetch"
+projectsfetch.href = serverhost + "projects/"
+document.head.appendChild(projectsfetch)
+
+let thissitefetch = document.createElement("link")
+thissitefetch.rel = "prefetch"
+thissitefetch.href = serverhost + "thissite/"
+document.head.appendChild(thissitefetch)
