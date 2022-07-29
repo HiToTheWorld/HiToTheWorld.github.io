@@ -1,5 +1,4 @@
 //HTML
-const serverhost = "https://rabitailleow.github.io/"
 const navbar = document.createElement("div")
 const navbaropen = document.createElement("button")
 const navbaropenimg = document.createElement("canvas")
