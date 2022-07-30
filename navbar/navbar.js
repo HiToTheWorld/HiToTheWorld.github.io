@@ -9,7 +9,7 @@ const closemobilenavbar = document.createElement("button")
 const homebutton = document.createElement("a")
 const myprojectsbutton = document.createElement("a")
 const thissitebutton = document.createElement("a")
-const morebuton = document.createElement("button")
+const morebutton = document.createElement("button")
 const navbarcover = document.createElement("div")
 
 navbar.id = "navbar"
@@ -17,6 +17,7 @@ navbaropen.id = "navbaropen"
 navbarbuttons.id = "navbarbuttons"
 closemobilenavbar.id = "closemobilenavbar"
 navbarcover.id = "navbarcover"
+morebutton.id = "navbarmorebutton"
 
 // navbaropenimg.src = "https://publicdatastore.rabitailleow.repl.co/images/numberstat.png"
 navbaropenimg.height = 30
@@ -43,12 +44,16 @@ homebutton.innerHTML = "Home"
 myprojectsbutton.innerHTML = "My Projects"
 thissitebutton.innerHTML = "This Site"
 
+morebutton.display = "none"
+closemobilenavbar.display = "none"
+
 document.body.prepend(navbarcover)
 
 navbarbuttons.appendChild(closemobilenavbar)
 navbarbuttons.appendChild(homebutton)
 navbarbuttons.appendChild(myprojectsbutton)
 navbarbuttons.appendChild(thissitebutton)
+navbarbuttons.appendChild(morebutton)
 navbaropen.appendChild(navbaropenimg)
 navbar.appendChild(navbaropen)
 navbar.appendChild(navbartitle)
@@ -58,8 +63,11 @@ document.body.insertBefore(navbar, navbarcover)
 
 const atags = navbarbuttons.getElementsByTagName('a')
 
-if (window.innerWidth < 800 || atags.length > 3) {
-
+if (window.innerWidth > 800 && atags.length > 3) {
+  for (let i = 2; i < atags.length; i++) {
+    atags[i].display = "none"
+  }
+  morebutton.display = "block"
 }
 
 //CSS
