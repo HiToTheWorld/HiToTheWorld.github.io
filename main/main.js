@@ -6,11 +6,9 @@ maincss.type = "text/css"
 maincss.href = serverhost + "main/main.css"
 document.head.appendChild(maincss)
 
-if (document.referrer == null) {
-    window.location.reload()
-}
+// && !(window.location.href.match('file://'))
 
-if (document.referrer.split('/')[2] != window.location.host && !(window.location.href.match('file://'))) {
+if (document.referrer.split('/')[2] != window.location.host && performance.getEntriesByType('navigation')[0].type != "reload") {
     const loader = document.createElement("div")
     const loaderimg = document.createElement("img")
     const rotateimg = document.createElement("img")
@@ -94,6 +92,7 @@ if (document.referrer.split('/')[2] != window.location.host && !(window.location
                 loader.remove()
             }, 2000)
         }, 500)
+        loader.style.pointerEvents = "none"
     }, 5000)
 
     loader.append(loaderimg)

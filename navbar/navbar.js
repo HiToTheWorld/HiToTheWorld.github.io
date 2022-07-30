@@ -44,9 +44,6 @@ homebutton.innerHTML = "Home"
 myprojectsbutton.innerHTML = "My Projects"
 thissitebutton.innerHTML = "This Site"
 
-morebutton.display = "none"
-closemobilenavbar.display = "none"
-
 document.body.prepend(navbarcover)
 
 navbarbuttons.appendChild(closemobilenavbar)
@@ -63,12 +60,12 @@ document.body.insertBefore(navbar, navbarcover)
 
 const atags = navbarbuttons.getElementsByTagName('a')
 
-if (window.innerWidth > 800 && atags.length > 3) {
-  for (let i = 2; i < atags.length; i++) {
-    atags[i].display = "none"
-  }
-  morebutton.display = "block"
-}
+// if (window.innerWidth > 800 && atags.length >= 3) {
+//   for (let i = 2; i < atags.length; i++) {
+//     atags[i].display = "none"
+//   }
+//   morebutton.display = "block"
+// }
 
 //CSS
 

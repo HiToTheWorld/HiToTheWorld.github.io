@@ -92,13 +92,25 @@
   height: 80%;
 }
 
-#navbarbuttons a,
-#navbarmorebutton {
+#navbarbuttons a {
   width: 25%;
   padding: 3%;
   margin-right: 3%;
   font-family: 'Montserrat';
   display: flex;
+  align-items: center;
+  background: grey;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+#navbarmorebutton {
+  width: 25%;
+  padding: 3%;
+  margin-right: 3%;
+  font-family: 'Montserrat';
+  display: none;
   align-items: center;
   background: grey;
   cursor: pointer;
