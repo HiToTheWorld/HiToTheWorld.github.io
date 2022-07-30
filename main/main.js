@@ -6,6 +6,10 @@ maincss.type = "text/css"
 maincss.href = serverhost + "main/main.css"
 document.head.appendChild(maincss)
 
+if (document.referrer == null) {
+    window.location.reload()
+}
+
 if (document.referrer.split('/')[2] != window.location.host && !(window.location.href.match('file://'))) {
     const loader = document.createElement("div")
     const loaderimg = document.createElement("img")
