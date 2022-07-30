@@ -97,6 +97,10 @@ if (document.referrer.split('/')[2] != window.location.host && !(window.location
     document.body.prepend(loader)
 }
 
+let navbarjs = document.createElement("script")
+navbarjs.src = serverhost + "navbar/navbar.css"
+document.head.appendChild(navbarjs)
+
 //Prefetch future pages
 
 let homefetch = document.createElement("link")
