@@ -9,8 +9,10 @@ const closemobilenavbar = document.createElement("button")
 const homebutton = document.createElement("a")
 const myprojectsbutton = document.createElement("a")
 const thissitebutton = document.createElement("a")
+const robloxbutton = document.createElement("a")
 const morebutton = document.createElement("button")
 const navbarcover = document.createElement("div")
+const morearrow = document.createElement("i")
 
 navbar.id = "navbar"
 navbaropen.id = "navbaropen"
@@ -18,6 +20,8 @@ navbarbuttons.id = "navbarbuttons"
 closemobilenavbar.id = "closemobilenavbar"
 navbarcover.id = "navbarcover"
 morebutton.id = "navbarmorebutton"
+
+morearrow.className = "navbardownarrow"
 
 // navbaropenimg.src = "https://publicdatastore.rabitailleow.repl.co/images/numberstat.png"
 navbaropenimg.height = 30
@@ -37,19 +41,25 @@ ctx.stroke()
 homebutton.href = serverhost
 myprojectsbutton.href = serverhost + "projects/"
 thissitebutton.href = serverhost + "thissite/"
+robloxbutton.href = serverhost + "projects/roblox"
 
 navbartitle.innerHTML = "rabitailleow"
 closemobilenavbar.innerHTML = "X"
 homebutton.innerHTML = "Home"
 myprojectsbutton.innerHTML = "My Projects"
 thissitebutton.innerHTML = "This Site"
+robloxbutton.innerHTML = "Roblox"
+morebutton.innerHTML = "More"
+
 
 document.body.prepend(navbarcover)
 
+morebutton.appendChild(morearrow)
 navbarbuttons.appendChild(closemobilenavbar)
 navbarbuttons.appendChild(homebutton)
 navbarbuttons.appendChild(myprojectsbutton)
 navbarbuttons.appendChild(thissitebutton)
+navbarbuttons.appendChild(robloxbutton)
 navbarbuttons.appendChild(morebutton)
 navbaropen.appendChild(navbaropenimg)
 navbar.appendChild(navbaropen)
@@ -57,15 +67,6 @@ navbar.appendChild(navbartitle)
 navbar.appendChild(navbarbuttons)
 
 document.body.insertBefore(navbar, navbarcover)
-
-const atags = navbarbuttons.getElementsByTagName('a')
-
-// if (window.innerWidth > 800 && atags.length >= 3) {
-//   for (let i = 2; i < atags.length; i++) {
-//     atags[i].display = "none"
-//   }
-//   morebutton.display = "block"
-// }
 
 //CSS
 
@@ -76,6 +77,16 @@ navbarcss.href = serverhost + "navbar/navbar.css"
 document.head.appendChild(navbarcss)
 
 //JavaScript
+
+const atags = navbarbuttons.getElementsByTagName('a')
+
+if (window.innerWidth > 800 && atags.length >= 3) {
+  console.log(atags.length)
+  for (let i = 2; i < atags.length; i++) {
+    atags[i].style.display = "none"
+  }
+  morebutton.style.display = "block"
+}
 
 let side = true
 let maxw = 800

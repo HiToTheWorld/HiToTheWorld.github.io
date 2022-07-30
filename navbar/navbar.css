@@ -96,6 +96,7 @@
   width: 25%;
   padding: 3%;
   margin-right: 3%;
+  font-size: 16px;
   font-family: 'Montserrat';
   display: flex;
   align-items: center;
@@ -109,6 +110,7 @@
   width: 25%;
   padding: 3%;
   margin-right: 3%;
+  font-size: 16px;
   font-family: 'Montserrat';
   display: none;
   align-items: center;
@@ -138,6 +140,15 @@
 
 #closemobilenavbar:hover {
   background: #404040
+}
+
+#navbardownarrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 
