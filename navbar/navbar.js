@@ -10,9 +10,10 @@ const homebutton = document.createElement("a")
 const myprojectsbutton = document.createElement("a")
 const thissitebutton = document.createElement("a")
 const robloxbutton = document.createElement("a")
-const morebutton = document.createElement("button")
+const morebutton = document.createElement("a")
 const navbarcover = document.createElement("div")
 const morearrow = document.createElement("i")
+const morebuttonsmenu = document.createElement("div")
 
 navbar.id = "navbar"
 navbaropen.id = "navbaropen"
@@ -20,6 +21,7 @@ navbarbuttons.id = "navbarbuttons"
 closemobilenavbar.id = "closemobilenavbar"
 navbarcover.id = "navbarcover"
 morebutton.id = "navbarmorebutton"
+morebuttonsmenu.id = "morebuttonsmenu"
 
 morearrow.className = "navbardownarrow"
 
@@ -51,16 +53,22 @@ thissitebutton.innerHTML = "This Site"
 robloxbutton.innerHTML = "Roblox"
 morebutton.innerHTML = "More"
 
+const atags = []
+
+atags.push(homebutton)
+atags.push(myprojectsbutton)
+atags.push(thissitebutton)
+atags.push(robloxbutton)
 
 document.body.prepend(navbarcover)
 
 morebutton.appendChild(morearrow)
+morebutton.appendChild(morebuttonsmenu)
 navbarbuttons.appendChild(closemobilenavbar)
 navbarbuttons.appendChild(homebutton)
 navbarbuttons.appendChild(myprojectsbutton)
 navbarbuttons.appendChild(thissitebutton)
 navbarbuttons.appendChild(robloxbutton)
-navbarbuttons.appendChild(morebutton)
 navbaropen.appendChild(navbaropenimg)
 navbar.appendChild(navbaropen)
 navbar.appendChild(navbartitle)
@@ -78,14 +86,20 @@ document.head.appendChild(navbarcss)
 
 //JavaScript
 
-const atags = navbarbuttons.getElementsByTagName('a')
-
-if (window.innerWidth > 800 && atags.length >= 3) {
-  console.log(atags.length)
+if (window.innerWidth > 800 && atags.length > 2) {
   for (let i = 2; i < atags.length; i++) {
-    atags[i].style.display = "none"
+    // atags[i].style.margin = 0
+    atags[i].style.padding = "10% 0"
+    atags[i].style.paddingLeft = "8%"
+    atags[i].style.minWidth = "92%"
+    atags[i].style.maxWidth = "92%"
+    atags[i].style.animation = "none"
+    // atags[i].style.background = "none"
+    morebuttonsmenu.appendChild(atags[i])
   }
-  morebutton.style.display = "block"
+  navbarbuttons.appendChild(morebutton)
+  atags.splice(2)
+  atags.push(morebutton)
 }
 
 let side = true
@@ -134,7 +148,12 @@ function onpagescroll() {
 
 let mobile = (window.innerWidth < 800)
 
+window.setTimeout(function () {
+  morebuttonsmenu.style.top = morebutton.getBoundingClientRect().top + morebutton.getBoundingClientRect().height + "px"
+}, 10)
+
 window.onresize = function () {
+  morebuttonsmenu.style.top = morebutton.getBoundingClientRect().top + morebutton.getBoundingClientRect().height + "px"
   if ((mobile == true && window.innerWidth > 800) || (mobile == false && window.innerWidth < 800)) {
     window.location.reload()
   }

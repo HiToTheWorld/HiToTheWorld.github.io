@@ -73,6 +73,20 @@
   }
 }
 
+@keyframes morebuttonstofull {
+  100% {
+    min-height: 80vh;
+    max-height: 80vh;
+  }
+}
+
+@keyframes morebuttonstonone {
+  100% {
+    min-height: 0;
+    max-height: 0;
+  }
+}
+
 #navbar h1 {
   margin-left: 100px;
   font-family: 'Oswald';
@@ -93,8 +107,9 @@
 }
 
 #navbarbuttons a {
-  width: 25%;
-  padding: 3%;
+  min-width: 25%;
+  max-width: 25%;
+  padding: 5%;
   margin-right: 3%;
   font-size: 16px;
   font-family: 'Montserrat';
@@ -106,22 +121,38 @@
   color: white;
 }
 
-#navbarmorebutton {
-  width: 25%;
-  padding: 3%;
+/* #navbarmorebutton {
+  min-width: 25%;
+  max-width: 25%;
+  padding: 5%;
   margin-right: 3%;
   font-size: 16px;
   font-family: 'Montserrat';
+  text-align: left;
   display: none;
   align-items: center;
   background: grey;
   cursor: pointer;
   text-decoration: none;
   color: white;
-}
+  border: none;
+} */
 
 #navbarbuttons a:hover {
   background: #9c9c9c;
+}
+
+#morebuttonsmenu {
+  display: none;
+  position: fixed;
+  top: 11.8%;
+  right: 1.5%;
+  background: none;
+  width: 15.5%;
+}
+
+#navbarmorebutton:hover #morebuttonsmenu {
+  display: block;
 }
 
 #closemobilenavbar {
@@ -142,15 +173,15 @@
   background: #404040
 }
 
-#navbardownarrow {
+.navbardownarrow {
   border: solid white;
   border-width: 0 2px 2px 0;
   display: inline-block;
-  padding: 3px;
+  margin-left: 5%;
+  padding: 1%;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-
 
 #navbarcover {
   width: 100%;
