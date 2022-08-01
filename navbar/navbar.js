@@ -78,11 +78,11 @@ document.body.insertBefore(navbar, navbarcover)
 
 //CSS
 
-let navbarcss = document.createElement("link")
-navbarcss.rel = "stylesheet"
-navbarcss.type = "text/css"
-navbarcss.href = serverhost + "navbar/navbar.css"
-document.head.appendChild(navbarcss)
+// let navbarcss = document.createElement("link")
+// navbarcss.rel = "stylesheet"
+// navbarcss.type = "text/css"
+// navbarcss.href = serverhost + "navbar/navbar.css"
+// document.head.appendChild(navbarcss)
 
 //JavaScript
 
@@ -94,6 +94,7 @@ if (window.innerWidth > 800 && atags.length > 2) {
     atags[i].style.minWidth = "92%"
     atags[i].style.maxWidth = "92%"
     atags[i].style.animation = "none"
+    atags[i].style.minHeight = 0
     // atags[i].style.background = "none"
     morebuttonsmenu.appendChild(atags[i])
   }
@@ -152,20 +153,28 @@ let morebuttonsview = false
 
 window.setInterval(function () {
   morebuttonsmenu.style.top = morebutton.getBoundingClientRect().top + morebutton.getBoundingClientRect().height + "px"
-  if (morebutton.matches(":hover")) {
-    if (morebuttonsview == false) {
-      morebuttonsview = true
-      morebuttonsmenu.style.minHeight = 0
-      morebuttonsmenu.style.maxHeight = 0
-      // morebuttonsmenu.style.display = "block"
-      morebuttonsmenu.style.animation = "morebuttonstofull 1s"
-    }
-  } else {
-    if (morebuttonsview == true) {
-      morebuttonsview = false
-      morebuttonsmenu.style.animation = "morebuttonstonone 1s"
-    }
-  }
+  // if (morebutton.matches(":hover")) {
+  //   if (morebuttonsview == false) {
+  //     morebuttonsview = true
+  //     morebuttonsmenu.style.minHeight = 0
+  //     morebuttonsmenu.style.maxHeight = 0
+  //     morebuttonsmenu.style.height = 0
+  //     morebuttonsmenu.style.display = "block"
+  //     morebuttonsmenu.style.animation = "morebuttonstofull 1s"
+  //     window.setTimeout(function () {
+  //       morebuttonsmenu.style.minHeight = "80vh"
+  //       morebuttonsmenu.style.maxHeight = "80vh"
+  //     }, 1000)
+  //   }
+  // } else {
+  //   if (morebuttonsview == true) {
+  //     morebuttonsview = false
+  //     morebuttonsmenu.style.animation = "morebuttonstonone 1s"
+  //     window.setTimeout(function () {
+  //       morebuttonsmenu.style.display = "none"
+  //     }, 1000)
+  //   }
+  // }
 }, 10)
 
 window.onresize = function () {
