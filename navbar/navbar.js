@@ -148,12 +148,27 @@ function onpagescroll() {
 
 let mobile = (window.innerWidth < 800)
 
-window.setTimeout(function () {
+let morebuttonsview = false
+
+window.setInterval(function () {
   morebuttonsmenu.style.top = morebutton.getBoundingClientRect().top + morebutton.getBoundingClientRect().height + "px"
+  if (morebutton.matches(":hover")) {
+    if (morebuttonsview == false) {
+      morebuttonsview = true
+      morebuttonsmenu.style.minHeight = 0
+      morebuttonsmenu.style.maxHeight = 0
+      // morebuttonsmenu.style.display = "block"
+      morebuttonsmenu.style.animation = "morebuttonstofull 1s"
+    }
+  } else {
+    if (morebuttonsview == true) {
+      morebuttonsview = false
+      morebuttonsmenu.style.animation = "morebuttonstonone 1s"
+    }
+  }
 }, 10)
 
 window.onresize = function () {
-  morebuttonsmenu.style.top = morebutton.getBoundingClientRect().top + morebutton.getBoundingClientRect().height + "px"
   if ((mobile == true && window.innerWidth > 800) || (mobile == false && window.innerWidth < 800)) {
     window.location.reload()
   }

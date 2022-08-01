@@ -149,11 +149,13 @@
   right: 1.5%;
   background: none;
   width: 15.5%;
+  pointer-events: auto;
+  /* animation: morebuttonstonone 1s; */
 }
 
-#navbarmorebutton:hover #morebuttonsmenu {
-  display: block;
-}
+/* #navbarmorebutton:hover #morebuttonsmenu {
+  animation: morebuttonstofull 1s;
+} */
 
 #closemobilenavbar {
   display: none;
