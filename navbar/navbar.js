@@ -78,11 +78,11 @@ document.body.insertBefore(navbar, navbarcover)
 
 //CSS
 
-// let navbarcss = document.createElement("link")
-// navbarcss.rel = "stylesheet"
-// navbarcss.type = "text/css"
-// navbarcss.href = serverhost + "navbar/navbar.css"
-// document.head.appendChild(navbarcss)
+let navbarcss = document.createElement("link")
+navbarcss.rel = "stylesheet"
+navbarcss.type = "text/css"
+navbarcss.href = serverhost + "navbar/navbar.css"
+document.head.appendChild(navbarcss)
 
 //JavaScript
 
