@@ -107,8 +107,8 @@
 }
 
 #navbarbuttons a {
-  min-width: 25%;
-  max-width: 25%;
+  min-width: 20%;
+  max-width: 20%;
   padding: 3%;
   margin-right: 3%;
   font-size: 16px;
@@ -148,7 +148,7 @@
   top: 11.8%;
   right: 1.5%;
   background: none;
-  width: 15.5%;
+  width: 13%;
   pointer-events: auto;
   background-color: grey;
   /* animation: morebuttonstonone 1s; */
@@ -219,6 +219,8 @@
     margin: 0;
     padding: 8% 0;
     padding-left: 5%;
+    min-width: 95%;
+    max-width: 95%;
     width: 95%;
     background: none;
   }

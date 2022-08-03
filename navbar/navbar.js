@@ -86,8 +86,10 @@ document.body.insertBefore(navbar, navbarcover)
 
 //JavaScript
 
-if (window.innerWidth > 800 && atags.length > 2) {
-  for (let i = 2; i < atags.length; i++) {
+let maxbuttons = 3
+
+if (window.innerWidth > 800 && atags.length > maxbuttons && atags.length != maxbuttons + 1) {
+  for (let i = maxbuttons; i < atags.length; i++) {
     // atags[i].style.margin = 0
     atags[i].style.padding = "10% 0"
     atags[i].style.paddingLeft = "8%"
@@ -178,7 +180,7 @@ window.setInterval(function () {
 }, 10)
 
 window.onresize = function () {
-  if ((mobile == true && window.innerWidth > 800) || (mobile == false && window.innerWidth < 800)) {
+  if ((mobile == true && window.innerWidth > 1000) || (mobile == false && window.innerWidth < 1000)) {
     window.location.reload()
   }
 }
