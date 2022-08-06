@@ -10,11 +10,10 @@
 
 function showProjectModal(modalname) {
   modalname = modalname.split('button')[0] + 'modal'
-  console.log(modalname)
   let modal = document.getElementById(modalname)
   document.getElementById('projectmodals').style.display = 'flex'
   modal.style.display = "block"
-  
+
   // let pos = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset
 
   // console.log(pos)

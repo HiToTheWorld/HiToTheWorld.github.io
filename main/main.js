@@ -7,9 +7,15 @@ maincss.type = "text/css"
 maincss.href = serverhost + "main/main.css"
 document.head.prepend(maincss)
 
+let urlparams = new URLSearchParams(window.location.search)
+
+if (urlparams.has("modal")) {
+    showProjectModal(urlparams.get("modal"))
+}
+
 // && !(window.location.href.match('file://'))
 
-if (document.referrer.split('/')[2] != window.location.host && performance.getEntriesByType('navigation')[0].type != "reload") {
+if (document.referrer.split('/')[2] != serverhost && performance.getEntriesByType('navigation')[0].type != "reload") {
     const loader = document.createElement("div")
     const loaderimg = document.createElement("img")
     const rotateimg = document.createElement("img")
