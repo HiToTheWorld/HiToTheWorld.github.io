@@ -5,7 +5,7 @@ let maincss = document.createElement("link")
 maincss.rel = "stylesheet"
 maincss.type = "text/css"
 maincss.href = serverhost + "main/main.css"
-document.head.appendChild(maincss)
+document.head.prepend(maincss)
 
 // && !(window.location.href.match('file://'))
 

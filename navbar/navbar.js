@@ -90,7 +90,7 @@ let navbarcss = document.createElement("link")
 navbarcss.rel = "stylesheet"
 navbarcss.type = "text/css"
 navbarcss.href = serverhost + "navbar/navbar.css"
-document.head.appendChild(navbarcss)
+document.head.prepend(navbarcss)
 
 //JavaScript
 
