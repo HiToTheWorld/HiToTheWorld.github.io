@@ -1,0 +1,18 @@
+#fourofourcenterframe {
+    width: 50%;
+    min-height: 50vh;
+    font-size: 80%;
+    margin: auto;
+}
+
+#fourofour {
+    font-family: "Oswald";
+    font-size: 15em;
+    margin: auto;
+}
+
+h3 {
+    font-family: "Montserrat";
+    font-size: 2em;
+    margin: auto;
+}
