@@ -28,6 +28,10 @@
   overflow: scroll;
 }
 
+/* .projectmodal p {
+  margin-right: 5%;
+} */
+
 /* 
 .projectmodal h2 {
   float: left;
@@ -37,6 +41,7 @@
   float: right;
   width: 25%;
   max-height: 80%;
+  padding: 2%;
 }
 
 .modallaunchwebsite {
