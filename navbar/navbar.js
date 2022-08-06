@@ -15,6 +15,9 @@ const navbarcover = document.createElement("div")
 const morearrow = document.createElement("i")
 const morebuttonsmenu = document.createElement("div")
 
+const quicklinks = document.createElement("div")
+const linksbutton = document.createElement("button")
+
 navbar.id = "navbar"
 navbaropen.id = "navbaropen"
 navbarbuttons.id = "navbarbuttons"
@@ -22,6 +25,7 @@ closemobilenavbar.id = "closemobilenavbar"
 navbarcover.id = "navbarcover"
 morebutton.id = "navbarmorebutton"
 morebuttonsmenu.id = "morebuttonsmenu"
+quicklinks.id = "navbarquicklinks"
 
 morearrow.className = "navbardownarrow"
 
@@ -74,7 +78,11 @@ navbar.appendChild(navbaropen)
 navbar.appendChild(navbartitle)
 navbar.appendChild(navbarbuttons)
 
+quicklinks.appendChild(linksbutton)
+
 document.body.insertBefore(navbar, navbarcover)
+
+document.body.insertBefore(quicklinks, navbar)
 
 //CSS
 
