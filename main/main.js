@@ -15,7 +15,7 @@ if (urlparams.has("modal")) {
 
 // && !(window.location.href.match('file://'))
 
-if (document.referrer.split('/')[2] != serverhost && performance.getEntriesByType('navigation')[0].type != "reload") {
+if (document.referrer.split('/')[2] != serverhost.split('/')[2] && performance.getEntriesByType('navigation')[0].type != "reload") {
     const loader = document.createElement("div")
     const loaderimg = document.createElement("img")
     const rotateimg = document.createElement("img")
