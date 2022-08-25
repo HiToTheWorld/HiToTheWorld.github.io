@@ -2,7 +2,7 @@ let serverhost = "https://rabitailleow.github.io/"
 // let serverhost = "file:///D:/Programming/rabitailleow.github.io/"
 
 let maincss = document.createElement("link")
-maincss.rel = "stylesheet"
+maincss.rel = "old stylesheet"
 maincss.type = "text/css"
 maincss.href = serverhost + "main/main.css"
 document.head.prepend(maincss)

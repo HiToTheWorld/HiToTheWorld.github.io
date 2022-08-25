@@ -1,0 +1,20 @@
+html:after,
+body:after {
+    /* background: none; */
+    background-color: black;
+    /* background-image: none; */
+}
+
+code {
+    background-color: rgba(128, 128, 128, 0.7);
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-family: 'Montserrat';
+}
+
+p {
+    font-family: 'Montserrat';
+}
