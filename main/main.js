@@ -1,5 +1,15 @@
-// let serverhost = "https://rabitailleow.github.io/"
-let serverhost = "file:///D:/Programming/rabitailleow.github.io/"
+let serverhost = "https://rabitailleow.github.io/"
+
+function runningLoacally() {
+    if (document.location.href.split("/")[0] == "file:") {
+        return true
+    }
+    return false
+}
+
+if (runningLoacally() == true) {
+    serverhost = "file:///D:/Programming/rabitailleow.github.io/"
+}
 
 let maincss = document.createElement("link")
 maincss.rel = "old stylesheet"
