@@ -1,5 +1,5 @@
-let serverhost = "https://rabitailleow.github.io/"
-// let serverhost = "file:///D:/Programming/rabitailleow.github.io/"
+// let serverhost = "https://rabitailleow.github.io/"
+let serverhost = "file:///D:/Programming/rabitailleow.github.io/"
 
 let maincss = document.createElement("link")
 maincss.rel = "old stylesheet"

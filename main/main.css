@@ -9,7 +9,7 @@ body {
     padding: 0;
     text-align: center;
     /* background: rgba(0, 0, 0, 0.7); */
-    background: url('https://publicdatastore.rabitailleow.repl.co/images/sunset.jpg') rgba(0, 0, 0, 0.7);
+    background: url('https://publicdatastore.rabitailleow.repl.co/images/sunset.jpg') rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
     background-repeat: none;
     background-size: cover;
@@ -17,6 +17,20 @@ body {
     background-position: center;
     overflow: overlay;
     /*         overflow-x: hidden; */
+}
+
+code {
+    background-color: rgba(128, 128, 128, 0.7);
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-family: 'Montserrat';
+}
+
+p {
+    font-family: 'Montserrat';
 }
 
 ::-webkit-scrollbar {

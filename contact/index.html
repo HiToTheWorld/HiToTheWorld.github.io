@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>rabitailleow/projects</title>
+    <link href="style.css" rel="newest stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+
+    <h2>Contact Information</h2>
+
+    <div id="contact">
+        <form id="contactForm">
+            <label for="contactuseremail">Email</label>
+            <input id="contactuseremail" placeholder="john.doe@example.com" type="email" required>
+            <br>
+            <label for="contactusername">Name</label>
+            <input id="contactusername" placeholder="John" type="text" required>
+            <br>
+            <label for="contactcategory">Category</label>
+            <select id="contactcategory">
+                <option value="general">General</option>
+                <option value="bug">Bug</option>
+                <option value="question">Question</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+            <br>
+            <label for="contactmessage">Your Message</label>
+            <br>
+            <textarea id="contactmessage" rows="5" cols="50" maxlength="150" required></textarea>
+            <br>
+            <input type="submit">
+        </form>
+        <p id="contactformresults"></p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="../main/main.js"></script>
+    <script src="../navbar/navbar.js"></script>
+</body>
+
+</html>
