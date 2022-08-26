@@ -5,19 +5,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>404 - Page Not Found</title>
-    <link href="fourofour.css" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        #fourofourcenterframe {
+            width: 50%;
+            min-height: 50vh;
+            font-size: 80%;
+            margin: auto;
+        }
+
+        #fourofour {
+            font-family: "Oswald";
+            font-size: 15em;
+            margin: auto;
+        }
+
+        button {
+            color: white;
+            font-size: 130%;
+            font-family: 'Montserrat';
+            background-color: #2c3d58;
+            border: 5px solid black;
+            border-radius: 10px;
+            width: 30%;
+            min-width: 100px;
+            min-height: 15%;
+            cursor: pointer;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-family: "Montserrat";
+            font-size: 2em;
+            margin: auto;
+        }
+
+        body {
+            background: none;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <div id="fourofourcenterframe">
         <h1 id="fourofour">404</h1>
         <h3>The page you are looking for is not found.</h3>
-        <button>Go Home</button>
+        <button onclick="window.location.replace('https://rabitailleow.github.io/')">Go Home 🚀</button>
     </div>
-    <!-- <script src="https://rabitailleow.github.io/main/main.js"></script> -->
-    <!-- <script src="https://rabitailleow.github.io/navbar/navbar.js"></script> -->
 </body>
 
 </html>
