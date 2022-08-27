@@ -3,7 +3,7 @@ let mds = document.getElementsByClassName("md")
 let mdcss = document.createElement("link")
 mdcss.rel = "old stylesheet"
 mdcss.type = "text/css"
-mdcss.href = serverhost + "projects/mdreader/style.css"
+mdcss.href = serverhost + "projects/mdreader/md.css"
 document.head.prepend(mdcss)
 
 //runs through every MD element
@@ -106,7 +106,7 @@ for (let mden = 0; mden < mds.length; mden++) {
         //ITALICS
         if (mdlcs[0] == "_" && mdlcs[mdlcs.length - 1] == "_") {
             let i = document.createElement("i")
-            mdl = mdl.substring(1, mdlcs.length - 2)
+            mdl = mdl.substring(1, mdlcs.length - 1)
             mdlcs = mdl.split("")
             textHolder.append(i)
             textHolder = i
