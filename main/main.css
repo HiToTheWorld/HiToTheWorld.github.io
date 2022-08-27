@@ -2,11 +2,11 @@ html,
 body {
     color: white;
     min-height: 100%;
-    width: 100%;
+    width: 90%;
     top: 0;
     left: 0;
     margin: 0;
-    padding: 0;
+    padding: 0 5%;
     text-align: center;
     /* background: rgba(0, 0, 0, 0.7); */
     background: url('https://publicdatastore.rabitailleow.repl.co/images/sunset.jpg') rgba(0, 0, 0, 0.3);
@@ -30,6 +30,10 @@ h2 {
 }
 
 p {
+    font-family: 'Montserrat';
+}
+
+a {
     font-family: 'Montserrat';
 }
 

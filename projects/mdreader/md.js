@@ -1,5 +1,11 @@
 let mds = document.getElementsByClassName("md")
 
+let mdcss = document.createElement("link")
+mdcss.rel = "old stylesheet"
+mdcss.type = "text/css"
+mdcss.href = serverhost + "projects/mdreader/style.css"
+document.head.prepend(mdcss)
+
 //runs through every MD element
 for (let mden = 0; mden < mds.length; mden++) {
     let mde = mds[mden]
@@ -8,6 +14,7 @@ for (let mden = 0; mden < mds.length; mden++) {
     let addElem
     mde.innerHTML = ""
     let currentList = null
+    let lineIsLink = false
 
     //runs through every MD line
     for (let mdln = 0; mdln < mdtext.length; mdln++) {
@@ -56,7 +63,7 @@ for (let mden = 0; mden < mds.length; mden++) {
                 console.log(currentList.tagName)
             }
             currentList.append(li)
-            mdl = mdl.substr(2, mdlcs.length)
+            mdl = mdl.substring(2, mdlcs.length)
             mdlcs = mdl.split("")
         } else if (!isNaN(mdlcs[0]) && mdlcs[1] == ".") {
             li = document.createElement("li")
@@ -69,7 +76,7 @@ for (let mden = 0; mden < mds.length; mden++) {
                 currentList = document.createElement("ol")
             }
             currentList.append(li)
-            mdl = mdl.substr(3, mdlcs.length)
+            mdl = mdl.substring(3, mdlcs.length)
             mdlcs = mdl.split("")
         } else {
             if (currentList) {
@@ -78,23 +85,42 @@ for (let mden = 0; mden < mds.length; mden++) {
             currentList = null
         }
 
+        //LINKS
+        if (mdl.includes("[") == true && mdl.includes("]") == true && mdl.includes("(") == true && mdl.includes(")") == true) {
+            let text = mdl.split("[")[1].split("]")[0]
+            let link = mdl.split("(")[1].split(")")[0]
+            let a = document.createElement("a")
+            a.href = link
+            a.innerText = text
+            let thtb = document.createTextNode(mdl.split("[")[0])
+            let thta = document.createTextNode(mdl.split(")")[1])
+            textHolder.innerHTML = ""
+            textHolder.appendChild(thtb)
+            textHolder.append(a)
+            textHolder.appendChild(thta)
+            mdl = mdl.split("[")[0] + mdl.split(")")[1]
+            mdlcs = mdl.split("")
+            lineIsLink = true
+        }
+
         //ITALICS
         if (mdlcs[0] == "_" && mdlcs[mdlcs.length - 1] == "_") {
             let i = document.createElement("i")
-            textHolder = i
-            mdl = mdl.substr(1, mdlcs.length - 2)
+            mdl = mdl.substring(1, mdlcs.length - 2)
             mdlcs = mdl.split("")
-            if (li) {
-                li.append(i)
-            } else {
-                line.append(i)
-            }
+            textHolder.append(i)
+            textHolder = i
         }
 
-        textHolder.innerText = mdl;
+        if (lineIsLink == false) {
+            textHolder.innerText = mdl;
+        }
         // console.log(mdl)
         if (addElem) {
             mde.append(addElem)
+        }
+        if (numofhashes == 2 || numofhashes == 1) {
+            mde.appendChild(document.createElement("hr"))
         }
     }
 }

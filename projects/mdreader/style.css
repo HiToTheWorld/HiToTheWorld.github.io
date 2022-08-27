@@ -1,6 +1,15 @@
-html:after,
-body:after {
-    /* background: none; */
-    background-color: black;
-    /* background-image: none; */
+.md {
+    width: 75%;
+    min-width: 250px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+hr {
+    height: 0;
+    border: 1px solid grey;
 }

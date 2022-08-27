@@ -116,7 +116,7 @@ if (window.innerWidth > 800 && atags.length > maxbuttons && atags.length != maxb
     morebuttonsmenu.appendChild(atags[i])
   }
   navbarbuttons.appendChild(morebutton)
-  atags.splice(2)
+  atags.splice(3)
   atags.push(morebutton)
 }
 
