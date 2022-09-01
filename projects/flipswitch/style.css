@@ -1,0 +1,225 @@
+html, 
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #c9c9c9;
+}
+
+button {
+    cursor: pointer;
+}
+  
+.compwarning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+    margin: 0;
+    width: 90%;
+    height: 100%;
+    background: #C9C9C9;
+    z-index: 100;
+    color: #e60000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#rotatedevice {
+    display: none;
+}
+
+#top {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#titlebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3vw;
+    background-color: cornflowerblue;
+    border-radius: 100vh;
+    width: 50%;
+    height: 10vw;
+    margin: auto;
+}
+
+#titlebar h1 {
+    margin: 10px;
+}
+
+@keyframes tooutset {
+    100% {
+        box-shadow: 5px 5px 10px grey, -5px -5px 10px white, inset -5px -5px 10px grey, inset 5px 5px 10px white;
+    }
+}
+
+@keyframes toinset {
+    100% {
+        box-shadow: inset 5px 5px 10px grey, inset -5px -5px 10px white, 5px 5px 10px grey, -5px -5px 10px white;
+    }
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border: none;
+    font-size: 3vw;
+    background-color: #C9C9C9;
+    border-radius: 100vh;
+    width: 30%;
+    height: 7vw;
+    margin: auto;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px grey, -5px -5px 10px white, inset -5px -5px 10px grey, inset 5px 5px 10px white;
+    transition: box-shadow 1s;
+}
+
+#start:hover {
+    border: 3px solid #C9C9C9;
+    box-shadow: inset 5px 5px 10px grey, inset -5px -5px 10px white, 5px 5px 10px grey, -5px -5px 10px white;
+}
+
+#top, #bottom {
+    display: none;
+}
+
+#game {
+    display: flex;
+}
+
+#gameside1, #gameside2 {
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#gamemiddle {
+    width: 20%;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#side1image, #side2image {
+    background-color: grey;
+    min-height: 150px;
+    min-width: 130px;
+    width: 20vw;
+    height: 50vh;
+    border: none;
+    border-radius: 15px;
+}
+
+#xpbar {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+}
+
+#xppfimage {
+    border-radius: 100vh;
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    border: 5px solid cornsilk;
+}
+
+#xpbarmeter {
+    width: calc(75% - 36px);
+    /* height: 5vh; */
+    /* border-radius: 20px; */
+}
+
+progress {
+    border: 0;
+    height: 3vh;
+    border-radius: 20px;
+}
+progress::-webkit-progress-bar {
+    border: 0;
+    height: 3vh;
+    border-radius: 20px;
+}
+progress::-webkit-progress-value {
+    background-color: royalblue;
+    border: 0;
+    height: 3vh;
+    border-radius: 20px;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 3vh;
+    border-radius: 20px;
+}
+
+#nextpuimage {
+    min-width: 40px;
+    min-height: 50px;
+    background-color: coral;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+#ccardimage {
+    background-color: grey;
+    min-height: 150px;
+    min-width: 130px;
+    width: 10vw;
+    height: 25vh;
+    border: none;
+    border-radius: 15px;
+}
+
+.sidearrow {
+    content: "";
+    width: 3.5vw;
+    height: 12vh;
+    position: absolute;
+    background-image: url(../../main/images/sidearrow.png); /*, linear-gradient(steelblue, steelblue)*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: royalblue;
+    /* background-blend-mode: saturation; */
+}
+
+#side1arrow {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    left: 35vw;
+    transform: rotate(180deg);
+}
+
+#side1arrow p {
+    transform: rotate(180deg);
+}
+
+#side2arrow {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    right: 35vw;
+}
