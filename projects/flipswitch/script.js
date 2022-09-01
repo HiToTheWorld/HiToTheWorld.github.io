@@ -24,7 +24,7 @@ let cards = [
 
 function gameplay() {
     function side1() {
-
+        
     }
 
     function side2() {
