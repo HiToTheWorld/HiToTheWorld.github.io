@@ -18,7 +18,8 @@ let cardgroups = {
     "cold": {title: "Cold", ptnr: "hot", pic: "cards/cold.png"}
 }
 let cards = [
-    {title: "Flamin' Hot Cheatos", group: "hot"}
+    {title: "Flamin' Hot Cheatos", group: "hot"},
+    {title: "Snow", group: "cold"}
 ]
 
 function gameplay() {
