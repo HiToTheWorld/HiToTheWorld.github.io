@@ -6,40 +6,47 @@
   <meta name="viewport" content="width=device-width">
   <title>FlipSwitch</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
-     
+
 <body>
   <div class="compwarning" id="enablejs">
     <h1>If you see this message, please enable JavaScript in page settings, or in the inspection tools.</h1>
   </div>
   <div class="compwarning" id="rotatedevice">
-    <h1>If you see this message, please rotate your device to landscape mode. If that does not work, your device is incompatible with our standards.</h1>
+    <h1>If you see this message, please rotate your device to landscape mode. If that does not work, your device is
+      incompatible with our standards.</h1>
   </div>
   <div id="top">
-    <div id="titlebar"><h1>FlipSwitch</h1><p>v0.0.1</p></div>
-<!--     <span>High Score: </span> -->
+    <div id="titlebar">
+      <h1>FlipSwitch</h1>
+      <p>v0.0.1</p>
+    </div>
+    <!--     <span>High Score: </span> -->
   </div>
   <div id="bottom">
     <button id="start">Start</button>
   </div>
   <div id="game">
     <div id="gameside1">
-      <div class="sidearrow" id="side1arrow"><p>a</p></div>
+      <div class="sidearrow" id="side1arrow">
+        <p>a</p>
+      </div>
       <div class="centerpiece">
         <button id="side1image"></button>
         <h3 id="side1title">Side Title</h3>
       </div>
     </div>
     <div id="scores">
-        <div>
-            <span id="currentscore">00000</span>
-            <h3>Score</h3>
-        </div>
-        <div>
-            <span id="highscore">00000</span>
-            <h3>High Score</h3>
-        </div>
+      <div>
+        <span id="currentscore">00000</span>
+        <h3>Score</h3>
+      </div>
+      <div>
+        <span id="highscore">00000</span>
+        <h3>High Score</h3>
+      </div>
     </div>
     <div id="gamemiddle">
       <div class="centerpiece">
@@ -49,19 +56,21 @@
     </div>
     <div id="scorerating"></div>
     <div id="gameside2">
-        <div class="sidearrow" id="side2arrow"><p>l</p></div>
-        <div class="centerpiece">
-            <button id="side2image"></button>
-            <h3 id="side2title">Side Title</h3>
-        </div>
+      <div class="sidearrow" id="side2arrow">
+        <p>l</p>
+      </div>
+      <div class="centerpiece">
+        <button id="side2image"></button>
+        <h3 id="side2title">Side Title</h3>
+      </div>
     </div>
     <div id="xpbar">
-      <img id="xppfimage" src="../../main/images/hpfp.jpg" type="image/jpg"></img>
-      <progress id="xpbarmeter" max="100" value="80"></progress>
-      <div id="nextpuimage">
+      <img id="xppfimage" src="images/pfps/airplane.webp" type="image/jpg"></img>
+      <div></div>
+      <progress id="xpbarmeter" max="100" value="50"></progress>
+      <div id="nextpuimage"></div>
     </div>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

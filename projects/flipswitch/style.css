@@ -1,4 +1,4 @@
-html, 
+html,
 body {
     font-family: 'Trebuchet MS', sans-serif;
     width: 100%;
@@ -11,7 +11,7 @@ body {
 button {
     cursor: pointer;
 }
-  
+
 .compwarning {
     position: fixed;
     top: 0;
@@ -91,7 +91,8 @@ button {
     box-shadow: inset 5px 5px 10px grey, inset -5px -5px 10px white, 5px 5px 10px grey, -5px -5px 10px white;
 }
 
-#top, #bottom {
+#top,
+#bottom {
     display: none;
 }
 
@@ -99,13 +100,16 @@ button {
     display: flex;
 }
 
-#gameside1, #gameside2 {
+#gameside1,
+#gameside2 {
     width: 40%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    box-shadow: inset 0 0 20px grey;
+    z-index: 1;
 }
 
 #gamemiddle {
@@ -115,10 +119,10 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: inset 0 0 20px rgb(180, 180, 180);
 }
 
-#side1image, #side2image {
+#side1image,
+#side2image {
     background-color: grey;
     min-height: 150px;
     min-width: 130px;
@@ -138,6 +142,7 @@ button {
     left: 25%;
     right: 25%;
     width: 50%;
+    z-index: 2;
 }
 
 #xppfimage {
@@ -159,17 +164,20 @@ progress {
     height: 3vh;
     border-radius: 20px;
 }
+
 progress::-webkit-progress-bar {
     border: 0;
     height: 3vh;
     border-radius: 20px;
 }
+
 progress::-webkit-progress-value {
     background-color: royalblue;
     border: 0;
     height: 3vh;
     border-radius: 20px;
 }
+
 progress::-moz-progress-bar {
     border: 0;
     height: 3vh;
@@ -199,7 +207,8 @@ progress::-moz-progress-bar {
     width: 3.5vw;
     height: 12vh;
     position: absolute;
-    background-image: url(../../main/images/sidearrow.png); /*, linear-gradient(steelblue, steelblue)*/
+    background-image: url('../../main/images/sidearrow.png');
+    /*, linear-gradient(steelblue, steelblue)*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: royalblue;
