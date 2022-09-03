@@ -255,3 +255,22 @@ progress::-moz-progress-bar {
     margin-top: 0;
     font-size: medium;
 }
+
+#countdown {
+    z-index: 2;
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+}
+
+#countdowndisplay {
+    position: absolute;
+    right: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

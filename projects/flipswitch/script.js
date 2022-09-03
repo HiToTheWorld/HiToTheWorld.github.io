@@ -48,8 +48,19 @@ let powerups = [
   }
 ]
 
+//PRELOAD
+//cards
+//<link rel="preload" as="image" href="important.png">
+for (let i = 0; i < cards.length; i++) {
+  let link = document.createElement("link")
+  link.setAttribute("rel", "preload")
+  link.setAttribute("as", "image")
+  link.setAttribute("href", cards[i].pic)
+  document.head.appendChild(link)
+}
+
 function gameplay() {
-  let maxtime
+  let maxtime = 90
   let timer = maxtime
   let currentCard
   let currentGroups = []
@@ -145,14 +156,38 @@ function gameplay() {
 
   window.addEventListener("keydown", function (e) { oninputfunction(e.key) })
 
+  const canvas = document.getElementById("cdcanvas")
+  const ctx = canvas.getContext('2d')
+  let clockpercent = 100
+
   window.setInterval(function () {
     if (timer > 0) {
-      timer -= 1
-      document.getElementById("timer").innerText = timer.toString
+      ctx.setTransform(1, 0, 0, 1, 0, 0)
+      ctx.beginPath()
+      ctx.strokeStyle = "grey"
+      ctx.lineWidth = 15
+      ctx.arc(canvas.width / 2, canvas.height / 2, 40, 0, 2 * Math.PI)
+      ctx.stroke()
+
+      let calcpercent = clockpercent
+      if (calcpercent == 0) {
+        calcpercent = 100
+      } else if (calcpercent == 100) {
+        calcpercent = 0
+      }
+      ctx.beginPath()
+      ctx.strokeStyle = "royalblue"
+      ctx.lineWidth = 15
+      ctx.arc(canvas.width / 2, canvas.height / 2, 40, 1.5 * Math.PI, ((calcpercent / 50) - 0.5) * Math.PI)
+      ctx.stroke()
+      timer -= 0.01
+      clockpercent = (timer / maxtime) * 100
+
+      document.getElementById("countdowndisplay").innerText = Math.floor(timer)
     } else {
 
     }
-  }, 1000)
+  }, 10)
 }
 
 gameplay()
