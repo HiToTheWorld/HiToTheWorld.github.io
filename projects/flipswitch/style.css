@@ -194,12 +194,13 @@ progress::-moz-progress-bar {
 
 #ccardimage {
     background-color: grey;
-    min-height: 150px;
+    min-height: 173px;
     min-width: 130px;
     width: 10vw;
-    height: 25vh;
+    height: 13vw;
     border: none;
     border-radius: 15px;
+    background-size: 100% 100%;
 }
 
 .sidearrow {

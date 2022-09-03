@@ -4,7 +4,7 @@ window.onorientationchange = function () {
   window.location.reload()
 }
 
-if (window.orientation == 0) {
+if (window.orientation == 0 || window.innerWidth < window.innerHeight || window.innerWidth < 650) {
   document.getElementById("rotatedevice").style.display = "flex"
 }
 
@@ -24,8 +24,9 @@ let cardgroups = {
 
 }
 let cards = [
-  { title: "Flamin' Hot Cheatos", group: "hot", pic: "images/cards/fhc.png" },
-  { title: "Snow", group: "cold", pic: "images/cards/snow.png" }
+  { title: "Fire", group: "hot", pic: "images/cards/fire.png" },
+  { title: "Snow", group: "cold", pic: "images/cards/snow.png" },
+  { title: "Ice", group: "ice", pic: "images/cards/ice.png" },
 ]
 let powerups = [
   {
@@ -48,17 +49,38 @@ let powerups = [
 ]
 
 function gameplay() {
+  let maxtime
+  let timer = maxtime
   let currentCard
   let currentGroups = []
+  let pts = 0
+  let addpts = 0
+  let streak = 0
   function clearpowerups() {
     lassign = true
     rassign = false
   }
 
+  function subpoints() {
+    window.setTimeout(function () {
+      if (addpts > 0) {
+        addpts -= 1
+        subpoints()
+      }
+    }, 30)
+  }
+
   function generateCard() {
-    currentCard = cards[Math.floor(Math.random() * cards.length)]
+    let newcard
+    do {
+      newcard = cards[Math.floor(Math.random() * cards.length)]
+    } while (newcard == currentCard)
+    currentCard = newcard
     document.getElementById("ccardimage").style.backgroundImage = "url('" + currentCard.pic + "')";
     document.getElementById("ccardtitle").innerText = currentCard.title;
+    addpts = 100
+    subpoints()
+
   }
 
   function assignGroups() {
@@ -76,16 +98,33 @@ function gameplay() {
     document.getElementById("side2title").innerText = cardgroups[currentGroups[1]].title;
   }
 
+  function zerosbefore(num) {
+    let times = 7 - num
+    let string = ""
+    for (let i = 0; i < times; i++) {
+      string = string + "0"
+    }
+    return string
+  }
+
   function side1() {
     if (currentCard.group == currentGroups[0]) {
-      console.log("Correct!1")
+      pts += addpts
+      document.getElementById("currentscore").innerText = zerosbefore(pts.toString().length) + pts.toString()
+      streak += 1
+    } else {
+      streak = 1
     }
     generateCard()
   }
 
   function side2() {
     if (currentCard.group == currentGroups[1]) {
-      console.log("Correct!2")
+      pts += (addpts * (streak + 1))
+      document.getElementById("currentscore").innerText = zerosbefore(pts.toString().length) + pts.toString()
+      streak += 1
+    } else {
+      streak = 0
     }
     generateCard()
   }
@@ -105,6 +144,15 @@ function gameplay() {
   document.getElementById("side2image").addEventListener("mousedown", function (e) { oninputfunction(rassign) })
 
   window.addEventListener("keydown", function (e) { oninputfunction(e.key) })
+
+  window.setInterval(function () {
+    if (timer > 0) {
+      timer -= 1
+      document.getElementById("timer").innerText = timer.toString
+    } else {
+
+    }
+  }, 1000)
 }
 
 gameplay()
