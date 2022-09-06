@@ -12,6 +12,10 @@ function onstart() {
   gameplay()
 }
 
+function gameover() {
+  console.log("GAME OVER")
+}
+
 //SELF CONFIG - DO NOT TOUCH
 let lassign = "a"
 let rassign = "l"
@@ -59,9 +63,49 @@ for (let i = 0; i < cards.length; i++) {
   document.head.appendChild(link)
 }
 
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+
+  return `${minutes}:${seconds}`;
+}
+
+let maxtime = 90
+
+let timePassed = 0;
+let timeLeft = maxtime;
+let timerInterval = null;
+
+document.getElementById("countdown").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining }"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+  timeLeft
+)}</span>
+</div>
+`;
+
 function gameplay() {
-  let maxtime = 90
-  let timer = maxtime
+  maxtime = 90
   let currentCard
   let currentGroups = []
   let pts = 0
@@ -156,40 +200,47 @@ function gameplay() {
 
   window.addEventListener("keydown", function (e) { oninputfunction(e.key) })
 
-  const canvas = document.getElementById("cdcanvas")
-  const ctx = canvas.getContext('2d')
-  let clockpercent = 100
+  // The following is for CountDown
 
-  window.setInterval(function () {
-    if (timer > 0) {
-      ctx.setTransform(1, 0, 0, 1, 0, 0)
-      ctx.beginPath()
-      ctx.strokeStyle = "grey"
-      ctx.lineWidth = 15
-      ctx.arc(canvas.width / 2, canvas.height / 2, 40, 0, 2 * Math.PI)
-      ctx.stroke()
+  const FULL_DASH_ARRAY = 283;
 
-      let calcpercent = clockpercent
-      if (calcpercent == 0) {
-        calcpercent = 100
-      } else if (calcpercent == 100) {
-        calcpercent = 0
+  startTimer();
+
+  function onTimesUp() {
+    clearInterval(timerInterval);
+    gameover()
+  }
+
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timePassed = timePassed += 1;
+      timeLeft = maxtime - timePassed;
+      document.getElementById("base-timer-label").innerHTML = formatTime(
+        timeLeft
+      );
+      setCircleDasharray();
+
+      if (timeLeft === 0) {
+        onTimesUp();
       }
-      ctx.beginPath()
-      ctx.strokeStyle = "royalblue"
-      ctx.lineWidth = 15
-      ctx.arc(canvas.width / 2, canvas.height / 2, 40, 1.5 * Math.PI, ((calcpercent / 50) - 0.5) * Math.PI)
-      ctx.stroke()
-      timer -= 0.01
-      clockpercent = (timer / maxtime) * 100
+    }, 1000);
+  }
 
-      document.getElementById("countdowndisplay").innerText = Math.floor(timer)
-    } else {
+  function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / maxtime;
+    return rawTimeFraction - (1 / maxtime) * (1 - rawTimeFraction);
+  }
 
-    }
-  }, 10)
+  function setCircleDasharray() {
+    const circleDasharray = `${(
+      calculateTimeFraction() * FULL_DASH_ARRAY
+    ).toFixed(0)} 283`;
+    document
+      .getElementById("base-timer-path-remaining")
+      .setAttribute("stroke-dasharray", circleDasharray);
+  }
 }
 
-gameplay()
+onstart()
 
 document.getElementById("start").addEventListener("click", onstart)

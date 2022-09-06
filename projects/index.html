@@ -17,7 +17,7 @@
       <h2>Number-Stat</h2>
       <p>Number-Stat is a software that tells you importaint things about a data set. Input your data, or generate a new
         array, and then click "Calculate". The right side of the screen will have your information.</p>
-      <button onclick="window.location.replace('./projects/numberstat')" class="modallaunchwebsite">Launch 🚀</button>
+      <button onclick="window.location.replace('./numberstat')" class="modallaunchwebsite">Launch 🚀</button>
     </div>
     <div class="projectmodal" id="thecoconutsongmodal">
       <img src='../main/images/palmtree.jpg' />
@@ -36,9 +36,30 @@
       <audio controls src="../main/audio/chaos.wav"></audio>
       <p>This was a compilation of Super Mario Bros. Theme, It's a Small World, and The Coconut Song!</p>
     </div>
+    <div class="projectmodal" id="mdreadermodal">
+      <img src='../main/images/markdown.png' />
+      <h2>MD Reader</h2>
+      <p>Read a markdown file just by importing the code and your MD file! DISCLAIMER: There is not yet any downloadable
+        file but I'm working on it!</p>
+      <button onclick="window.location.replace('./mdreader')" class="modallaunchwebsite">Launch 🚀</button>
+    </div>
+    <div class="projectmodal" id="flipswitchmodal">
+      <img src='../main/images/numberstat.png' />
+      <h2>FlipSwitch</h2>
+      <p>A game I made! This game features my own art!</p>
+      <button onclick="window.location.replace('./flipswitch')" class="modallaunchwebsite">Launch 🚀</button>
+    </div>
   </div>
   <div id='myprojects'>
     <h2 style="padding-right: 20px;">My Projects</h2>
+
+    <button id="flipswitchbutton" onclick="showProjectModal(this.id)">
+      <img src='../main/images/numberstat.png' />
+      <div>
+        <p><strong>FlipSwitch</strong></p>
+        <p>A not yet musical game!</p>
+      </div>
+    </button>
 
     <button id="thecoconutsongbutton" onclick="showProjectModal(this.id)">
       <img src='../main/images/numberstat.png' />
@@ -57,7 +78,7 @@
     </button>
 
     <button id="mdreaderbutton" onclick="showProjectModal(this.id)">
-      <img src='../main/images/numberstat.png' />
+      <img src='../main/images/markdown.png' />
       <div>
         <p><strong>MD Reader</strong></p>
         <p>Read a markdown file!</p>

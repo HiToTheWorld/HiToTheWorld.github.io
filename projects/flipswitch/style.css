@@ -256,21 +256,57 @@ progress::-moz-progress-bar {
     font-size: medium;
 }
 
-#countdown {
-    z-index: 2;
+#streakdisplay {
     position: absolute;
-    right: 1vw;
-    top: 1vw;
+    width: 15%;
+    bottom: 20vh;
+    left: 42.5%;
 }
 
-#countdowndisplay {
+/* The following is for CountDown */
+
+.base-timer {
+    z-index: 10;
     position: absolute;
-    right: 25%;
-    top: 25%;
-    width: 50%;
-    height: 50%;
+    top: 2vh;
+    right: 2vh;
+    width: 100px;
+    height: 100px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 10px;
+    stroke: rgb(167, 167, 167);
+}
+
+.base-timer__path-remaining {
+    stroke-width: 10px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+    color: cornflowerblue;
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
