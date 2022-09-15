@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>CHROMECRASHER</title>
+  </head>
+  <body>
+    <h1>CHROMECRASHER</h1>
+    
+    <p>⚠️🟥ATTENTION!! YOU HAVE <span id="seconds">10</span> SECONDS BEFORE THIS PROGRAM CRASHES CHROME (THIS WILL CRASH YOUR ENTIRE CHROMEBOOK)🟥⚠️</p>
+    <script>
+      function crash() {
+        let i = 0
+        let j = 0
+        do {
+          j += 1
+          console.log(j)
+        } (while i < 1)
+      }
+      
+      let count = document.getElementById("seconds").innerText
+      
+      function countDown() {
+        count -= 1
+        document.getElementById("seconds").innerText = count
+        if (count < 0) {
+          window.setTimeout(countDown, 1000)
+        } else {
+          crash()
+        }
+      }
+      
+      countDown()
+    </script>
+    <script scr="../../main/main.js"></script>
+    <script scr="../../navbar/navbar.js></script>
+  </body>
+</html>
