@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <img id="imageDisplay" width="300" height="300">
+  <fieldset id="borderFields">
+    <legend>Image Settings</legend>
+    <div>
+      <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp">
+    </div>
+    <br>
+    <div>
+      <label for="borderWidth">Border Width (px)</label>
+      <input type="number" value="1" id="borderWidth">
+    </div>
+    <br>
+    <div>
+      <label for="borderColor">Border Color</label>
+      <input type="color" id="borderColor">
+    </div>
+    <div>
+      <label for="imageRes">Resolution</label>
+      <div>
+        <input type="range" min="100" value="300" max="1000" id="imageRes"> <input type="number" id="imageResLabel" value="300">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Viewport Settings</legend>
+    <div>
+      <label for="bgcolorswitch">Background Color</label>
+      <button id="bgcolorswitch" onclick="bgswitch()">Change</button>
+    </div>
+    <br>
+    <div>
+      <label for="showImageOnOut">Show image in output</label>
+      <input type="checkbox" id="showImageOnOut">
+    </div>
+    <br>
+    <div>
+      <label for="stopBuild">Stop Build</label>
+      <button id="stopBuild" onclick="buildStopped = true" disabled>Stop</button>
+    </div>
+    <br>
+    <div>
+      <label for="clearBuild">Clear Build</label>
+      <button id="clearBuild" onclick="window.location.reload()" disabled>Clear, and Reload</button>
+    </div>
+  </fieldset>
+  <button id="start" onclick="onSub()">Submit</button>
+
+  <h3>Output</h3>
+  <progress id="borderProgress" value="0"></progress>
+  <span class="progLabel" data-prog="borderProgress"></span>
+  <br>
+  <canvas id="outCanvas"></canvas>
+  <div id="out">
+  </div>
+  <script src="script.js"></script>
+  <script>
+    function loadProgressBars() {
+      let progs = document.getElementsByClassName("progLabel")
+      
+      for (let a = 0; a < progs.length; a++) {
+        let prog = document.getElementById(progs[a].dataset.prog)
+        let perc = (prog.value / prog.max) * 100
+
+        //trunc perc
+        perc = perc.toFixed(2)
+        
+        progs[a].innerText = perc + "%"
+      }
+
+      if (document.activeElement.id == "imageResLabel") {
+        document.getElementById("imageRes").value = document.getElementById("imageResLabel").value
+      } else {
+        document.getElementById("imageResLabel").value = document.getElementById("imageRes").value
+      }
+    }
+    window.setInterval(loadProgressBars, 10)
+  </script>
+</body>
+
+</html>
