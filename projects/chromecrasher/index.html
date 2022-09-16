@@ -12,10 +12,21 @@
       function crash() {
         let i = 0
         let j = 0
+        let canvases = []
+        let colors = ["red", "green", "blue", "black", "white"]
         do {
           j += 1
           console.log(j)
-          document.body.append(document.createElement("canvas"))
+          let canvas = document.createElement("canvas")
+          canvas.width = 300
+          canvas.height = 300
+          document.body.append(canvas)
+          canvases.push(canvas)
+          for (let x = 0; x < canvases.length; x++) {
+            let ctx = canvases[x].getContext('2d')
+            ctx.fillStyle = colors[j % colors.length]
+            ctx.fillRect(0, 0, 300, 300)
+          }
         } while (i < 1)
       }
       
