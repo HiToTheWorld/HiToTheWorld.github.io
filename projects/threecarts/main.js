@@ -1,12 +1,9 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js';
+// import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js';
 // import { GUI } from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/libs/lil-gui.module.min.js';
 // import { Vector3 } from 'https://cdn.jsdelivr.net/npm/three@0.118/src/math/Vector3.js';
 import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/loaders/FBXLoader.js';
-
-// import * as THREE from './resources/three/build/three.module.js';
-// import { OrbitControls } from './resources/three/examples/jsm/controls/OrbitControls.js';
-// import { FBXLoader } from './resources/three/examples/jsm/loaders/FBXLoader.js';
+// import { GUI } from './resources/three/lil-gui.module.min.js';
 
 let renderer, cam, scene, plrObj
 let velocity = 0
@@ -18,7 +15,7 @@ let maxVel = 2
 
 let keys = {}
 
-let camPos = { x: 0, y: 35, z: -40 }
+let camPos = { x: 0, y: 30, z: -45 }
 
 function init() {
   //The renderer that renders the scene
@@ -135,39 +132,20 @@ function init() {
     }
   });
 
-  const fbxloader = new FBXLoader();
-  fbxloader.setPath('./resources/models/jumpsuit/');
-  fbxloader.load('jumpsuit.fbx', function (fbx) {
-    fbx.scale.setScalar(0.1);
-    fbx.traverse(c => {
-      c.castShadow = true;
-    });
-
-    // const animLoader = new FBXLoader();
-    // animLoader.setPath('./recources/models/jumpsuit');
-    // animLoader.load('dance.fbx', function(anim) {
-    //   const mixer = THREE.AnimationMixer(fbx);
-    //   const idle = mixer.clipAnimation(anim.animations[0]);
-    //   idle.play()
-    // });
-    scene.add(fbx)
-    plrObj = fbx
-  });
-
   // function createPanel() {
   //   const panel = new GUI({ width: 300 });
 
   //   const cameraFolder = panel.addFolder('Camera');
 
   //   const settings = {
-  //     'Camera X': 0,
-  //     'Camera Y': 20,
-  //     'Camera Z': -25
+  //     'Camera X': camPos.x,
+  //     'Camera Y': camPos.y,
+  //     'Camera Z': camPos.z,
   //   }
 
-  //   cameraFolder.add(settings, 'Camera X').onChange(function (pos) {camPos.x = pos})
-  //   cameraFolder.add(settings, 'Camera Y').onChange(function (pos) {camPos.y = pos})
-  //   cameraFolder.add(settings, 'Camera Z').onChange(function (pos) {camPos.z = pos})
+  //   cameraFolder.add(settings, 'Camera X', -50.0, 50.0, 0.1).onChange(function (pos) {camPos.x = pos})
+  //   cameraFolder.add(settings, 'Camera Y', -50.0, 50.0, 0.1).onChange(function (pos) {camPos.y = pos})
+  //   cameraFolder.add(settings, 'Camera Z', -50.0, 50.0, 0.1).onChange(function (pos) {camPos.z = pos})
   // }
 
   // createPanel()
@@ -218,7 +196,30 @@ function init() {
   reqAnimFrame();
 }
 
-init()
+const fbxloader = new FBXLoader();
+fbxloader.setPath('./resources/models/jumpsuit/');
+fbxloader.load('jumpsuit.fbx', function (fbx) {
+  fbx.scale.setScalar(0.1);
+  fbx.traverse(c => {
+    c.castShadow = true;
+  });
+
+  init()
+
+  // const animLoader = new FBXLoader();
+  // animLoader.setPath('./recources/models/jumpsuit');
+  // animLoader.load('dance.fbx', function(anim) {
+  //   const mixer = THREE.AnimationMixer(fbx);
+  //   const idle = mixer.clipAnimation(anim.animations[0]);
+  //   idle.play()
+  // });
+  document.getElementById("home").style.display = "none"
+  scene.add(fbx)
+  plrObj = fbx
+}, function (xhr) {
+  document.getElementById("fbxProgress").max = xhr.total
+  document.getElementById("fbxProgress").value = xhr.loaded
+});
 
 function reqAnimFrame() {
   requestAnimationFrame(function () {
@@ -238,5 +239,10 @@ function updateCamPos() {
   cam.translateX(camPos.x)
   cam.translateY(camPos.y)
   cam.translateZ(camPos.z)
-  cam.lookAt(plrObj.position)
+
+  let box3 = new THREE.Box3().setFromObject(plrObj);
+  let size = new THREE.Vector3();
+  box3.getSize(size);
+
+  cam.lookAt(new THREE.Vector3(plrObj.position.x, plrObj.position.y + size.y / 2, plrObj.position.z))
 }
