@@ -5,14 +5,14 @@ body {
     text-align: center;
 }
 
-/* #havingIssues {
-    width: calc(100vw - 10px);
-    padding: 5px;
+#havingIssues {
+    /* width: calc(100vw - 20px); */
+    padding: 10px;
     margin: 0;
     background-color: grey;
     text-align: center;
-  }
-   */
+}
+
 #inputContainer {
     background: skyblue;
     padding: 15vh auto;
