@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Pattern Recognizer</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <!--     <p id="havingIssues">Having issues? Try the <a href="https://replit.com/@rabitailleow/Pattern-AI#index.js">terminal version.</a></p> -->
+    <div id="inputContainer">
+        <input type="text" id="patternInput" placeholder="Your pattern here">
+        <button id="btnSubmit">></button>
+    </div>
+    <div class="box" id="rules">
+        <h3>Rules</h3>
+        <ul>
+            <li>Patterns can be up to 99 characters long.</li>
+        </ul>
+    </div>
+    <div class="box" id="data">
+        <h3>Out</h3>
+        <p>Input: <span id="patternData"></span></p>
+        <p>Patterns in Input: <span id="patternsInData"></span></p>
+        <p>First Pattern: <span id="firstPattern"></span></p>
+        <p>Next Pattern Instance: <span id="nextPattern"></span></p>
+        <p>Errors: <span id="patternErrors"></span></p>
+    </div>
+    <div id="footer">
+        <a href="notes">Notes and </a>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

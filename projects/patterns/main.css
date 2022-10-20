@@ -1,0 +1,61 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* #havingIssues {
+    width: calc(100vw - 10px);
+    padding: 5px;
+    margin: 0;
+    background-color: grey;
+    text-align: center;
+  }
+   */
+#inputContainer {
+    background: skyblue;
+    padding: 15vh auto;
+    margin: 0;
+}
+
+#patternInput {
+    width: 50vw;
+    min-width: 200px;
+    max-width: 500px;
+    height: 10vh;
+    min-height: 30px;
+    max-height: 50px;
+    border: none;
+    border-radius: 100vw;
+    text-align: center;
+    outline: none;
+    margin: 15vh auto;
+    background-color: white;
+}
+
+#btnSubmit {
+    width: 5vw;
+    min-width: 5px;
+    max-width: 10%;
+    height: 10vh;
+    min-height: 30px;
+    max-height: 50px;
+    border: none;
+    border-radius: 100vw;
+    text-align: center;
+    outline: none;
+    margin: 15vh auto;
+    cursor: pointer;
+    background-color: white;
+}
+
+.box {
+    margin: 5vh auto;
+    padding: 10px;
+    width: 50vw;
+    min-width: 200px;
+    text-align: left;
+    background: lightcoral;
+    border-radius: 5px;
+}
