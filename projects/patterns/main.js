@@ -47,7 +47,7 @@ function start() {
         }
         // console.log(lastArtAnswer)
 
-        for (let rotate = 0; rotate < firstPattern.length; rotate++) {
+        for (let rotate = 1; rotate < firstPattern.length; rotate++) {
           let artificialAnswer = lastArtAnswer.substring(1, lastArtAnswer.length) + lastArtAnswer.charAt(0)
 
           lastArtAnswer = artificialAnswer
