@@ -53,7 +53,7 @@ function start() {
 
             lastArtAnswer = artificialAnswer;
 
-            for (let i = 0; i < answer.length; i++) {
+            for (let i = 1; i < answer.length; i++) {
                 let thing = artificialAnswer.match(new RegExp(".{1," + i + "}", "g"));
                 if (thing.length == 1 || thing.length == 0) {
                 break;
@@ -68,7 +68,6 @@ function start() {
                         thing[j].charAt(k) != "☒"
                         ) {
                         isPattern = false;
-                        console.log("false: " + thing[j] + " " + thing[k].charAt(k));
                         }
                     }
                 }
@@ -110,4 +109,3 @@ window.addEventListener("keydown", function (e) {
     start();
     }
 });
-  
