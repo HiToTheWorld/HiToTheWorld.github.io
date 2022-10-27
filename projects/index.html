@@ -12,6 +12,7 @@
 
 <body>
   <div id="projectmodals">
+
     <div class="projectmodal" id="numberstatmodal">
       <img src='../main/images/numberstat.png' />
       <h2>Number-Stat</h2>
@@ -19,6 +20,7 @@
         array, and then click "Calculate". The right side of the screen will have your information.</p>
       <button onclick="window.location.replace('./numberstat')" class="modallaunchwebsite">Launch 🚀</button>
     </div>
+
     <div class="projectmodal" id="thecoconutsongmodal">
       <img src='../main/images/palmtree.jpg' />
       <h2>The Coconut Song</h2>
@@ -36,6 +38,7 @@
       <audio controls src="../main/audio/chaos.wav"></audio>
       <p>This was a compilation of Super Mario Bros. Theme, It's a Small World, and The Coconut Song!</p>
     </div>
+
     <div class="projectmodal" id="mdreadermodal">
       <img src='../main/images/markdown.png' />
       <h2>MD Reader</h2>
@@ -43,15 +46,46 @@
         file but I'm working on it!</p>
       <button onclick="window.location.replace('./mdreader')" class="modallaunchwebsite">Launch 🚀</button>
     </div>
+
     <div class="projectmodal" id="flipswitchmodal">
       <img src='../main/images/numberstat.png' />
       <h2>FlipSwitch</h2>
       <p>A game I made! This game features my own art!</p>
       <button onclick="window.location.replace('./flipswitch')" class="modallaunchwebsite">Launch 🚀</button>
     </div>
+
+    <div class="projectmodal" id="lovenwantitimodal">
+      <img src='../main/images/lovenwantiti.jpg' />
+      <h2>Love Nwantiti Remix</h2>
+      <p>This song I have created is a mix between 3 different songs originating from the same song. I tried my best at
+        aligning all of them but it is not perfect. I made this in Audacity and the BPMs were throwing me off. The
+        ending of the second song is slowed down so it sounds bad at the very end. It's 10PM so I will be going to bed
+        now. I hope you like it and see you next time!</p>
+      <p>
+        <strong>Key for pan:</strong> Left: Joeboy + Kuami Eugene, Middle: CKay Original, Right: Axel + DJ Yo;
+      </p>
+      <h3>The Original Songs</h3>
+      <iframe allow="fullscreen;" width="400" height="225" src="https://www.youtube.com/embed/7l22qaD31iE">
+      </iframe>
+      <iframe allow="fullscreen;" width="400" height="225" src="https://www.youtube.com/embed/0pObLdN9ICg">
+      </iframe>
+      <iframe allow="fullscreen;" width="400" height="225" src="https://www.youtube.com/embed/D-YDEyuDxWU">
+      </iframe>
+      <h3>Remixed Version (All three songs)</h3>
+      <audio controls src="../main/audio/lovenwantiti.wav"></audio>
+    </div>
+
   </div>
   <div id='myprojects'>
     <h2 style="padding-right: 20px;">My Projects</h2>
+
+    <button id="lovenwantitibutton" onclick="showProjectModal(this.id)">
+      <img src='../main/images/lovenwantiti.jpg' />
+      <div>
+        <p><strong>Love Nwantiti Remix</strong></p>
+        <p>I nice remix between three Love Nwantiti remixes</p>
+      </div>
+    </button>
 
     <button id="flipswitchbutton" onclick="showProjectModal(this.id)">
       <img src='../main/images/numberstat.png' />
