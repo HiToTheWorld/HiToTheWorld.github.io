@@ -1,4 +1,4 @@
-//fiddle: https://jsfiddle.net/rabitailleow/85n90a2c/3/
+//fiddle: https://jsfiddle.net/rabitailleow/85n90a2c/4/
 
 const canvas = document.getElementById("canvas");
 
@@ -158,14 +158,10 @@ function main() {
     let num2 = Math.floor(Math.random() * 2);
 
     if (num1 == 0) {
-        ball.vel.x *= 1;
-    } else {
         ball.vel.x *= -1;
     }
 
     if (num2 == 0) {
-        ball.vel.y *= 1;
-    } else {
         ball.vel.y *= -1;
     }
 
