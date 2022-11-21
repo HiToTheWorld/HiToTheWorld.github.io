@@ -1,9 +1,7 @@
-//fiddle: https://jsfiddle.net/rabitailleow/85n90a2c/4/
-
 const canvas = document.getElementById("canvas");
 
-canvas.width = 480;
-canvas.height = 360;
+canvas.width = 300;
+canvas.height = 300;
 
 const ctx = canvas.getContext("2d");
 let setSpeed = 50;
