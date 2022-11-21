@@ -1,9 +1,9 @@
-//fiddle: https://jsfiddle.net/rabitailleow/85n90a2c/
+//fiddle: https://jsfiddle.net/rabitailleow/85n90a2c/3/
 
 const canvas = document.getElementById("canvas");
 
-canvas.width = 300;
-canvas.height = 300;
+canvas.width = 480;
+canvas.height = 360;
 
 const ctx = canvas.getContext("2d");
 let setSpeed = 50;
@@ -111,7 +111,7 @@ function run() {
         reflect(true);
     }
 
-    if (ball.pos.y + ball.size >= canvas.width || ball.pos.y - ball.size <= 0) {
+    if (ball.pos.y + ball.size >= canvas.height || ball.pos.y - ball.size <= 0) {
         reflect(false);
     }
 
