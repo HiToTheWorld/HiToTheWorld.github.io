@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas");
 
-canvas.width = 300;
-canvas.height = 300;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 const ctx = canvas.getContext("2d");
 let setSpeed = 50;
