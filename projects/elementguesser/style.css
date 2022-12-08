@@ -50,8 +50,6 @@ h3 {
 }
 
 #bannerMsg {
-  margin: 0;
-  padding: 0;
   margin-bottom: 15vh;
 }
 
@@ -99,6 +97,5 @@ h1 {
     padding-top: 30px;
     padding-bottom: 5px;
     margin-top: 50px;
-    position: absolute;
-    top: 100%;
+    margin-bottom: 0;
 }
