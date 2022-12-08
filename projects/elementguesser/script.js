@@ -204,7 +204,11 @@ function clueReveal(keyword) {
 function inputEntered() {
     const input = formatInput(document.getElementById("questionInput").value)
 
+    input.replace("lanthanoid", "lanthanide")
+    input.replace("actinoid", "actinide")
+
     let matches = []
+    let matched = false
 
     for (let i = 0; i < questionKeywords.length; i++) {
         if (input.match(questionKeywords[i])) {
@@ -222,6 +226,7 @@ function inputEntered() {
 
         if (singular == true && guessedKeywords.includes(matches[j]) == false) {
             clueReveal(matches[j])
+            matched = true
             guessedKeywords.push(matches[j]);
         }
     }
@@ -236,6 +241,7 @@ function inputEntered() {
                     addHint("The secret element's atomic mass is less than " + num + ".")
                 }
                 guessedKeywords.push("mass-" + num)
+                matched = true
             }
         } else if (input.includes("less than")) {
             let num = parseInt(input.split("less than")[1])
@@ -246,7 +252,29 @@ function inputEntered() {
                     addHint("The secret element's atomic mass is greater than " + num + ".")
                 }
                 guessedKeywords.push("mass-" + num)
+                matched = true
             }
+        }
+    }
+
+    if (input.includes("symbol") && input.includes("start") && input.includes("with")) {
+        let string = input.split("with")[1]
+        let letter = string.charAt(0)
+
+        for (let i = 0; i < string.length; i++) {
+            letter = string.charAt(i)
+            if (letter.match(/[a-z]/g)) {
+                break
+            }
+        }
+
+        do {
+            letter = string.charAt
+        } while (!(letter.match(/[a-z]/g)))
+        if (element.symbol.charAt(0) == letter) {
+            addHint("The secret element's symbol starts with" + capName(letter) + "!")
+        } else {
+            addHint("The secret element's symbol does not start with" + capName(letter) + ".")
         }
     }
 
