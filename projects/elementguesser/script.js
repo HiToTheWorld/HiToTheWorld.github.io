@@ -295,3 +295,5 @@ function run() {
 
     document.getElementById("enterBtn").addEventListener("click", inputEntered);
 }
+
+run()
