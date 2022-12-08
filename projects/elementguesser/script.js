@@ -121,9 +121,6 @@ const elements = [
 
 const questionKeywords = []
 const guessedKeywords = []
-
-let score = 0;
-
 const typeGroupings = {
     chemicalGroups: ["noble gas", "alkaline", "alkali", "halogen", "transition metal", "inner transition metal", "lanthanide", "actinide", "synthetic", "radioactive"],
     states: ["gas", "solid", "liquid"],
@@ -165,132 +162,136 @@ function addHint(text) {
     document.getElementById("hintsCount").innerText = score
 }
 
-let element = elements[Math.floor(Math.random() * (elements.length))]
+function run() {
 
-function formatInput(input) {
-    input = input.toLowerCase()
-    input = input.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?=]/g, "")
-    return input
-}
+    let score = 0;
+    let element = elements[Math.floor(Math.random() * (elements.length))]
 
-function clueReveal(keyword) {
-    if (element.name == keyword) {
-        document.getElementById("bannerMsg").innerText = "Congratulations! You got the element in " + score + " tries! It was " + capName(element.name) + "! Reload to play again!";
-        document.getElementById("questionInput").disabled = true;
-        document.getElementById("enterBtn").disabled = true;
-    } else if (typeGroupings.elements.includes(keyword)) {
-        addHint("The secret element is not " + capName(keyword) + ".")
+    function formatInput(input) {
+        input = input.toLowerCase()
+        input = input.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?=]/g, "")
+        return input
     }
 
-    if (element.state == keyword) {
-        addHint("The secret element is a " + keyword + "!")
-    } else if (typeGroupings.states.includes(keyword) == true) {
-        addHint("The secret element is not a " + keyword + ".")
-    }
+    function clueReveal(keyword) {
+        if (element.name == keyword) {
+            document.getElementById("bannerMsg").innerText = "Congratulations! You got the element in " + score + " tries! It was " + capName(element.name) + "! Reload to play again!";
+            document.getElementById("questionInput").disabled = true;
+            document.getElementById("enterBtn").disabled = true;
+        } else if (typeGroupings.elements.includes(keyword)) {
+            addHint("The secret element is not " + capName(keyword) + ".")
+        }
 
-    if (element.classList.includes(keyword)) {
-        addHint("The secret element is part of the '" + capName(keyword) + "' chemical group!")
-    } else if (typeGroupings.chemicalGroups.includes(keyword)) {
-        addHint("The secret element is not part of the '" + capName(keyword) + "' chemical group.")
-    }
+        if (element.state == keyword) {
+            addHint("The secret element is a " + keyword + "!")
+        } else if (typeGroupings.states.includes(keyword) == true) {
+            addHint("The secret element is not a " + keyword + ".")
+        }
 
-    if (element.metal == keyword) {
-        addHint("The secret element if of the '" + capName(keyword) + "' metal type!")
-    } else if (typeGroupings.metals.includes(keyword)) {
-        addHint("The secret element is not of the '" + capName(keyword) + "' metal type.")
-    }
-}
+        if (element.classList.includes(keyword)) {
+            addHint("The secret element is part of the '" + capName(keyword) + "' chemical group!")
+        } else if (typeGroupings.chemicalGroups.includes(keyword)) {
+            addHint("The secret element is not part of the '" + capName(keyword) + "' chemical group.")
+        }
 
-function inputEntered() {
-    const input = formatInput(document.getElementById("questionInput").value)
-
-    input.replace("lanthanoid", "lanthanide")
-    input.replace("actinoid", "actinide")
-
-    let matches = []
-    let matched = false
-
-    for (let i = 0; i < questionKeywords.length; i++) {
-        if (input.match(questionKeywords[i])) {
-            matches.push(questionKeywords[i])
+        if (element.metal == keyword) {
+            addHint("The secret element if of the '" + capName(keyword) + "' metal type!")
+        } else if (typeGroupings.metals.includes(keyword)) {
+            addHint("The secret element is not of the '" + capName(keyword) + "' metal type.")
         }
     }
 
-    for (let j = 0; j < matches.length; j++) {
-        let singular = true
-        for (let k = 0; k < matches.length; k++) {
-            if (k != j && matches[k].includes(matches[j]) == true) {
-                singular = false
+    function inputEntered() {
+        const input = formatInput(document.getElementById("questionInput").value)
+
+        input.replace("lanthanoid", "lanthanide")
+        input.replace("actinoid", "actinide")
+
+        let matches = []
+        let matched = false
+
+        for (let i = 0; i < questionKeywords.length; i++) {
+            if (input.match(questionKeywords[i])) {
+                matches.push(questionKeywords[i])
             }
         }
 
-        if (singular == true && guessedKeywords.includes(matches[j]) == false) {
-            clueReveal(matches[j])
-            matched = true
-            guessedKeywords.push(matches[j]);
-        }
-    }
-
-    if (input.includes("atomic mass")) {
-        if (input.includes("greater than")) {
-            let num = parseInt(input.split("greater than")[1])
-            if (guessedKeywords.includes("mass-" + num) == false) {
-                if (element.atomicMass > num) {
-                    addHint("The secret element's atomic mass is greater than " + num + "!")
-                } else if (element.atomicMass < num) {
-                    addHint("The secret element's atomic mass is less than " + num + ".")
+        for (let j = 0; j < matches.length; j++) {
+            let singular = true
+            for (let k = 0; k < matches.length; k++) {
+                if (k != j && matches[k].includes(matches[j]) == true) {
+                    singular = false
                 }
-                guessedKeywords.push("mass-" + num)
-                matched = true
             }
-        } else if (input.includes("less than")) {
-            let num = parseInt(input.split("less than")[1])
-            if (guessedKeywords.includes("mass-" + num) == false) {
-                if (element.atomicMass < num) {
-                    addHint("The secret element's atomic mass is less than " + num + "!")
-                } else if (element.atomicMass > num) {
-                    addHint("The secret element's atomic mass is greater than " + num + ".")
+
+            if (singular == true && guessedKeywords.includes(matches[j]) == false) {
+                clueReveal(matches[j])
+                matched = true
+                guessedKeywords.push(matches[j]);
+            }
+        }
+
+        if (input.includes("atomic mass")) {
+            if (input.includes("greater than")) {
+                let num = parseInt(input.split("greater than")[1])
+                if (guessedKeywords.includes("mass-" + num) == false) {
+                    if (element.atomicMass > num) {
+                        addHint("The secret element's atomic mass is greater than " + num + "!")
+                    } else if (element.atomicMass < num) {
+                        addHint("The secret element's atomic mass is less than " + num + ".")
+                    }
+                    guessedKeywords.push("mass-" + num)
+                    matched = true
                 }
-                guessedKeywords.push("mass-" + num)
-                matched = true
-            }
-        }
-    }
-
-    if (input.includes("symbol") && input.includes("start") && input.includes("with")) {
-        let string = input.split("with")[1]
-        let letter = string.charAt(0)
-
-        for (let i = 0; i < string.length; i++) {
-            letter = string.charAt(i)
-            if (letter.match(/[a-z]/g)) {
-                break
+            } else if (input.includes("less than")) {
+                let num = parseInt(input.split("less than")[1])
+                if (guessedKeywords.includes("mass-" + num) == false) {
+                    if (element.atomicMass < num) {
+                        addHint("The secret element's atomic mass is less than " + num + "!")
+                    } else if (element.atomicMass > num) {
+                        addHint("The secret element's atomic mass is greater than " + num + ".")
+                    }
+                    guessedKeywords.push("mass-" + num)
+                    matched = true
+                }
             }
         }
 
-        do {
-            letter = string.charAt
-        } while (!(letter.match(/[a-z]/g)))
-        if (element.symbol.charAt(0) == letter) {
-            addHint("The secret element's symbol starts with" + capName(letter) + "!")
-        } else {
-            addHint("The secret element's symbol does not start with" + capName(letter) + ".")
+        if (input.includes("symbol") && input.includes("start") && input.includes("with")) {
+            let string = input.split("with")[1]
+            let letter = string.charAt(0)
+
+            for (let i = 0; i < string.length; i++) {
+                letter = string.charAt(i)
+                if (letter.match(/[a-z]/g)) {
+                    break
+                }
+            }
+
+            do {
+                letter = string.charAt
+            } while (!(letter.match(/[a-z]/g)))
+            if (element.symbol.charAt(0) == letter) {
+                addHint("The secret element's symbol starts with" + capName(letter) + "!")
+            } else {
+                addHint("The secret element's symbol does not start with" + capName(letter) + ".")
+            }
         }
+
+        if (input.includes("i give up")) {
+            document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
+            document.getElementById("questionInput").disabled = true;
+            document.getElementById("enterBtn").disabled = true;
+        }
+
+        document.getElementById("questionInput").value = "";
     }
 
-    if (input.includes("i give up")) {
-        document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
-        document.getElementById("questionInput").disabled = true;
-        document.getElementById("enterBtn").disabled = true;
-    }
+    window.addEventListener("keydown", function (e) {
+        if (e.key == "Enter") {
+            inputEntered();
+        }
+    })
 
-    document.getElementById("questionInput").value = "";
+    document.getElementById("enterBtn").addEventListener("click", inputEntered);
 }
-
-window.addEventListener("keydown", function (e) {
-    if (e.key == "Enter") {
-        inputEntered();
-    }
-})
-
-document.getElementById("enterBtn").addEventListener("click", inputEntered);
