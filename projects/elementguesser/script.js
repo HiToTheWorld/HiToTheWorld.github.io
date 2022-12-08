@@ -142,6 +142,8 @@ for (let i = 0; i < elements.length; i++) {
     typeGroupings.elements.push(elements[i].name)
 }
 
+let score = 0;
+
 function capName(str) {
     let cutstr = str.split(" ")
     let newstr = ""
@@ -163,9 +165,9 @@ function addHint(text) {
 }
 
 function run() {
-
-    let score = 0;
     let element = elements[Math.floor(Math.random() * (elements.length))]
+
+    let debugInit = false
 
     function formatInput(input) {
         input = input.toLowerCase()
@@ -202,7 +204,7 @@ function run() {
     }
 
     function inputEntered() {
-        const input = formatInput(document.getElementById("questionInput").value)
+        let input = document.getElementById("questionInput").value
 
         input.replace("lanthanoid", "lanthanide")
         input.replace("actinoid", "actinide")
@@ -210,78 +212,109 @@ function run() {
         let matches = []
         let matched = false
 
-        for (let i = 0; i < questionKeywords.length; i++) {
-            if (input.match(questionKeywords[i])) {
-                matches.push(questionKeywords[i])
-            }
-        }
+        if (input == "!@#DEBUGGING#@!") {
+            debugInit = true
+        } else {
+            if (input == "```" && debugInit == true) {
+                let msg = document.getElementById("bannerMsg").innerText = "Welcome tildalite. We have awaited your presence. Please wait as we get your X-Files..."
+                document.getElementById("bannerMsg").innerText = msg + " (0)"
 
-        for (let j = 0; j < matches.length; j++) {
-            let singular = true
-            for (let k = 0; k < matches.length; k++) {
-                if (k != j && matches[k].includes(matches[j]) == true) {
-                    singular = false
-                }
-            }
-
-            if (singular == true && guessedKeywords.includes(matches[j]) == false) {
-                clueReveal(matches[j])
-                matched = true
-                guessedKeywords.push(matches[j]);
-            }
-        }
-
-        if (input.includes("atomic mass")) {
-            if (input.includes("greater than")) {
-                let num = parseInt(input.split("greater than")[1])
-                if (guessedKeywords.includes("mass-" + num) == false) {
-                    if (element.atomicMass > num) {
-                        addHint("The secret element's atomic mass is greater than " + num + "!")
-                    } else if (element.atomicMass < num) {
-                        addHint("The secret element's atomic mass is less than " + num + ".")
-                    }
-                    guessedKeywords.push("mass-" + num)
-                    matched = true
-                }
-            } else if (input.includes("less than")) {
-                let num = parseInt(input.split("less than")[1])
-                if (guessedKeywords.includes("mass-" + num) == false) {
-                    if (element.atomicMass < num) {
-                        addHint("The secret element's atomic mass is less than " + num + "!")
-                    } else if (element.atomicMass > num) {
-                        addHint("The secret element's atomic mass is greater than " + num + ".")
-                    }
-                    guessedKeywords.push("mass-" + num)
-                    matched = true
-                }
-            }
-        }
-
-        if (input.includes("symbol") && input.includes("start") && input.includes("with")) {
-            let string = input.split("with")[1]
-            let letter = string.charAt(0)
-
-            for (let i = 0; i < string.length; i++) {
-                letter = string.charAt(i)
-                if (letter.match(/[a-z]/g)) {
-                    break
-                }
-            }
-
-            do {
-                letter = string.charAt
-            } while (!(letter.match(/[a-z]/g)))
-            if (element.symbol.charAt(0) == letter) {
-                addHint("The secret element's symbol starts with" + capName(letter) + "!")
+                window.setTimeout(function () {
+                    document.getElementById("bannerMsg").innerText = msg + " (1)"
+                    window.setTimeout(function () {
+                        document.getElementById("bannerMsg").innerText = msg + " (2)"
+                        window.setTimeout(function () {
+                            document.getElementById("bannerMsg").innerText = msg + " (3)"
+                            window.setTimeout(function () {
+                                document.getElementById("bannerMsg").innerText = msg + " (4)"
+                                window.setTimeout(function () {
+                                    document.getElementById("bannerMsg").innerText = msg + " (5)"
+                                    window.setTimeout(function () {
+                                        document.getElementById("bannerMsg").innerText = "X-Files[Tildalite] { name: 'tildalite', file: '{ name: '" + element.name + "', symbol: '" + element.symbol + "', atomicNumber: " + element.atomicNumber + ", state: '" + element.state + "', metal: '" + element.state + "', classList: " + element.state + ", atomicMass: " + element.atomicMass + " }' }"
+                                    }, 500)
+                                }, 1000)
+                            }, 1000)
+                        }, 1000)
+                    }, 1000)
+                }, 1000)
             } else {
-                addHint("The secret element's symbol does not start with" + capName(letter) + ".")
-            }
-        }
+                input = formatInput(input)
+                debugInit = false
 
-        if (input.includes("i give up")) {
-            document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
-            document.getElementById("questionInput").disabled = true;
-            document.getElementById("enterBtn").disabled = true;
+                for (let i = 0; i < questionKeywords.length; i++) {
+                    if (input.match(questionKeywords[i])) {
+                        matches.push(questionKeywords[i])
+                    }
+                }
+
+                for (let j = 0; j < matches.length; j++) {
+                    let singular = true
+                    for (let k = 0; k < matches.length; k++) {
+                        if (k != j && matches[k].includes(matches[j]) == true) {
+                            singular = false
+                        }
+                    }
+
+                    if (singular == true && guessedKeywords.includes(matches[j]) == false) {
+                        clueReveal(matches[j])
+                        matched = true
+                        guessedKeywords.push(matches[j]);
+                    }
+                }
+
+                if (input.includes("atomic mass")) {
+                    if (input.includes("greater than")) {
+                        let num = parseInt(input.split("greater than")[1])
+                        if (guessedKeywords.includes("mass-" + num) == false) {
+                            if (element.atomicMass > num) {
+                                addHint("The secret element's atomic mass is greater than " + num + "!")
+                            } else if (element.atomicMass < num) {
+                                addHint("The secret element's atomic mass is less than " + num + ".")
+                            }
+                            guessedKeywords.push("mass-" + num)
+                            matched = true
+                        }
+                    } else if (input.includes("less than")) {
+                        let num = parseInt(input.split("less than")[1])
+                        if (guessedKeywords.includes("mass-" + num) == false) {
+                            if (element.atomicMass < num) {
+                                addHint("The secret element's atomic mass is less than " + num + "!")
+                            } else if (element.atomicMass > num) {
+                                addHint("The secret element's atomic mass is greater than " + num + ".")
+                            }
+                            guessedKeywords.push("mass-" + num)
+                            matched = true
+                        }
+                    }
+                }
+
+                if (input.includes("symbol") && input.includes("start") && input.includes("with")) {
+                    let string = input.split("with")[1]
+                    let letter = string.charAt(0)
+
+                    for (let i = 0; i < string.length; i++) {
+                        letter = string.charAt(i)
+                        if (letter.match(/[a-z]/g)) {
+                            break
+                        }
+                    }
+
+                    do {
+                        letter = string.charAt
+                    } while (!(letter.match(/[a-z]/g)))
+                    if (element.symbol.charAt(0) == letter) {
+                        addHint("The secret element's symbol starts with" + capName(letter) + "!")
+                    } else {
+                        addHint("The secret element's symbol does not start with" + capName(letter) + ".")
+                    }
+                }
+
+                if (input.includes("i give up")) {
+                    document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
+                    document.getElementById("questionInput").disabled = true;
+                    document.getElementById("enterBtn").disabled = true;
+                }
+            }
         }
 
         document.getElementById("questionInput").value = "";
