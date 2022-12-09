@@ -239,6 +239,8 @@ function run() {
                 input = formatInput(input)
                 debugInit = false
 
+                document.getElementById("bannerMsg").innerText = ""
+
                 input.replace("lanthanoid", "lanthanide")
                 input.replace("actinoid", "actinide")
 
