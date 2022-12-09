@@ -206,9 +206,6 @@ function run() {
     function inputEntered() {
         let input = document.getElementById("questionInput").value
 
-        input.replace("lanthanoid", "lanthanide")
-        input.replace("actinoid", "actinide")
-
         let matches = []
         let matched = false
 
@@ -240,6 +237,9 @@ function run() {
             } else {
                 input = formatInput(input)
                 debugInit = false
+
+                input.replace("lanthanoid", "lanthanide")
+                input.replace("actinoid", "actinide")
 
                 for (let i = 0; i < questionKeywords.length; i++) {
                     if (input.match(questionKeywords[i])) {
@@ -306,28 +306,28 @@ function run() {
                     }
                 }
 
+                if (input.includes("big hint")) {
+                    document.getElementById("bannerMsg").innerText = "Rats. You've trapped us. We will give you a huge hint if you brighten our day with a fun fact. Whaddya say?"
+                }
+        
+                if (input.includes("owen") && input.includes("best")) {
+                    document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
+                }
+        
+                if (input.includes("sophia the first") || input.includes("ooga booga") || input.includes("roblox")) {
+                    document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
+                }
+        
+                if (input.includes("open the chamber of secrets")) {
+                    document.getElementById("bannerMsg").innerText = "If you say so... {HeFN-OFSiCa;PVBSi-CaOB-HeBKCa;PHeMgPCr;F-NFTiB-ScS}"
+                }
+
                 if (input.includes("i give up")) {
                     document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
                     document.getElementById("questionInput").disabled = true;
                     document.getElementById("enterBtn").disabled = true;
                 }
             }
-        }
-
-        if (input.includes("big hint")) {
-            document.getElementById("bannerMsg").innerText = "Rats. You've trapped us. We will give you a huge hint if you brighten our day with a fun fact. Whaddya say?"
-        }
-
-        if (input.includes("owen") && input.includes("best")) {
-            document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
-        }
-
-        if (input.includes("sophia the first") || input.includes("ooga booga") || input.includes("roblox")) {
-            document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
-        }
-
-        if (input.includes("open the chamber of secrets")) {
-            document.getElementById("bannerMsg").innerText = "If you say so... {HeFN-OFSiCa;PVBSi-CaOB-HeBKCa;PHeMgPCr;F-NFTiB-ScS}"
         }
 
         document.getElementById("questionInput").value = "";
