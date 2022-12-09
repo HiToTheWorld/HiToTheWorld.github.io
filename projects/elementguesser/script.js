@@ -168,6 +168,7 @@ function run() {
     let element = elements[Math.floor(Math.random() * (elements.length))]
 
     let debugInit = false
+    let bigHintInit = false
 
     function formatInput(input) {
         input = input.toLowerCase()
@@ -262,8 +263,8 @@ function run() {
                     }
                 }
 
-                if (input.includes("atomic mass")) {
-                    if (input.includes("greater than")) {
+                if (input.includes("atomic mass") == true) {
+                    if (input.includes("greater than") == true) {
                         let num = parseInt(input.split("greater than")[1])
                         if (guessedKeywords.includes("mass-" + num) == false) {
                             if (element.atomicMass > num) {
@@ -274,7 +275,7 @@ function run() {
                             guessedKeywords.push("mass-" + num)
                             matched = true
                         }
-                    } else if (input.includes("less than")) {
+                    } else if (input.includes("less than") == true) {
                         let num = parseInt(input.split("less than")[1])
                         if (guessedKeywords.includes("mass-" + num) == false) {
                             if (element.atomicMass < num) {
@@ -288,7 +289,7 @@ function run() {
                     }
                 }
 
-                if (input.includes("symbol") && input.includes("start") && input.includes("with")) {
+                if (input.includes("symbol") == true && input.includes("start") == true && input.includes("with") == true) {
                     let string = input.split("with")[1]
                     let letter = string.charAt(0)
 
@@ -306,23 +307,30 @@ function run() {
                     }
                 }
 
-                if (input.includes("big hint")) {
+                if (input.includes("big hint") == true) {
                     document.getElementById("bannerMsg").innerText = "Rats. You've trapped us. We will give you a huge hint if you brighten our day with a fun fact. Whaddya say?"
+                    bigHintInit = true
+                } else {
+                    if (input.includes("did you know") == true && bigHintInit == true) {
+                        document.getElementById("bannerMsg").innerText = "Okay. Fine. The hint is the element start with " + capName(element.name.charAt(0) + element.name.charAt(1))
+                    } else {
+                        bigHintInit = false
+                    }
                 }
         
-                if (input.includes("owen") && input.includes("best")) {
+                if (input.includes("owen") == true && input.includes("best") == true) {
                     document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
                 }
         
-                if (input.includes("sophia the first") || input.includes("ooga booga") || input.includes("roblox")) {
+                if (input.includes("sophia the first") == true || input.includes("ooga booga") == true || input.includes("roblox") == true) {
                     document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
                 }
         
-                if (input.includes("open the chamber of secrets")) {
+                if (input.includes("open the chamber of secrets") == true) {
                     document.getElementById("bannerMsg").innerText = "If you say so... {HeFN-OFSiCa;PVBSi-CaOB-HeBKCa;PHeMgPCr;F-NFTiB-ScS}"
                 }
 
-                if (input.includes("i give up")) {
+                if (input.includes("i give up") == true) {
                     document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
                     document.getElementById("questionInput").disabled = true;
                     document.getElementById("enterBtn").disabled = true;
