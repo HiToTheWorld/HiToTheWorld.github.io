@@ -322,6 +322,8 @@ function run() {
         
                 if (input.includes("owen") == true && input.includes("best") == true) {
                     document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
+
+                window.setTimeout(function () {document.getElementById("bannerMsg").innerText = ""}, 3000)
                 }
         
                 if (input.includes("sophia the first") == true || input.includes("ooga booga") == true || input.includes("roblox") == true) {
