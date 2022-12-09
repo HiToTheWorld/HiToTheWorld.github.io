@@ -312,7 +312,7 @@ function run() {
                     bigHintInit = true
                 } else {
                     if (input.includes("did you know") == true && bigHintInit == true) {
-                        document.getElementById("bannerMsg").innerText = "Okay. Fine. The hint is the element start with " + capName(element.name.charAt(0) + element.name.charAt(1))
+                        document.getElementById("bannerMsg").innerText = "Interesting! The hint is the element start with " + capName(element.name.charAt(0) + element.name.charAt(1))
                     } else {
                         bigHintInit = false
                     }
