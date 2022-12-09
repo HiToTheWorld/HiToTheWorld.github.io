@@ -44,11 +44,11 @@ const elements = [
     { name: "technetium", symbol: "tc", atomicNumber: 43, state: "solid", metal: "metal", classList: ["transition metal", "radioactive"], atomicMass: 0 },
     { name: "ruthenium", symbol: "ru", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
     { name: "rhodium", symbol: "rh", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
-    { name: "palladium", symbol: "", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
-    { name: "silver", symbol: "", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
-    { name: "cadmium", symbol: "", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
-    { name: "indum", symbol: "", atomicNumber: 0, state: "solid", metal: "metal", classList: ["inner transition metal"], atomicMass: 0 },
-    { name: "tin", symbol: "", atomicNumber: 0, state: "solid", metal: "metal", classList: ["inner transition metal"], atomicMass: 0 },
+    { name: "palladium", symbol: "47", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
+    { name: "silver", symbol: "ag", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
+    { name: "cadmium", symbol: "cd", atomicNumber: 0, state: "solid", metal: "metal", classList: ["transition metal"], atomicMass: 0 },
+    { name: "indium", symbol: "in", atomicNumber: 0, state: "solid", metal: "metal", classList: ["inner transition metal"], atomicMass: 0 },
+    { name: "tin", symbol: "sn", atomicNumber: 0, state: "solid", metal: "metal", classList: ["inner transition metal"], atomicMass: 0 },
     { name: "antimony", symbol: "", atomicNumber: 0, state: "solid", metal: "metalloid", classList: [], atomicMass: 0 },
     { name: "tellurium", symbol: "", atomicNumber: 0, state: "solid", metal: "metalloid", classList: [], atomicMass: 0 },
     { name: "iodine", symbol: "", atomicNumber: 0, state: "solid", metal: "nonmetal", classList: ["halogen"], atomicMass: 0 },
@@ -216,7 +216,7 @@ function run() {
             debugInit = true
         } else {
             if (input == "```" && debugInit == true) {
-                let msg = document.getElementById("bannerMsg").innerText = "Welcome tildalite. We have awaited your presence. Please wait as we get your X-Files..."
+                let msg = "Welcome Tildalite. We have awaited your presence. Please wait as we get your X-Files..."
                 document.getElementById("bannerMsg").innerText = msg + " (0)"
 
                 window.setTimeout(function () {
@@ -230,7 +230,7 @@ function run() {
                                 window.setTimeout(function () {
                                     document.getElementById("bannerMsg").innerText = msg + " (5)"
                                     window.setTimeout(function () {
-                                        document.getElementById("bannerMsg").innerText = "X-Files[Tildalite] { name: 'tildalite', file: '{ name: '" + element.name + "', symbol: '" + element.symbol + "', atomicNumber: " + element.atomicNumber + ", state: '" + element.state + "', metal: '" + element.state + "', classList: " + element.state + ", atomicMass: " + element.atomicMass + " }' }"
+                                        document.getElementById("bannerMsg").innerText = "X-Files[Tildalite] { name: 'Tildalite', file: '{ name: '" + element.name + "', symbol: '" + element.symbol + "', atomicNumber: " + element.atomicNumber + ", state: '" + element.state + "', metal: '" + element.state + "', classList: " + element.state + ", atomicMass: " + element.atomicMass + " }' }"
                                     }, 500)
                                 }, 1000)
                             }, 1000)
@@ -294,18 +294,15 @@ function run() {
 
                     for (let i = 0; i < string.length; i++) {
                         letter = string.charAt(i)
-                        if (letter.match(/[a-z]/g)) {
+                        if (letter && letter.match(/[a-z]/g)) {
                             break
                         }
                     }
 
-                    do {
-                        letter = string.charAt
-                    } while (!(letter.match(/[a-z]/g)))
                     if (element.symbol.charAt(0) == letter) {
-                        addHint("The secret element's symbol starts with" + capName(letter) + "!")
+                        addHint("The secret element's symbol starts with " + capName(letter) + "!")
                     } else {
-                        addHint("The secret element's symbol does not start with" + capName(letter) + ".")
+                        addHint("The secret element's symbol does not start with " + capName(letter) + ".")
                     }
                 }
 
@@ -315,6 +312,22 @@ function run() {
                     document.getElementById("enterBtn").disabled = true;
                 }
             }
+        }
+
+        if (input.includes("big hint")) {
+            document.getElementById("bannerMsg").innerText = "Rats. You've trapped us. We will give you a huge hint if you brighten our day with a fun fact. Whaddya say?"
+        }
+
+        if (input.includes("owen") && input.includes("best")) {
+            document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
+        }
+
+        if (input.includes("sophia the first") || input.includes("ooga booga") || input.includes("roblox")) {
+            document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
+        }
+
+        if (input.includes("open the chamber of secrets")) {
+            document.getElementById("bannerMsg").innerText = "If you say so... {HeFN-OFSiCa;PVBSi-CaOB-HeBKCa;PHeMgPCr;F-NFTiB-ScS}"
         }
 
         document.getElementById("questionInput").value = "";
