@@ -214,7 +214,7 @@ function run() {
             debugInit = true
         } else {
             if (input == "```" && debugInit == true) {
-                let msg = "Welcome Tildalite. We have awaited your presence. Please wait as we get your X-Files..."
+                let msg = "Welcome Adventurer. We have awaited your presence. Please wait as we get your X-Files..."
                 document.getElementById("bannerMsg").innerText = msg + " (0)"
 
                 window.setTimeout(function () {
@@ -228,7 +228,7 @@ function run() {
                                 window.setTimeout(function () {
                                     document.getElementById("bannerMsg").innerText = msg + " (5)"
                                     window.setTimeout(function () {
-                                        document.getElementById("bannerMsg").innerText = "X-Files[Tildalite] { name: 'Tildalite', file: '{ name: '" + element.name + "', symbol: '" + element.symbol + "', atomicNumber: " + element.atomicNumber + ", state: '" + element.state + "', metal: '" + element.state + "', classList: " + element.state + ", atomicMass: " + element.atomicMass + " }' }"
+                                        document.getElementById("bannerMsg").innerText = "X-Files[Elementalite] { name: 'Elementalite', file: '{ name: '" + element.name + "', symbol: '" + element.symbol + "', atomicNumber: " + element.atomicNumber + ", state: '" + element.state + "', metal: '" + element.state + "', classList: " + element.state + ", atomicMass: " + element.atomicMass + " }' }"
                                     }, 500)
                                 }, 1000)
                             }, 1000)
