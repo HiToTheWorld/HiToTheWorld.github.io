@@ -243,6 +243,8 @@ function run() {
 
                 input = input.replaceAll("lanthanoid", "lanthanide")
                 input = input.replaceAll("actinoid", "actinide")
+                input = input.replaceAll("non-metal", "nonmetal")
+                input = input.replaceAll("non metal", "nonmetal")
 
                 for (let i = 0; i < questionKeywords.length; i++) {
                     if (input.match(questionKeywords[i])) {
