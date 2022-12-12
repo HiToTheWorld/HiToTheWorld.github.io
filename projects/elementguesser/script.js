@@ -212,8 +212,11 @@ function run() {
 
         if (input == "!@#DEBUGGING#@!") {
             debugInit = true
+            matched = true
         } else {
             if (input == "```" && debugInit == true) {
+                matched = true
+                
                 let msg = "Welcome Adventurer. We have awaited your presence. Please wait as we get your X-Files..."
                 document.getElementById("bannerMsg").innerText = msg + " (0)"
 
@@ -309,14 +312,18 @@ function run() {
                     } else {
                         addHint("The secret element's symbol does not start with " + capName(letter) + ".")
                     }
+                    
+                    matched = true
                 }
 
                 if (input.includes("big hint") == true) {
                     document.getElementById("bannerMsg").innerText = "Rats. You've trapped us. We will give you a huge hint if you brighten our day with a fun fact. Whaddya say?"
                     bigHintInit = true
+                    matched = true
                 } else {
                     if (input.includes("did you know") == true && bigHintInit == true) {
                         document.getElementById("bannerMsg").innerText = "Interesting! The hint is the element start with " + capName(element.name.charAt(0) + element.name.charAt(1))
+                        matched = true
                     } else {
                         bigHintInit = false
                     }
@@ -324,27 +331,34 @@ function run() {
         
                 if (input.includes("owen") == true && input.includes("best") == true) {
                     document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
-
-                window.setTimeout(function () {document.getElementById("bannerMsg").innerText = ""}, 3000)
+                    matched = true
+                    window.setTimeout(function () {document.getElementById("bannerMsg").innerText = ""}, 3000)
                 }
         
                 if (input.includes("sophia the first") == true || input.includes("ooga booga") == true || input.includes("roblox") == true) {
                     document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
+                    matched = true
                 }
         
                 if (input.includes("open the chamber of secrets") == true) {
                     document.getElementById("bannerMsg").innerText = "If you say so... {HeFN-OFSiCa;PVBSi-CaOB-HeBKCa;PHeMgPCr;F-NFTiB-ScS}"
+                    matched = true
                 }
 
                 if (input.includes("i give up") == true) {
                     document.getElementById("bannerMsg").innerText = "Aww! Don't give up! You can do it! By the way the element was " + capName(element.name) + ".";
                     document.getElementById("questionInput").disabled = true;
                     document.getElementById("enterBtn").disabled = true;
+                    matched = true
                 }
             }
         }
 
         document.getElementById("questionInput").value = "";
+        
+        if (matched == false) {
+            document.getElementById("bannerMsg").innerText = "Invalid phrase."
+        }
     }
 
     window.addEventListener("keydown", function (e) {
