@@ -241,8 +241,8 @@ function run() {
 
                 document.getElementById("bannerMsg").innerText = ""
 
-                input.replace("lanthanoid", "lanthanide")
-                input.replace("actinoid", "actinide")
+                input.replaceAll("lanthanoid", "lanthanide")
+                input.replaceAll("actinoid", "actinide")
 
                 for (let i = 0; i < questionKeywords.length; i++) {
                     if (input.match(questionKeywords[i])) {
