@@ -216,7 +216,7 @@ function run() {
         } else {
             if (input == "```" && debugInit == true) {
                 matched = true
-                
+
                 let msg = "Welcome Adventurer. We have awaited your presence. Please wait as we get your X-Files..."
                 document.getElementById("bannerMsg").innerText = msg + " (0)"
 
@@ -312,7 +312,7 @@ function run() {
                     } else {
                         addHint("The secret element's symbol does not start with " + capName(letter) + ".")
                     }
-                    
+
                     matched = true
                 }
 
@@ -328,18 +328,18 @@ function run() {
                         bigHintInit = false
                     }
                 }
-        
+
                 if (input.includes("owen") == true && input.includes("best") == true) {
                     document.getElementById("bannerMsg").innerText = "Why thank you! *bows*"
                     matched = true
-                    window.setTimeout(function () {document.getElementById("bannerMsg").innerText = ""}, 3000)
+                    window.setTimeout(function () { document.getElementById("bannerMsg").innerText = "" }, 3000)
                 }
-        
+
                 if (input.includes("sophia the first") == true || input.includes("ooga booga") == true || input.includes("roblox") == true) {
                     document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
                     matched = true
                 }
-        
+
                 if (input.includes("open the chamber of secrets") == true) {
                     document.getElementById("bannerMsg").innerText = "If you say so... {HeFN-OFSiCa;PVBSi-CaOB-HeBKCa;PHeMgPCr;F-NFTiB-ScS}"
                     matched = true
@@ -355,7 +355,7 @@ function run() {
         }
 
         document.getElementById("questionInput").value = "";
-        
+
         if (matched == false) {
             document.getElementById("bannerMsg").innerText = "Invalid phrase."
         }
@@ -371,3 +371,20 @@ function run() {
 }
 
 run()
+
+let table = []
+let tablePos = [0, 0]
+let newLines = [1, 3, 11, 19, 37, 55, 87]
+let leftEnds = [2, 5, 13]
+
+for (let i = 0; i < elements.length; i++) {
+    let key = Object.keys(elements)[i]
+    elements[key].atomicNumber = i + 1
+    if (newLines.includes(i)) {
+        tablePos[1] += 1
+    }
+    table[tablePos[0]][tablePos[1]] = elements[key]
+    tablePos[0] += 1
+}
+
+console.log(table)
