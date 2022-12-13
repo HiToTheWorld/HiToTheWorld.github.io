@@ -191,6 +191,7 @@
   width: 100%;
   min-height: 145px;
   max-height: 100%;
+  background: none;
 }
 
 @media (max-width: 800px) {
