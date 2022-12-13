@@ -1,0 +1,22 @@
+Sample project modal
+
+<div class="projectmodal" id="-projectName-modal">
+    <img src='../main/images/' />
+    <h2>Project Name</h2>
+    <p>Description</p>
+
+    <div class="dateContainer">
+        <hr>
+        <h6>-Project Date-</h6>
+    </div>
+</div>
+
+Sample project button
+
+<button id="-projectName-button" onclick="showProjectModal(this.id)">
+    <img src='../main/images/' />
+    <div>
+        <p><strong>Project Name</strong></p>
+        <p>Short project description</p>
+    </div>
+</button>

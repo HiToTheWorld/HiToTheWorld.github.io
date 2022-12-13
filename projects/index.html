@@ -19,6 +19,11 @@
       <p>Number-Stat is a software that tells you importaint things about a data set. Input your data, or generate a new
         array, and then click "Calculate". The right side of the screen will have your information.</p>
       <button onclick="window.location.replace('./numberstat')" class="modallaunchwebsite">Launch 🚀</button>
+
+      <div class="dateContainer">
+        <hr>
+        <h6>May 15, 2022</h6>
+      </div>
     </div>
 
     <div class="projectmodal" id="thecoconutsongmodal">
@@ -37,6 +42,11 @@
       <h3 id="absolutechaostitle">The ABSOLUTE CHAOS Coconut Song</h3>
       <audio controls src="../main/audio/chaos.wav"></audio>
       <p>This was a compilation of Super Mario Bros. Theme, It's a Small World, and The Coconut Song!</p>
+
+      <div class="dateContainer">
+        <hr>
+        <h6>Jun 28, 2022</h6>
+      </div>
     </div>
 
     <div class="projectmodal" id="mdreadermodal">
@@ -45,6 +55,11 @@
       <p>Read a markdown file just by importing the code and your MD file! DISCLAIMER: There is not yet any downloadable
         file but I'm working on it!</p>
       <button onclick="window.location.replace('./mdreader')" class="modallaunchwebsite">Launch 🚀</button>
+
+      <div class="dateContainer">
+        <hr>
+        <h6>Aug 24, 2022</h6>
+      </div>
     </div>
 
     <div class="projectmodal" id="flipswitchmodal">
@@ -52,6 +67,11 @@
       <h2>FlipSwitch</h2>
       <p>A game I made! This game features my own art!</p>
       <button onclick="window.location.replace('./flipswitch')" class="modallaunchwebsite">Launch 🚀</button>
+
+      <div class="dateContainer">
+        <hr>
+        <h6>Jan 26, 2022</h6>
+      </div>
     </div>
 
     <div class="projectmodal" id="lovenwantitimodal">
@@ -73,11 +93,39 @@
       </iframe>
       <h3>Remixed Version (All three songs)</h3>
       <audio controls src="../main/audio/lovenwantiti.wav"></audio>
+
+      <div class="dateContainer">
+        <hr>
+        <h6>Sep 29, 2022</h6>
+      </div>
+    </div>
+
+    <div class="projectmodal" id="elementguessermodal">
+      <img src='../main/images/' />
+      <h2>Element Guesser</h2>
+      <p>Element guesser is an AI-Like game where you ask the box a question and get a hint based on your question. Try
+        it out! The reason I say AI-Like is because it can decifer what you say in the box into phrases it can process
+        by using an internal database of words or phrases that are matched individually. This is not an actively
+        learning robot process, therefore it is not AI.</p>
+      <button onclick="window.location.replace('./elementguesser')" class="modallaunchwebsite">Launch 🚀</button>
+
+      <div class="dateContainer">
+        <hr>
+        <h6>Dec 12, 2022</h6>
+      </div>
     </div>
 
   </div>
   <div id='myprojects'>
     <h2 style="padding-right: 20px;">My Projects</h2>
+
+    <button id="elementguesserbutton" onclick="showProjectModal(this.id)">
+      <img src='../main/images/' />
+      <div>
+        <p><strong>Element Guesser</strong></p>
+        <p>Try to guess the mystery element!</p>
+      </div>
+    </button>
 
     <button id="lovenwantitibutton" onclick="showProjectModal(this.id)">
       <img src='../main/images/lovenwantiti.jpg' />
@@ -88,7 +136,7 @@
     </button>
 
     <button id="flipswitchbutton" onclick="showProjectModal(this.id)">
-      <img src='../main/images/numberstat.png' />
+      <img src='../main/images/' />
       <div>
         <p><strong>FlipSwitch</strong></p>
         <p>A not yet musical game!</p>
@@ -96,7 +144,7 @@
     </button>
 
     <button id="thecoconutsongbutton" onclick="showProjectModal(this.id)">
-      <img src='../main/images/numberstat.png' />
+      <img src='../main/images/' />
       <div>
         <p><strong>The Coconut Song</strong></p>
         <p>The coconut song arranged by me with a beach theme.</p>
