@@ -371,7 +371,7 @@ function run() {
                     window.setTimeout(function () { document.getElementById("bannerMsg").innerText = "" }, 3000)
                 }
 
-                if (input.includes("sophia the first") == true || input.includes("ooga booga") == true || input.includes("roblox") == true) {
+                if (input.includes("sofia the first") == true || input.includes("ooga booga") == true || input.includes("roblox") == true) {
                     document.getElementById("bannerMsg").innerText = "Hey! Thats my favorite!"
                     matched = true
                 }
