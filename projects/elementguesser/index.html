@@ -4,9 +4,23 @@
 
 <head>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <title>Element Guesser</title>
 </head>
 
 <body>
+
+    <div id="welcomeBox">
+        <h1>Welcome to Element Guesser!</h1>
+        <p>Enter a yes or no question into the input box below! We have also hidden 5 easter eggs! Can you find them
+            all?</p>
+    </div>
+
+    <hr>
 
     <div id="inputContainer">
         <input id="questionInput" />
@@ -21,23 +35,35 @@
     </div>
 
     <div id="periodicTable">
-        <h3>Periodic table</h3>
+        <h3 style="padding-bottom: 10px;">Periodic table</h3>
         <table id="periodicTableTable">
 
         </table>
     </div>
 
+    <!-- <hr> -->
+
+    <!-- <div id="hardModeDisplay">
+        <p>Hard mode is currently turned off. To turn it on or off again type "Toggle hard mode" into the input box or
+            toggle the switch below. Hard mode will hide the periodic table shown above.</p>
+
+        <div class="toggleSwitch">
+            <div class="toggleSwitchBody">
+                <div class="toggle"></div>
+            </div>
+            <label for="">Hard Mode</label>
+            <input type="checkbox" name="hello" id="">
+        </div>
+    </div> -->
+
     <div id="footer">
         <button id="reload" onclick="window.location.reload()">Start Over</button>
         <h1>Scripting and Data collection by Owen Rabitaille, Styling and Interface by Colin Scutieri</h1>
-        <h4>V. 1.0.1</h4>
+        <h4>Version 2.0</h4>
     </div>
 
     <script src="script.js"></script>
 
-    <script>
-
-    </script>
 </body>
 
 </html>
