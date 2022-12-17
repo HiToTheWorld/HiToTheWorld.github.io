@@ -126,6 +126,10 @@ h1 {
     margin-bottom: 0;
 }
 
+#issue a {
+    color: #353535;
+}
+
 /* TOGGLE SWITCH */
 
 /* .toggleSwitch {
