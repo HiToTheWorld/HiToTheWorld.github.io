@@ -337,7 +337,7 @@ function run() {
                 }
 
                 if (input.includes("atomic mass") == true) {
-                    if (input.includes("greater than") == true) {
+                    if (input.includes("greater than") == true || input.includes(">")) {
                         let num = parseInt(input.split("greater than")[1])
                         if (guessedKeywords.includes("mass-" + num) == false) {
                             if (parseInt(element.atomicMass) > num) {
@@ -350,7 +350,7 @@ function run() {
                             guessedKeywords.push("mass-" + num)
                             matched = true
                         }
-                    } else if (input.includes("less than") == true) {
+                    } else if (input.includes("less than") == true || input.includes("<")) {
                         let num = parseInt(input.split("less than")[1])
                         if (guessedKeywords.includes("mass-" + num) == false) {
                             if (parseInt(element.atomicMass) < num) {
