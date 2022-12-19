@@ -189,13 +189,17 @@ function oppElements(cl) {
 
 function findAndGreyNumberElements(attribute, num, ruling) {
     for (let i = 0; i < elements.length; i++) {
-        if (ruling == 0 && parseInt(elements[i][attribute]) > num) {
+    		let attNum = parseInt(elements[i][attribute])
+    		if (isNaN(attNum)) {
+        		attNum = parseInt(elements[i][attribute].substring(1, elements[i][attribute].length - 1))
+        }
+        if (ruling == 0 && attNum > num) {
             greyElement(elements[i].name)
         }
-        if (ruling == 1 && parseInt(elements[i][attribute]) < num) {
+        if (ruling == 1 && attNum < num) {
             greyElement(elements[i].name)
         }
-        if (ruling == 4 && parseInt(elements[i][attribute]) == num) {
+        if (ruling == 4 && attNum == num) {
             greyElement(elements[i].name)
         }
     }
