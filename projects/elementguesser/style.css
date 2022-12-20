@@ -214,6 +214,7 @@ h1 {
     min-width: 80vw;
     max-width: 90vw;
     margin: auto;
+    padding-bottom: 25px;
 }
 
 #periodicTableTable tr {
