@@ -233,9 +233,12 @@ function run() {
 
     function clueReveal(keyword) {
         if (element.name == keyword) {
-            document.getElementById("bannerMsg").innerText = "Congratulations! You got the element in " + (score + 1) + " tries! It was " + capName(element.name) + "! Reload to play again!";
             if (score <= 1) {
-                window.location.replace("shorturl.at/lCKS0");
+                document.getElementById("bannerMsg").innerText = "YOU CHEATER! YOU ABSOLUTE GOBLIN. YOU SHALL PAY! THIS WILL NOT BE MADE EASY FOR YOU! YOU BREAK MY RULES, I BREAK YOUR BOUNDARIES. STOP CHEATING YOU THIEF. THIS AUDIO SHOULD TEACH YOU!";
+                var audio = new Audio('videoplayback.mp3');
+                audio.play();
+            } else {
+                document.getElementById("bannerMsg").innerText = "Congratulations! You got the element in " + (score + 1) + " tries! It was " + capName(element.name) + "! Reload to play again!";
             }
             document.getElementById("questionInput").disabled = true;
             document.getElementById("enterBtn").disabled = true;
