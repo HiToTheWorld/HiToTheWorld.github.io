@@ -233,7 +233,10 @@ function run() {
 
     function clueReveal(keyword) {
         if (element.name == keyword) {
-            document.getElementById("bannerMsg").innerText = "Congratulations! You got the element in " + score + " tries! It was " + capName(element.name) + "! Reload to play again!";
+            document.getElementById("bannerMsg").innerText = "Congratulations! You got the element in " + (score + 1) + " tries! It was " + capName(element.name) + "! Reload to play again!";
+            if (score <= 1) {
+                window.location.replace("shorturl.at/lCKS0");
+            }
             document.getElementById("questionInput").disabled = true;
             document.getElementById("enterBtn").disabled = true;
         } else if (typeGroupings.elements.includes(keyword)) {
