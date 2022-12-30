@@ -2,7 +2,7 @@
 
 <html>
 
-<head>
+  <head>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,36 +10,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
     <title>Element Guesser</title>
-</head>
+  </head>
 
-<body>
+  <body>
 
     <div id="welcomeBox">
-        <h1>Welcome to Element Guesser!</h1>
-        <p>Enter a yes or no question about the secret element (Ex. "is it a solid") into the input box below! We have
-            also hidden 5 easter eggs! Can you find them
-            all?</p>
+      <h1>Welcome to Element Guesser!</h1>
+      <p>Enter a yes or no question about the secret element (Ex. "is it a solid") into the input box below! We have
+        also hidden 5 easter eggs! Can you find them
+        all?</p>
     </div>
 
     <hr>
 
     <div id="inputContainer">
-        <input id="questionInput" />
-        <button id="enterBtn">Enter</button>
+      <input id="questionInput" />
+      <button id="enterBtn">Enter</button>
     </div>
 
     <p id="bannerMsg"></p>
 
     <div id="hintsContainer">
-        <h3>Hints - <span id="hintsCount">0</span></h3>
-        <ul id="hintsList"></ul>
+      <h3>Hints - <span id="hintsCount">0</span></h3>
+      <ul id="hintsList"></ul>
     </div>
 
     <div id="periodicTable">
-        <h3 style="padding-bottom: 10px;">Periodic table</h3>
-        <table id="periodicTableTable">
+      <h3 style="padding-bottom: 10px;">Periodic table</h3>
+      <table id="periodicTableTable">
 
-        </table>
+      </table>
+
+      <hr>
+      <h3>Key</h3>
+      <table id="periodicTableKey">
+        <tr>
+          <th class="keyBoxNone">
+            <svg width="5" height="5" class="elementMarker">
+              <circle cx="2.5" cy="2.5" r="2.5" class="solidMarker" /></svg>
+            <p>Solid</p>
+          </th>
+          <th class="keyBoxNone">
+            <svg width="5" height="5" class="elementMarker">
+              <circle cx="2.5" cy="2.5" r="2.5" class="liquidMarker" /></svg>
+            <p>Liquid</p>
+          </th>
+          <th class="keyBoxNone">
+            <svg width="5" height="5" class="elementMarker">
+              <circle cx="2.5" cy="2.5" r="2.5" class="gasMarker" /></svg>
+            <p>Gas</p>
+          </th>
+          <th class="keyBoxNone">
+            <svg width="5" height="5" class="elementMarker">
+              <circle cx="2.5" cy="2.5" r="2.5" class="syntheticMarker" /></svg>
+            <p>Synthetic</p>
+          </th>
+          <th class="keyBoxNone">
+            <svg width="5" height="5" class="elementMarker">
+              <circle cx="2.5" cy="2.5" r="2.5" class="radioactiveMarker" /></svg>
+            <p>Radioactive</p>
+          </th>
+        </tr>
+        <tr>
+          <th class="alkali">
+            <p>Alkali</p>
+          </th>
+                    <th class="alkaline">
+            <p>Alkaline</p>
+          </th>
+                    <th class="transition-metal">
+            <p>Transition Metal</p>
+          </th>
+                    <th class="inner-transition-metal">
+            <p>Inner Transition Metal</p>
+          </th>
+                    <th class="metalloid">
+            <p>Metalloid</p>
+          </th>
+                    <th class="nonmetal">
+            <p>Nonmetal</p>
+          </th>
+                    <th class="halogen">
+            <p>Halogen</p>
+          </th>
+                    <th class="noble-gas">
+            <p>Noble Gas</p>
+          </th>
+                    <th class="lanthanide">
+            <p>Lanthanide</p>
+          </th>
+                    <th class="actinide">
+            <p>Actinide</p>
+          </th>
+        </tr>
+      </table>
     </div>
 
     <!-- <hr> -->
@@ -58,15 +122,15 @@
     </div> -->
 
     <div id="footer">
-        <button id="reload" onclick="window.location.reload()">Start Over</button>
-        <br>
-        <p id="issue"><a href="https://github.com/rabitailleow/rabitailleow.github.io/issues">Report issue</a></p>
-        <h1>Scripting and Data collection by Owen Rabitaille, Styling and Interface by Colin Scutieri</h1>
-        <h4>Version 2.3</h4>
+      <button id="reload" onclick="window.location.reload()">Start Over</button>
+      <br>
+      <p id="issue"><a href="https://github.com/rabitailleow/rabitailleow.github.io/issues">Report issue</a></p>
+      <h1>Scripting and Data collection by Owen Rabitaille, Styling and Interface by Colin Scutieri</h1>
+      <h4>Version 2.3</h4>
     </div>
 
     <script src="script.js"></script>
 
-</body>
+  </body>
 
 </html>

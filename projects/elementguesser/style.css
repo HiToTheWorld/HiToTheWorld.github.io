@@ -5,7 +5,7 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 #welcomeBox {
@@ -187,10 +187,34 @@ h1 {
     font-family: 'Oswald', sans-serif;
 }
 
+/* #periodicTableKey tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+#periodicTableKey tr th {
+/*   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px; */
+  width: 75px;
+  height: 75px;
+  border-radius: 5px;
+  font-family: 'Oswald', sans-serif;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+.keyBoxNone {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 #periodicTableTable {
     min-width: 80vw;
     max-width: 90vw;
     margin: auto;
+    padding-bottom: 25px;
 }
 
 #periodicTableTable tr {
