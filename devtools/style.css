@@ -92,4 +92,8 @@ body {
         padding: 0;
         margin: 0;
     }
+
+    #lockimg {
+        top: 5vh;
+    }
 }

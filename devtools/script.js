@@ -62,7 +62,7 @@ function run() {
                         b.value = "";
                         c.value = "";
                         if (runningLocally()) {
-                            window.location.replace("open/index.html?t=" + btoa(atob(password) + btoa(userName)))
+                            window.location.replace("open/index.html?t=" + btoa(atob(password) + "+id" + btoa(userName)))
                         } else {
                             window.location.replace("open/?t=" + btoa(atob(password) + "+id" + btoa(userName)))
                         }
