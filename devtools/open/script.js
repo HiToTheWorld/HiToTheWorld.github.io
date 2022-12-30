@@ -1,6 +1,6 @@
 let sp = (new URL(document.location)).searchParams.get("t");
 
-if (performance.getEntriesByType('navigation')[0].type == "reload") {
+if (performance.getEntriesByType('navigation')[0].type == "reload" || (document.referrer != "https://rabitailleow.github.io/devtools/" && !runningLocally())) {
     if (!runningLocally()) {
         window.history.replaceState({}, "Devtools", "../")
     }
