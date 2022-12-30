@@ -1,13 +1,4 @@
-let serverhost = "https://rabitailleow.github.io/"
-
-function runningLoacally() {
-    if (document.location.href.split("/")[0] == "file:") {
-        return true
-    }
-    return false
-}
-
-if (runningLoacally() == true) {
+if (runningLocally()) {
     serverhost = "file:///D:/Programming/rabitailleow.github.io/"
 }
 

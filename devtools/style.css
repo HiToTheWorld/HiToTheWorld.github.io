@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("../main/fonts/SFPro/OpenType/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../main/fonts/SFPro/OpenType/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+@keyframes blurisland {
+    0% {
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+    }
+
+    50% {
+        filter: blur(15px);
+        -webkit-filter: blur(15px);
+    }
+
+    100% {
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+    }
+}
+
+body {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#island {
+    margin: auto;
+    color: rgb(73, 73, 73);
+    font-family: "SF Pro Display", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    /* background-color: white; */
+    width: 640px;
+    height: 610px;
+    border: 1px solid lightgrey;
+    border-radius: 30px;
+    box-shadow: 0 0 50px lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputBox {
+    width: 270px;
+    height: 45px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 17px;
+    padding-left: 15px;
+    padding-right: 45px;
+    outline-color: #0070c9;
+    color: rgb(73, 73, 73);
+    font-family: "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+}
+
+#userid,
+#userpass {
+    display: none;
+}
+
+#lockimg {
+    position: absolute;
+    top: 20vh;
+}
+
+@keyframes wrongPass {
+    100% {
+        outline-color: #f54242;
+    }
+}
+
+@media (max-width: 700px),
+(max-height: 700px) {
+    #island {
+        width: 100vw;
+        height: 100vh;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+}

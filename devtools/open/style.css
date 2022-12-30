@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("../../main/fonts/SFPro/OpenType/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../../main/fonts/SFPro/OpenType/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+html,
+body {
+    background-color: whitesmoke;
+}
+
+#centerDiv {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 85vw;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid lightgrey;
+}
+
+#centerDiv div {
+    margin: auto;
+}
+
+#-projectManager {
+    background-color: whitesmoke;
+    padding: 5px 0;
+}
+
+#-projectManager-left {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+#-projectManager-left input {
+    width: 200px;
+    height: 30px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 40px;
+    outline-color: #0070c9;
+    color: rgb(73, 73, 73);
+    font-family: "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    margin: 5px;
+}
+
+#-projectManager-left fieldset div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#-projectManager-right {
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#-projectManager-right textarea {
+    width: 80%;
+    height: 500px;
+    margin-top: 10px;
+    text-align: left;
+}

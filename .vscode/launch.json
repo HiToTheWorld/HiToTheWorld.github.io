@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///D:/Programming/rabitailleow.github.io/index.html",
+            "url": "file:///D:/Programming/rabitailleow.github.io/devtools/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
