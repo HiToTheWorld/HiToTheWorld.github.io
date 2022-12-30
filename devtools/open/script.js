@@ -1,25 +1,46 @@
 let sp = (new URL(document.location)).searchParams.get("t");
 
+if (performance.getEntriesByType('navigation')[0].type == "reload") {
+    if (!runningLocally()) {
+        window.history.replaceState({}, "Devtools", "../")
+    }
+    window.location.replace("../")
+}
+
 if (sp) {
     try {
         sp = atob(sp)
         atob(sp.slice(11))
     } catch {
-        window.location.replace("../")
+        if (!runningLocally()) {
+            window.history.replaceState({}, "Devtools", "../")
+        }
+        window.location.replace("../");
     }
 
-    if (((sp.slice(0, 11) == "D3vt00!s+id" && developerUsers[atob(sp.slice(11))]) || runningLocally()) && window.innerWidth >= 700) {
-        window.history.replaceState({}, "Devtools", window.location.href);
+    if ((sp.slice(0, 11) == "D3vt00!s+id" && developerUsers[atob(sp.slice(11))]) && window.innerWidth >= 700) {
+        if (!runningLocally()) {
+            window.history.replaceState({}, "Devtools", "../");
+        }
     } else {
-        window.location.replace("../")
+        if (!runningLocally()) {
+            window.history.replaceState({}, "Devtools", "../");
+        }
+        window.location.replace("../");
     }
 } else {
-    window.location.replace("../")
+    if (!runningLocally()) {
+        window.history.replaceState({}, "Devtools", "../");
+    }
+    window.location.replace("../");
 }
 
 window.addEventListener("resize", function () {
     if (window.innerWidth < 700) {
-        window.location.replace("../")
+        if (!runningLocally()) {
+            window.history.replaceState({}, "Devtools", "../");
+        }
+        window.location.replace("../");
     }
 })
 

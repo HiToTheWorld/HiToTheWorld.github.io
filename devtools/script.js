@@ -104,7 +104,7 @@ function run() {
 
     window.onbeforeunload = function () {
         try {
-            window.history.replaceState({}, "Devtools Gate", attempts);
+            window.history.replaceState({}, "Devtools Gate", window.location.href + "?a=" + attempts);
         } catch {
             console.error("History Error")
         }
