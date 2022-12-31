@@ -44,13 +44,6 @@ window.addEventListener("resize", function () {
     }
 })
 
-/* <button id="mdreaderbutton" onclick="showProjectModal(this.id)">
-<img src='../main/images/markdown.png' />
-<div>
-  <p><strong>MD Reader</strong></p>
-  <p>Read a markdown file!</p>
-</div>
-</button> */
 
 function getInputFromId(id) {
     return document.getElementById("-projectManager-" + id).value
@@ -128,5 +121,25 @@ function updProjectManager() {
 `
     document.getElementById("projectManagerOutput").value = string
 }
+
+let copycount = 0
+const onelineIn = document.getElementById("onelineinput")
+
+function oneline() {
+    let text = document.getElementById("onelineinput").value
+    text = text.replaceAll("\n", "")
+    text = text.replaceAll("  ", "")
+
+    navigator.clipboard.writeText(text);
+
+    copycount++
+    document.getElementById("onelinecopyalert").innerText = "Copied! (" + copycount + ")"
+}
+
+onelineIn.addEventListener("keydown", function (e) {
+    if (e.key == "Enter") {
+        oneline()
+    }
+})
 
 window.setInterval(updProjectManager, 100)

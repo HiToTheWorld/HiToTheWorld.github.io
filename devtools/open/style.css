@@ -18,8 +18,7 @@ body {
     background-color: white;
     border-radius: 10px;
     width: 85vw;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto;
     border: 1px solid lightgrey;
 }
 

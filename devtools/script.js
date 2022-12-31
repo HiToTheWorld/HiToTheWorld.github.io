@@ -20,15 +20,15 @@ function run() {
 
     function tob() {
         a.blur()
-        island.style.animation = "blurisland 3s"
-        lock.style.animation = "blurisland 3s"
+        island.style.animation = "blurisland 1s"
+        lock.style.animation = "blurisland 1s"
         window.setTimeout(function () {
             a.style.display = "none"
             c.style.display = "none"
             b.style.display = "initial"
             b.focus()
             text.innerText = "This application is locked. Sign in to continue."
-        }, 1500)
+        }, 500)
         window.setTimeout(function () {
             island.style.animation = null
             lock.style.animation = null
@@ -42,14 +42,14 @@ function run() {
 
     function toc() {
         b.blur()
-        island.style.animation = "blurisland 3s"
-        lock.style.animation = "blurisland 3s"
+        island.style.animation = "blurisland 1s"
+        lock.style.animation = "blurisland 1s"
         window.setTimeout(function () {
             b.style.display = "none"
             c.style.display = "initial"
             c.focus()
             text.innerText = "Welcome, " + b.value
-        }, 1500)
+        }, 500)
         window.setTimeout(function () {
             island.style.animation = null
             lock.style.animation = null
