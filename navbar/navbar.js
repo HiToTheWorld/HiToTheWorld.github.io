@@ -10,7 +10,7 @@ const closemobilenavbar = document.createElement("button")
 const homebutton = document.createElement("a")
 const myprojectsbutton = document.createElement("a")
 const thissitebutton = document.createElement("a")
-const robloxbutton = document.createElement("a")
+const devtoolsbutton = document.createElement("a")
 const contactbutton = document.createElement("a")
 
 const morebutton = document.createElement("a")
@@ -50,7 +50,7 @@ ctx.stroke()
 homebutton.href = serverhost
 myprojectsbutton.href = serverhost + "projects/"
 thissitebutton.href = serverhost + "thissite/"
-robloxbutton.href = serverhost + "projects/roblox"
+devtoolsbutton.href = serverhost + "devtools"
 contactbutton.href = serverhost + "contact/"
 
 navbartitle.innerHTML = "rabitailleow"
@@ -58,7 +58,7 @@ closemobilenavbar.innerHTML = "X"
 homebutton.innerHTML = "Home"
 myprojectsbutton.innerHTML = "My Projects"
 thissitebutton.innerHTML = "This Site"
-robloxbutton.innerHTML = "Roblox"
+devtoolsbutton.innerHTML = "Developer Tools"
 contactbutton.innerHTML = "Contact Me"
 morebutton.innerHTML = "More"
 
@@ -67,7 +67,7 @@ const atags = []
 atags.push(homebutton)
 atags.push(myprojectsbutton)
 atags.push(thissitebutton)
-atags.push(robloxbutton)
+atags.push(devtoolsbutton)
 atags.push(contactbutton)
 
 document.body.prepend(navbarcover)
@@ -78,7 +78,7 @@ navbarbuttons.appendChild(closemobilenavbar)
 navbarbuttons.appendChild(homebutton)
 navbarbuttons.appendChild(myprojectsbutton)
 navbarbuttons.appendChild(thissitebutton)
-navbarbuttons.appendChild(robloxbutton)
+navbarbuttons.appendChild(devtoolsbutton)
 navbarbuttons.appendChild(contactbutton)
 navbaropen.appendChild(navbaropenimg)
 navbar.appendChild(navbaropen)

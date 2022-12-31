@@ -1,7 +1,3 @@
-if (runningLocally()) {
-    serverhost = "file:///D:/Programming/rabitailleow.github.io/"
-}
-
 let maincss = document.createElement("link")
 maincss.rel = "old stylesheet"
 maincss.type = "text/css"

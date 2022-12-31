@@ -1,5 +1,16 @@
 let sp = (new URL(document.location)).searchParams.get("t");
 
+function testWidth() {
+    if (window.innerWidth < 700) {
+        if (!runningLocally()) {
+            window.history.replaceState({}, "Devtools", "../");
+        }
+        window.location.replace("../");
+    }
+}
+
+testWidth()
+
 if (performance.getEntriesByType('navigation')[0].type == "reload" || (document.referrer != "https://rabitailleow.github.io/devtools/" && !runningLocally())) {
     if (!runningLocally()) {
         window.history.replaceState({}, "Devtools", "../")
@@ -35,14 +46,7 @@ if (sp) {
     window.location.replace("../");
 }
 
-window.addEventListener("resize", function () {
-    if (window.innerWidth < 700) {
-        if (!runningLocally()) {
-            window.history.replaceState({}, "Devtools", "../");
-        }
-        window.location.replace("../");
-    }
-})
+window.addEventListener("resize", testWidth)
 
 
 function getInputFromId(id) {
