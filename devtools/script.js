@@ -19,7 +19,6 @@ function run() {
     const password = btoa("D3vt00!s")
 
     function tob() {
-        a.blur()
         island.style.animation = "blurisland 1s"
         lock.style.animation = "blurisland 1s"
         window.setTimeout(function () {
@@ -41,7 +40,6 @@ function run() {
     }
 
     function toc() {
-        b.blur()
         island.style.animation = "blurisland 1s"
         lock.style.animation = "blurisland 1s"
         window.setTimeout(function () {
