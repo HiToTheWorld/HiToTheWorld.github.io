@@ -8,6 +8,8 @@
 //   );
 // }
 
+// document.querySelector("#repo-content-turbo-frame").getElementsByClassName("d-none d-sm-inline")[1].querySelector("strong").innerText
+
 function showProjectModal(modalname) {
   modalname = modalname.split('button')[0] + 'modal'
   let modal = document.getElementById(modalname)
