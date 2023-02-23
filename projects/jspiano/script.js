@@ -23,8 +23,8 @@ const notes =  {
   "'": "D", //D
   "]": "D# or Eb", //D# Eb
   "Enter": "E",
-  "=": "High",
-  "-": "Taser",
+  "Alt": "High",
+  "Control": "Taser",
 }
 
 const keymap = {
