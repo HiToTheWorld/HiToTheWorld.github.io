@@ -3,7 +3,7 @@ const audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 let octave = 1
 
 const notes =  {
-	"a": "A", //A
+  "a": "A", //A
   "w": "A# or Bb", //A# Bb
   "s": "B", //B
   "d": "C", //C
@@ -23,8 +23,8 @@ const notes =  {
   "'": "D", //D
   "]": "D# or Eb", //D# Eb
   "Enter": "E",
-  ",": "High",
-  ".": "Taser",
+  "=": "High",
+  "-": "Taser",
 }
 
 const keymap = {
@@ -48,8 +48,8 @@ const keymap = {
   "'": 587.33, //D
   "]": 622.25, //D# Eb
   "Enter": 659.25,
-  ",": 17000,
-  ".": 25,
+  "=": 17000,
+  "-": 25,
 }
 
 let osc = {}
