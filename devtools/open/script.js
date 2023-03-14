@@ -76,7 +76,7 @@ function launchPath(p) {
 
 function updProjectManager() {
     let string = `//Root Button
-<button id="` + getInputFromId("projectId") + `" onclick="showProjectModal(this.id)">
+<button id="` + getInputFromId("projectId") + `button" onclick="showProjectModal(this.id)">
 <img src='main/images/` + getInputFromId("icon") + `' />
 <div>
     <p><strong>` + getInputFromId("title") + `</strong></p>
@@ -102,7 +102,7 @@ function updProjectManager() {
 
 
 //Project Button
-<button id="` + getInputFromId("projectId") + `" onclick="showProjectModal(this.id)">
+<button id="` + getInputFromId("projectId") + `button" onclick="showProjectModal(this.id)">
 <img src='../main/images/` + getInputFromId("icon") + `' />
 <div>
     <p><strong>` + getInputFromId("title") + `</strong></p>
