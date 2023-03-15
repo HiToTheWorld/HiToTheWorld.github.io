@@ -49,10 +49,13 @@ function setup() {
             body.append(elem)
         }
 
+        e.dataset.rel = 0
         e.classList.add("questionContainer")
         titlebox.classList.add("titlebox")
         titlebox.classList.add("wgb")
-        titlebox.append(document.createTextNode(keys[i]))
+        const span = document.createElement("span")
+        span.innerText = keys[i]
+        titlebox.append(span)
         body.classList.add("questionBody")
 
         const c = blob[1];
@@ -89,11 +92,7 @@ function testForMatch(a, b) {
         }
     }
 
-    if (matches / list.length >= 0.75) {
-        return true;
-    }
-
-    return false;
+    return matches / list.length;
 }
 
 function searchTags(name, sp) {
@@ -106,14 +105,34 @@ function searchTags(name, sp) {
     return false;
 }
 
+// function orderByRelevance() {
+//     const elems = document.getElementById("results").childNodes
+//     for (let i = 0; i < elems.length; i++) {
+//         for (let j = 0; j < elems.length; j++) {
+//             if (elems[i].className == "questionContainer" && elems[j].className == "questionContainer") {
+//                 if (elems[i].dataset.rel >= elems[j]) {
+//                     elems[i].remove()
+//                     document.getElementById("results").insertBefore(elems[i], elems[j])
+//                 } else {
+//                     elems[i].remove()
+//                     elems[j].after(elems[i])
+//                 }
+//             }
+//         }
+//     }
+// }
+
 function search() {
     const text = inputBox.value;
     const elems = document.getElementById("results").childNodes
     let elemDisplayed = false
+
     for (let i = 0; i < elems.length; i++) {
         const e = elems[i]
         if (e.className == "questionContainer") {
-            if (testForMatch(text.toLowerCase(), e.querySelector("h3").innerText.toLowerCase()) || searchTags(e.querySelector("h3").innerText, text)) {
+            e.dataset.rel = testForMatch(text.toLowerCase(), e.querySelector("h3 span").innerText.toLowerCase())
+            console.log(e.dataset.rel)
+            if (e.dataset.rel >= 0.8 || searchTags(e.querySelector("h3 span").innerText, text)) {
                 e.style.display = "block"
                 elemDisplayed = true
             } else {
@@ -121,6 +140,9 @@ function search() {
             }
         }
     }
+
+    // orderByRelevance()
+
     if (elemDisplayed == true) {
         document.getElementById("noResults").style.display = "none"
     } else {
