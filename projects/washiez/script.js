@@ -14,16 +14,20 @@ function setup() {
         }
 
         const c = blob[1];
-        const telem = document.createElement("div");
-        for (let i = 0; i < c.length; i++) {
-            if (c[i].charAt(0) == "#") {
-                const e = document.createElement("code")
-                e.classList.add("tag")
-                e.innerText = c[i]
-                telem.append(e)
+        if (c.length > 0) {
+            const telem = document.createElement("div");
+            telem.classList.add("tagContainer")
+            for (let i = 0; i < c.length; i++) {
+                if (c[i].charAt(0) == "#") {
+                    const e = document.createElement("code")
+                    e.classList.add("tag")
+                    e.innerText = c[i]
+                    telem.append(e)
+                }
             }
+
+            body.append(telem)
         }
-        body.append(telem)
         return body;
     }
 
@@ -100,11 +104,11 @@ const inputBox = document.querySelector("#fields input")
 inputBox.addEventListener("keydown", search)
 inputBox.addEventListener("keyup", search)
 
-document.getElementById("newQuestionSubmit").addEventListener("click", function() {
+document.getElementById("newQuestionSubmit").addEventListener("click", function () {
     const text = document.querySelector("#remarks input").value
     if (text.length > 5) {
         var url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB7uYo2Holp2pAtfwCd5KZkU4x86HPP4FoHQry2H8-nAKnpQ/formResponse?entry.422547697=" + encodeURIComponent(text);
-    
+
         var script = document.createElement('script');
         script.src = url + '&callback=handleResponse';
         document.getElementsByTagName('head')[0].appendChild(script);
