@@ -141,5 +141,6 @@ document.getElementById("newQuestionSubmit").addEventListener("click", function 
         script.src = url + '&callback=handleResponse';
         document.getElementsByTagName('head')[0].appendChild(script);
         document.querySelector("#remarks input").value = "";
+        document.getElementById("remarks").remove()
     }
 })
