@@ -29,10 +29,11 @@ p {
 
 .tag {
     color: var(--wgrey);
+    font-weight: 400;
     padding: 5px;
-    background-color: #dedede;
+    background-color: #d4d4d4;
     border-radius: 5px;
-    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .signed {
@@ -113,7 +114,9 @@ p {
 
 .tagContainer {
     height: 25px;
-    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    float: right;
 }
 
 .questionContainer {

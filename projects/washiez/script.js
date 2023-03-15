@@ -14,7 +14,8 @@ function setup() {
         }
 
         const c = blob[1];
-        if (c.length > 0) {
+        if (c.length > 0 && window.innerWidth > 600) {
+            console.log(window.innerWidth)
             const telem = document.createElement("div");
             telem.classList.add("tagContainer")
             for (let i = 0; i < c.length; i++) {
@@ -32,16 +33,43 @@ function setup() {
     }
 
     const keys = Object.keys(data)
+
     for (let i = 0; i < keys.length; i++) {
         const e = document.createElement("div")
         const titlebox = document.createElement("h3")
-        const body = toDiv(data[keys[i]])
+        const blob = data[keys[i]]
+        const split = blob[0].split("\\");
+        const body = document.createElement("div")
+
+        for (let i = 0; i < split.length; i++) {
+            const elem = document.createElement("p");
+            elem.innerText = split[i];
+            elem.classList.add("wg")
+            elem.classList.add("spacing")
+            body.append(elem)
+        }
 
         e.classList.add("questionContainer")
         titlebox.classList.add("titlebox")
         titlebox.classList.add("wgb")
-        titlebox.innerText = keys[i]
+        titlebox.append(document.createTextNode(keys[i]))
         body.classList.add("questionBody")
+
+        const c = blob[1];
+        if (c.length > 0 && window.innerWidth > 600) {
+            const telem = document.createElement("div");
+            telem.classList.add("tagContainer")
+            for (let i = 0; i < c.length; i++) {
+                if (c[i].charAt(0) == "#") {
+                    const e = document.createElement("code")
+                    e.classList.add("tag")
+                    e.innerText = c[i]
+                    telem.append(e)
+                }
+            }
+
+            titlebox.prepend(telem)
+        }
 
         e.append(titlebox)
         e.append(body)
