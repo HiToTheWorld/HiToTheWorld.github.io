@@ -3,6 +3,7 @@ const data = {
     "How do you get skill points?": ["You can get skill points by working at the booths!", []],
     "Where are the training guides?": ["You can find the training guides in the #supervision-information channel in the Communications Server!", ["#training"]],
     "How do I become staff?": ["First, join the Washiez group!\\Head to the application center to take the Employee Test!\\Then, attend trainings to work your way up the ranks!", ["#staff", "#trainee"]],
+    "How do I call an ST or an HR?": ["You can call an ST by saying '-Calls ST-' in chat. An alternative", []]
 }
 
 export default data;
