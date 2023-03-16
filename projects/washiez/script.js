@@ -88,7 +88,7 @@ function searchTags(name, sp) {
 }
 
 function orderByRelevance() {
-    const elems = document.getElementById("results").childNodes
+    const elems = document.getElementById("results").children
 
     for (let i = 0; i < elems.length; i++) {
         for (let j = 0; j < elems.length; j++) {
