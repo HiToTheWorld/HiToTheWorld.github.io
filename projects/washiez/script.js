@@ -111,17 +111,22 @@ function search() {
         const e = elems[i]
         if (e.className == "questionContainer") {
             e.dataset.rel = testForMatch(text.toLowerCase(), e.querySelector("h3 span").innerText.toLowerCase())
-            console.log(e.dataset.rel)
-            if (e.dataset.rel >= 0.8 || searchTags(e.querySelector("h3 span").innerText, text)) {
+            if (e.dataset.rel >= 0.8) {
                 e.style.display = "block"
                 elemDisplayed = true
             } else {
-                e.style.display = "none"
+                if (searchTags(e.querySelector("h3 span").innerText, text)) {
+                    e.style.display = "block"
+                    elemDisplayed = true
+                    e.dataset.rel = 0
+                } else {
+                    e.style.display = "none"
+                }
             }
         }
     }
 
-    // orderByRelevance()
+    orderByRelevance()
 
     if (elemDisplayed == true) {
         document.getElementById("noResults").style.display = "none"
