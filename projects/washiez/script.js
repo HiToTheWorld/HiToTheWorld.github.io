@@ -15,7 +15,7 @@ function setup() {
         for (let j = 0; j < split.length; j++) {
             const elem = document.createElement("p");
             const slice = split[j].split("**")
-            
+
             for (let k = 0; k < slice.length; k++) {
                 if (k % 2 != 0) {
                     const el = document.createElement("strong")
@@ -25,7 +25,7 @@ function setup() {
                     elem.append(document.createTextNode(slice[k]))
                 }
             }
-            
+
             elem.classList.add("wg")
             elem.classList.add("spacing")
             body.append(elem)
@@ -69,7 +69,7 @@ function testForMatch(a, b) {
     let matches = 0;
 
     for (let i = 0; i < list.length; i++) {
-        if (b.match(list[i])) {
+        if (encodeURIComponent(b).match(encodeURIComponent(list[i]))) {
             matches++;
         }
     }
@@ -79,8 +79,8 @@ function testForMatch(a, b) {
 
 function searchTags(name, sp) {
     const l = data[name][1]
-    for (let i = 0; i < l.length; i++) {
-        if (l[i].match(sp)) {
+    for (let i of l) {
+        if (encodeURIComponent(i).match(encodeURIComponent(sp))) {
             return true;
         }
     }
@@ -88,19 +88,26 @@ function searchTags(name, sp) {
 }
 
 function orderByRelevance() {
-    const elems = document.getElementById("results").children
+    const re = document.getElementById("results")
+    const elems = re.children
+    const list = []
 
-    for (let i = 0; i < elems.length; i++) {
-        for (let j = 0; j < elems.length; j++) {
-            if (elems[i].className == "questionContainer" && elems[j].className == "questionContainer") {
-                if (elems[i].dataset.rel >= elems[j].dataset.rel) {
-                    elems[i].remove()
-                    document.getElementById("results").insertBefore(elems[i], elems[j])
-                    log(null, "script.js", 99, 20, elems[i].parentElement)
-                    log(null, "script.js", 100, 20, elems[i].style.display)
+    for (let e = 0; e < elems.length; e++) {
+        const i = elems[e]
+        if (i.className == "questionContainer") {
+            let index = 0
+            for (let j = 0; j < list.length; j++) {
+                if (i.dataset.rel > list[j].dataset.rel) {
+                    index = j + 1
                 }
             }
+            i.remove()
+            list.splice(index, 0, i);
         }
+    }
+
+    for (let i = 0; i < list.length; i++) {
+        re.prepend(list[i])
     }
 }
 
@@ -109,8 +116,7 @@ function search() {
     const elems = document.getElementById("results").childNodes
     let elemDisplayed = false
 
-    for (let i = 0; i < elems.length; i++) {
-        const e = elems[i]
+    for (let e of elems) {
         if (e.className == "questionContainer") {
             e.dataset.rel = testForMatch(text.toLowerCase(), e.querySelector("h3 span").innerText.toLowerCase())
             if (e.dataset.rel >= 0.8) {
@@ -121,10 +127,8 @@ function search() {
                     e.style.display = "block"
                     elemDisplayed = true
                     e.dataset.rel = 0
-                    log(null, "script.js", 124, 20, "umm")
                 } else {
                     e.style.display = "none"
-                    log(null, "script.js", 126, 20, "gone.")
                 }
             }
         }
@@ -155,9 +159,3 @@ document.getElementById("newQuestionSubmit").addEventListener("click", function 
         document.getElementById("remarks").remove()
     }
 })
-
-function log(e, s, ln, cn, err) {
-    document.getElementById("eventLog").innerText += `${s} - ${ln}:${cn} ${err}\n`
-}
-
-window.addEventListener("error", log)
