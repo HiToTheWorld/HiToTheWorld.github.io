@@ -87,22 +87,20 @@ function searchTags(name, sp) {
     return false;
 }
 
-// function orderByRelevance() {
-//     const elems = document.getElementById("results").childNodes
-//     for (let i = 0; i < elems.length; i++) {
-//         for (let j = 0; j < elems.length; j++) {
-//             if (elems[i].className == "questionContainer" && elems[j].className == "questionContainer") {
-//                 if (elems[i].dataset.rel >= elems[j]) {
-//                     elems[i].remove()
-//                     document.getElementById("results").insertBefore(elems[i], elems[j])
-//                 } else {
-//                     elems[i].remove()
-//                     elems[j].after(elems[i])
-//                 }
-//             }
-//         }
-//     }
-// }
+function orderByRelevance() {
+    const elems = document.getElementById("results").childNodes
+
+    for (let i = 0; i < elems.length; i++) {
+        for (let j = 0; j < elems.length; j++) {
+            if (elems[i].className == "questionContainer" && elems[j].className == "questionContainer") {
+                if (elems[i].dataset.rel >= elems[j]) {
+                    elems[i].remove()
+                    document.getElementById("results").insertBefore(elems[i], elems[j])
+                }
+            }
+        }
+    }
+}
 
 function search() {
     const text = inputBox.value;
