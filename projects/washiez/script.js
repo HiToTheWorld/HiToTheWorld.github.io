@@ -14,7 +14,7 @@ function setup() {
 
         for (let j = 0; j < split.length; j++) {
             const elem = document.createElement("p");
-            const slice = split[i].split("**")
+            const slice = split[j].split("**")
             
             for (let k = 0; k < slice.length; k++) {
                 if (k % 2 != 0) {
