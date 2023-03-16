@@ -2,35 +2,6 @@ import data from "./resources/data.js"
 
 function setup() {
     const questionElem = document.getElementById("results")
-    function toDiv(blob) {
-        const split = blob[0].split("\\");
-        const body = document.createElement("div")
-        for (let i = 0; i < split.length; i++) {
-            const elem = document.createElement("p");
-            elem.innerText = split[i];
-            elem.classList.add("wg")
-            elem.classList.add("spacing")
-            body.append(elem)
-        }
-
-        const c = blob[1];
-        if (c.length > 0 && window.innerWidth > 600) {
-            console.log(window.innerWidth)
-            const telem = document.createElement("div");
-            telem.classList.add("tagContainer")
-            for (let i = 0; i < c.length; i++) {
-                if (c[i].charAt(0) == "#") {
-                    const e = document.createElement("code")
-                    e.classList.add("tag")
-                    e.innerText = c[i]
-                    telem.append(e)
-                }
-            }
-
-            body.append(telem)
-        }
-        return body;
-    }
 
     const keys = Object.keys(data)
 
@@ -41,9 +12,20 @@ function setup() {
         const split = blob[0].split("\\");
         const body = document.createElement("div")
 
-        for (let i = 0; i < split.length; i++) {
+        for (let j = 0; j < split.length; j++) {
             const elem = document.createElement("p");
-            elem.innerText = split[i];
+            const slice = split[i].split("**")
+            
+            for (let k = 0; k < slice.length; j++) {
+                if (k % 2 != 0) {
+                    const el = document.createElement("strong")
+                    el.innerText = slice[k]
+                    elem.append(el)
+                } else {
+                    elem.append(document.createTextNode(slice[k])
+                }
+            }
+            
             elem.classList.add("wg")
             elem.classList.add("spacing")
             body.append(elem)
