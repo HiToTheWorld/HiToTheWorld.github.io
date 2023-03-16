@@ -93,7 +93,7 @@ function orderByRelevance() {
     for (let i = 0; i < elems.length; i++) {
         for (let j = 0; j < elems.length; j++) {
             if (elems[i].className == "questionContainer" && elems[j].className == "questionContainer") {
-                if (elems[i].dataset.rel >= elems[j]) {
+                if (elems[i].dataset.rel >= elems[j].dataset.rel) {
                     elems[i].remove()
                     document.getElementById("results").insertBefore(elems[i], elems[j])
                 }
