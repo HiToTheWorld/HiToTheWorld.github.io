@@ -96,6 +96,8 @@ function orderByRelevance() {
                 if (elems[i].dataset.rel >= elems[j].dataset.rel) {
                     elems[i].remove()
                     document.getElementById("results").insertBefore(elems[i], elems[j])
+                    log(null, "script.js", 99, 20, elems[i].parentElement)
+                    log(null, "script.js", 100, 20, elems[i].style.display)
                 }
             }
         }
