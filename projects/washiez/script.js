@@ -121,8 +121,10 @@ function search() {
                     e.style.display = "block"
                     elemDisplayed = true
                     e.dataset.rel = 0
+                    log(null, "script.js", 124, 20, "umm")
                 } else {
                     e.style.display = "none"
+                    log(null, "script.js", 126, 20, "gone.")
                 }
             }
         }
@@ -153,3 +155,9 @@ document.getElementById("newQuestionSubmit").addEventListener("click", function 
         document.getElementById("remarks").remove()
     }
 })
+
+function log(e, s, ln, cn, err) {
+    document.getElementById("eventLog").innerText += `${s} - ${ln}:${cn} ${err}\n`
+}
+
+window.addEventListener("error", log)
