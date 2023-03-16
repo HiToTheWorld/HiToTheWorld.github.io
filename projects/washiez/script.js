@@ -22,7 +22,7 @@ function setup() {
                     el.innerText = slice[k]
                     elem.append(el)
                 } else {
-                    elem.append(document.createTextNode(slice[k])
+                    elem.append(document.createTextNode(slice[k]))
                 }
             }
             
