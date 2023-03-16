@@ -16,7 +16,7 @@ function setup() {
             const elem = document.createElement("p");
             const slice = split[i].split("**")
             
-            for (let k = 0; k < slice.length; j++) {
+            for (let k = 0; k < slice.length; k++) {
                 if (k % 2 != 0) {
                     const el = document.createElement("strong")
                     el.innerText = slice[k]
