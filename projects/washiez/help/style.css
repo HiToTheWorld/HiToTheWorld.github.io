@@ -1,0 +1,172 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f3f3f3;
+    font-family: 'Roboto Condensed', sans-serif;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --wblue: #1155cc;
+    --wred: #cc0000;
+    --wgrey: #666666;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px;
+    padding: 0;
+}
+
+.tag {
+    color: var(--wgrey);
+    font-weight: 400;
+    padding: 5px 8px;
+    background-color: #d4d4d4;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.signed {
+    font-family: 'Satisfy', sans-serif;
+    font-size: 25px;
+    color: var(--wgrey);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.wb {
+    color: var(--wblue);
+}
+
+.spacing {
+    padding-top: 8px;
+}
+
+.wgb {
+    color: var(--wgrey);
+    font-weight: 700;
+}
+
+.wg {
+    color: var(--wgrey);
+}
+
+.header {
+    font-size: 49px;
+    margin: 5px;
+    padding: 0;
+}
+
+.wr {
+    color: var(--wred);
+}
+
+#entrydiv {
+    text-align: center;
+}
+
+#fields {
+    text-align: center;
+}
+
+#fields input {
+    width: calc(100% - 100px);
+    height: 30px;
+    border: 2px solid var(--wgrey);
+    border-radius: 5px;
+    padding: 20px 10px;
+    outline-color: var(--wblue);
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--wgrey);
+    font-weight: 700;
+    background-color: #efefef;
+    max-width: 800px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#fields input::placeholder {
+    color: var(--wgrey);
+    font-weight: 400;
+}
+
+#resultsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#results {
+    width: calc(100% - 100px);
+    max-width: 800px;
+}
+
+.tagContainer {
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+}
+
+.questionContainer {
+    background-color: #eaeaea;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.titlebox {
+    background-color: #dedede;
+    padding: 15px;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.questionBody {
+    padding: 15px;
+}
+
+#remarks input {
+    width: calc(100% - 85px);
+    height: 30px;
+    border: 2px solid var(--wgrey);
+    border-radius: 8px;
+    padding: 20px 10px;
+    outline: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--wgrey);
+    font-weight: 700;
+    background-color: #efefef;
+    max-width: 800px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#remarks input::placeholder {
+    color: var(--wgrey);
+    font-weight: 400;
+}
+
+#remarks button {
+    width: 80px;
+    height: 44px;
+    border: none;
+    background-color: var(--wgrey);
+    color: #eaeaea;
+    border-radius: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+}

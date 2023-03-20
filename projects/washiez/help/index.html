@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Washiez | Help</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div style="width:100%; display:block; margin:0; padding:0; margin-bottom: 45px;">
+        <svg style="background-color:#eaeaea; width:100%; height:30px; display:block;"></svg>
+        <svg style="background-color:#efefef; width:100%; height:15px; display:block;"></svg>
+    </div>
+    <div id="entrydiv">
+        <h1 class="wb header">Wash<span class="wr">iez</span></h1>
+        <h3 class="wgb">Fast, Clean, Simple</h3>
+        <p class="wg"><span class="wgb">·</span> The Help Desk <span class="wgb">·</span></p>
+    </div>
+
+    <canvas class="redsepbar" width="300" height="25"></canvas>
+
+    <div id="fields">
+        <input type="text" placeholder="Question or search term">
+    </div>
+    <div id="resultsContainer">
+        <div id="results">
+            <p id="noResults" style="text-align:center; display:none;" class="wgb">Hmm... There are no results.</p>
+            <div id="remarks" style="background-color:#eaeaea; border-radius:8px; margin:30px 0;">
+                <h3 class="titlebox wgb">Have a different question? Ask here;</h3>
+                <div class="questionBody">
+                    <input type="text" maxlength="80" placeholder="Your Question">
+                    <button id="newQuestionSubmit">Submit</button>
+                </div>
+            </div>
+            <div id="addQuestion"></div>
+        </div>
+    </div>
+
+    <p id="out" class="wg"></p>
+
+    <canvas class="bluesepbar" width="300" height="25"></canvas>
+
+    <p style="text-align:center; margin-top:30px" class="wg">This page is a replica of Washiez guides and was not
+        created by</p>
+    <p class="signed">Washiez Leadership</p>
+
+    <div style="width:100%; display:block; margin:0; padding:0; margin-top:45px;">
+        <svg style="background-color:#efefef; width:100%; height:15px; display:block;"></svg>
+        <svg style="background-color:#eaeaea; width:100%; height:30px; display:block;"></svg>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
