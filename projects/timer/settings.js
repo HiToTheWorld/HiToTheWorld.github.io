@@ -100,6 +100,7 @@ const fonts = [
     "Saira Condensed",
     "Saira Extra Condensed",
     "Saira Semi Condensed",
+    "Satisfy",
     "Sedgwick Ave",
     "Sedgwick Ave Display",
     "Shadows Into Light",
