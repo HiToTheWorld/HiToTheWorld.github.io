@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Timer</title>
+</head>
+
+<body>
+    <div id="background">
+        <span id="timer">15:00</span>
+    </div>
+
+    <div id="settings">
+        <h3>Settings</h3>
+        <p>Anti-lag is on. You can not pause this timer.</p>
+        <input type="number" name="timeSelector" class="numSelect" id="tsMinuteTen" value="1" maxlength="1"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <input type="number" name="timeSelector" class="numSelect" id="tsMinuteOne" value="5" maxlength="1"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <span style="font-size: 40px;">:</span>
+        <input type="number" name="timeSelector" class="numSelect" id="tsSecondTen" value="0" maxlength="1"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <input type="number" name="timeSelector" class="numSelect" id="tsSecondOne" value="0" maxlength="1"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <label for="backgroundSelector">Background</label>
+        <br>
+        <select id="backgroundSelector"></select>
+        <br>
+        <label for="fontSelector">Font</label>
+        <br>
+        <select id="fontSelector"></select>
+        <br>
+        <label for="fontSizeSelector">Font Size</label>
+        <input type="range" id="fontSizeSelector" min="1" max="30" value="15">
+    </div>
+
+    <button id="start" class="material-symbols-outlined">play_arrow</button>
+    <button id="settingsbtn" class="material-symbols-outlined">settings</button>
+
+    <script src="settings.js"></script>
+    <script src="main.js"></script>
+    <script src="bg.js"></script>
+</body>
+
+
+</html>
