@@ -1,0 +1,41 @@
+.light {
+  fill: #212121;
+  padding: 0;
+  margin: 0;
+}
+
+.lightgroup {
+  background-color: #111111;
+  width: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-bottom: calc(2px / 2);
+}
+
+#lights {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  position: absolute;
+  top: 25px;
+}
+
+body {
+  background-color: #454545;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  min-height: 300px;
+}
+
+span {
+  color: #ffffff;
+  font-size: 50px;
+  font-family: "Roboto Mono", sans-serif;
+}
