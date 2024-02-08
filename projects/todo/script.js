@@ -49,6 +49,10 @@ function create(name, date, complete) {
   time.onchange = () => {
     if (data[key].completed) {
       time.style.backgroundColor = "#aaffaa"
+      
+      for (let i = 0; i < document.querySelectorAll('.item').length; i++) {
+        document.querySelectorAll('.item')[i].style.order = Math.abs(Math.floor((Date.parse(data[document.querySelectorAll('.item')[i].id].date)) / 8.64e7) - Math.floor((new Date()) / 8.64e7))
+      }
     } else {
       if (Math.floor((Date.parse(time.value)) / 8.64e7) <= Math.floor((new Date()) / 8.64e7) + 1) {
         time.style.backgroundColor = "#ffaf90"
@@ -63,10 +67,6 @@ function create(name, date, complete) {
 
     data[key].date = time.value
     document.cookie = 'data=' + JSON.stringify(data)
-
-    for (let i = 0; i < document.querySelectorAll('.item').length; i++) {
-      document.querySelectorAll('.item')[i].style.order = Math.floor((Date.parse(data[document.querySelectorAll('.item')[i].id].date)) / 8.64e7) - (Math.floor((new Date()) / 8.64e7) + 1)
-    }
   }
 
   text.value = name;
@@ -130,6 +130,10 @@ function create(name, date, complete) {
 
     if (data[key].completed) {
       time.style.backgroundColor = "#aaffaa"
+
+      for (let i = 0; i < document.querySelectorAll('.item').length; i++) {
+        document.querySelectorAll('.item')[i].style.order = Math.abs(Math.floor((Date.parse(data[document.querySelectorAll('.item')[i].id].date)) / 8.64e7) - Math.floor((new Date()) / 8.64e7))
+      }
     } else {
       if (Math.floor((Date.parse(time.value)) / 8.64e7) <= Math.floor((new Date()) / 8.64e7) + 1) {
         time.style.backgroundColor = "#ffaf90"
