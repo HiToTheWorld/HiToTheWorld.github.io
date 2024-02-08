@@ -11,7 +11,6 @@ html {
   position: fixed;
   top: 16px;
   width: 50%;
-  min-width: 350px;
   background-color: #ffffff88;
   box-shadow: 0 0 16px #00000055;
   padding: 16px;
@@ -29,7 +28,6 @@ html {
   position: fixed;
   bottom: 25px;
   width: 60%;
-  min-width: 400px;
   background-color: white;
   box-shadow: 0 0 16px #00000055;
   padding: 12px;
@@ -52,6 +50,8 @@ html {
   box-sizing: border-box;
   color: #555;
   outline: none;
+  flex-shrink: 1;
+  width: 0;
 }
 
 #input-bar input::placeholder {
@@ -74,21 +74,39 @@ html {
   box-shadow: 0 0 12px #00000033;
   cursor: pointer;
   color: #333;
+  flex-shrink: 0;
 }
 
 #list {
   width: 50%;
-  height: 100%;
   min-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 98px 0 121px 0;
+  padding-top: 98px;
   margin: auto;
 }
 
-#list .item {
+#complete {
+  width: 50%;
+  min-width: 350px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 121px;
+  margin: auto;
+  padding-top: 24px;
+}
+
+#complete h1 {
+  border-bottom: 5px solid #62bc62;
+  color: #62bc62;
+  box-sizing: border-box;
+}
+
+.item {
   width: 90%;
   background-color: white;
   box-shadow: 0 0 12px #00000033;
@@ -100,7 +118,7 @@ html {
   justify-content: space-between;
 }
 
-#list .item .text {
+.item .text {
   min-height: 24px;
   display: flex;
   align-items: center;
@@ -118,7 +136,7 @@ html {
   outline: none;
 }
 
-#list .item .options {
+.item .options {
   flex-shrink: 0;
   padding-left: 16px;
   display: flex;
@@ -126,7 +144,7 @@ html {
   height: min-content;
 }
 
-#list .item .closeBTN {
+.item .closeBTN {
   cursor: pointer;
   width: 24px;
   height: 24px;
@@ -135,7 +153,16 @@ html {
   border: none;
 }
 
-#list .item .timeBTN {
+.item .completedBTN {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background: #eaeaea;
+  border-radius: 6px;
+  border: none;
+}
+
+.item .timeBTN {
   cursor: pointer;
   height: 24px;
   background: #eaeaea;
@@ -143,4 +170,32 @@ html {
   border: none;
   padding: 0 8px;
   outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  #input-bar {
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    border-radius: 16px 16px 0 0;
+    padding: 12px 32px;
+  }
+
+  #header {
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 0 0 16px 16px;
+    padding: 16px 32px;
+  }
+
+  #list {
+    padding-top: 72px;
+    padding-bottom: 98px;
+  }
+
+  #complete {
+    padding-bottom: 98px;
+  }
 }
